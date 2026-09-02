@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Delta UniForm 테이블(Iceberg V3) Parquet Footer 내 Null 통계 미생성 원인 분석</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Delta UniForm 테이블(Iceberg V3) Parquet Footer 내 Null 통계 미생성 원인 분석</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607280030008010</b></span>
+    <span>최근 발신자: <b>jaesung.lim@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 30. 오전 11:24</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">5</div><div class="thread-card-meta">jaesung.lim@microsoft.com · 2026. 7. 30. 오전 11:24</div><div class="thread-card-body">jaesung.lim@microsoft.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br><br> <br><br> <br><br>안녕하세요, 박승섭(@박승섭(Data서비스팀))님, 박수정(@박수정(Data플랫폼팀))님.<br><br>한국마이크로소프트 고객기술지원부 임재성입니다.<br><br> <br><br>Databricks팀으로부터 본 이슈 관련하여 아래와 같이 질문을 요청 받았습니다.<br><br>확인해주시면 감사하겠습니다.<br><br> <br><br>문제가 발생한 테이블을 작성할 때 사용한 Databricks Runtime(DBR) 버전과 해당 쓰기 작업이 Job, Notebook 또는 DLT/Streaming Pipeline 중 어떤 방식으로 수행되었는지<br>해당 테이블에서 디버그 명령을 실행하는 것에 대한 동의<br>테스트에 사용할 수 있는 Cluster URL<br>동일한 컬럼 정의와 NOT NULL 제약 조건이 테이블 생성 당시부터 존재했는지, 아니면 이후에 추가 또는 변경되었는지<br>Snowflake가 해당 테이블을 읽도록 구성한 방식이 Iceberg REST Catalog인지 External Volume인지에 대한 확인<br><br>이 정보에 따라 어느 계층에서 null_count 검증이 수행되는지가 달라질 수 있으며, Parquet Writer와 Databricks가 생성하는 Iceberg Metadata 중 어느 부분을 중심으로 조사해야 하는지 판단하는 데 도움이 됩니다.<br><br> <br><br>&lt;Databricks팀 요청 원문&gt;<br><br>To summarize my understanding: your Delta UniForm (Iceberg V3) table sc_voc_rcp_txn writes some Parquet files whose footers are missing null_count statistics for the NOT NULL column RISK_SHAR_TRT_SBST. Snowflake, when validating the Iceberg table, treats the absent statistic as a possible null and rejects the file with &quot;non-nullable column without default has null values according to file statistics.&quot; Please correct me if I&#x27;ve misread any part of this.<br><br>To move quickly, could you help me with the following:<br><br><br><br><br>The Databricks Runtime (DBR) version(s) used to write the affected table, and whether the writes came from a job, notebook, or DLT/streaming pipeline.<br>Consent to run debug commands on the table.<br>Cluster url that can be used for testing.<br>Confirmation of whether the same column definition and NOT NULL constraint existed at table creation, or was added/altered later.<br>On the Snowflake side, it would help to know how you&#x27;ve configured Snowflake to read the table (Iceberg REST catalog vs. external volume), as that determines which layer performs the null-count validation this helps us pinpoint whether to focus on the Parquet writer or the Iceberg metadata Databricks generates.<br><br>Once I have these, I&#x27;ll investigate the file-writing path and get you clear answers on the conditions under which null_count can be omitted, whether this is expected for UniForm Iceberg V3, and safe remediation options that avoid recreating the full table.<br><br> <br><br> <br><br> <br><br>감사합니다.<br><br>임재성 드림.<br><br> <br><br>Jae Sung Lim<br><br>Support Engineer<br><br>Business hours: Mon-Fri:  9 AM - 6 PM | UTC+9<br>T: +82-2-531-4567<br><br>Email: jaesung.lim@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">4</div><div class="thread-card-meta">박승섭(Data서비스팀) &lt;seungseob.park@kt.com&gt; · Wednesday, July 29, 2026 1:14 PM</div><div class="thread-card-body">안녕하세요. 재성님<br><br> <br><br>노트북 공유드립니다.<br><br>확인 부탁드립니다.<br><br> <br><br>https://kt.azuredatabricks.net/editor/notebooks/4441921612953431?o=7405617489826213<br><br> <br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-meta">jaesunglim@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt;</div><div class="thread-card-body">보냄: 2026 7월 29, 수요일 오전 10:54<br><br> <br><br>안녕하세요, 박수정님.<br><br>한국마이크로소프트 고객기술지원부 임재성입니다.<br><br> <br><br>자세한 설명 감사드립니다.<br><br>Databricks팀과 소통을 위해 [part-01033-3193be82-d654-488f-929b-7175cc66c4ad-c000.zstd.parquet 통계 조회 결과] 를 확인하신 URL 공유 해주시면 감사하겠습니다.<br><br> <br><br>감사합니다.<br><br>임재성 드림.<br><br> <br><br>Jae Sung Lim<br><br>Support Engineer<br><br>Business hours: Mon-Fri:  9 AM - 6 PM | UTC+9<br>T: +82-2-531-4567<br><br>Email: jaesung.lim@microsoft.com<br><br><br><br> <br><br> <br><br>------------------- Original Message -------------------</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-meta">soojeong.park@kt.com;</div><div class="thread-card-body">Received: Wed Jul 29 2026 10:05:57 GMT+0900 (한국 표준시)<br><br> <br><br> <br><br>	<br><br>soojeong.park@kt.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br><br>	<br><br> <br><br>안녕하세요 KT 박수정입니다.<br><br> <br><br>승섭님이 확인해주신 자세한 내용 추가 공유 드립니다.<br><br> <br><br>[제목]<br>Delta UniForm 테이블(Iceberg V3) Parquet Footer 내 Null 통계 미생성 원인 분석<br><br>[요약]<br>ㅇ DBX Workspace : adb-7405617489826213.13.azuredatabricks.net<br><br>ㅇ 현상 :<br><br>·                    Delta UniForm 테이블 생성 후 데이터 INSERT 성공하였으나, Parquet Footer에 null_count 통계정보 없음에 따른 외부엔진(Snwoflake) 테이블 생성 및 읽기 오류 발생.<br><br>·                    해당 컬럼은 NOT NULL 대상임. Snowflake에서는 Iceberg 테이블 파일 등록 시 컬럼 null 여부를 Parquet 파일 통계로 검증하나, Parquet 통계가 없어 오류 발생한 것으로 추정.<br><br> <br><br>ㅇ Error Message(Snowflake) : Invalid parquet file: non-nullable column (columnId 170) without default has null values according to file statistics. File Name: sit2-bdw-sc-db/__unitystorage/schemas/03d1dac6-5d05-4fa0-a421-808479c2ba65/tables/3cb2e92a-e2cd-4859-ba06-0aed0d0f15ff/HH/part-01033-3193be82-d654-488f-929b-7175cc66c4ad-c000.zstd.parquet<br><br> <br><br>ㅇ 대상 테이블(DBX) : magma_bdw_tst.sit2_bdw_sc_db.sc_voc_rcp_txn<br><br> <br><br>ㅇ 대상 컬럼(DBX) : RISK_SHAR_TRT_SBST    VARCHAR(6000) COLLATE UTF8_BINARY NOT NULL<br><br> <br><br>ㅇ 자체 분석 결과 :<br><br>·                    Parquet footer 확인 시, null_count 누락 파일 존재<br><br>o part-00105-4ac52669-2c4c-40a7-b10d-ce2b3bc9afdb-c000.zstd.parquet<br><br>o part-00164-7a45ba49-bfb3-4782-b596-630873a404bb-c000.zstd.parquet<br><br>o part-00269-d72794d1-f944-49cb-b99c-4f4c73b88bb3-c000.zstd.parquet<br><br>o part-01033-3193be82-d654-488f-929b-7175cc66c4ad-c000.zstd.parquet<br><br>o part-01335-cf76185f-fcb3-4b85-8f3e-173e55a7495a-c000.zstd.parquet<br><br>o part-01419-18a7a337-a3f0-410e-b9f8-edc60363ca12-c000.zstd.parquet<br><br> <br><br>[part-01033-3193be82-d654-488f-929b-7175cc66c4ad-c000.zstd.parquet 통계 조회 결과]<br><br> <br><br> <br><br>·                    테이블 DDL 을 하나 더 구성하여 원본테이블로부터 INSERT INTO 시에는, Snowflake Iceberg 테이블 생성 간 오류 없음.<br><br>ex)<br><br>CREATE TABLE magma_bdw_tst.default.test(<br><br>~~~<br><br>);<br><br> <br><br>INSERT INTO magma_bdw_tst.default.test<br><br>SELECT *<br><br>FROM magma_bdw_tst.sit2_bdw_sc_db.sc_voc_rcp_txn;<br><br> <br><br>참고 부탁드립니다.<br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">jaesunglim@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt; · Wednesday, July 29, 2026 10:03 AM</div><div class="thread-card-body">안녕하세요. 한국 마이크로소프트(유) 기술지원부 임재성입니다.<br>기술지원 서비스를 이용해 주셔서 감사합니다.<br> <br>문의하신 내용에 대해 아래와 같이 정리합니다. 잘못 이해한 부분이 있으면 알려 주시기 바랍니다.<br><br>[문의번호]<br>2607280030008010<br><br>[제목]<br>Delta UniForm 테이블(Iceberg V3) Parquet Footer 내 Null 통계 미생성 원인 분석 <br><br>[요약]<br>Delta UniForm 테이블 생성 후 데이터 INSERT 성공하였으나, Parquet Footer에 null_count 통계정보 없음에 따른 외부엔진(Snwoflake) 테이블 생성 및 읽기 오류 발생.<br><br>해당 컬럼은 NOT NULL 대상임. Snowflake에서는 Iceberg 테이블 파일 등록 시 컬럼 null 여부를 Parquet 파일 통계로 검증하나, Parquet 통계가 없어 오류 발생한 것으로 추정.<br><br> <br><br>Error Message)<br><br>Error Message(Snowflake) : Invalid parquet file: non-nullable column (columnId 170) without default has null values according to file statistics. File Name: sit2-bdw-sc-db/__unitystorage/schemas/03d1dac6-5d05-4fa0-a421-808479c2ba65/tables/3cb2e92a-e2cd-4859-ba06-0aed0d0f15ff/HH/part-01033-3193be82-d654-488f-929b-7175cc66c4ad-c000.zstd.parquet<br><br><br>[진행사항] <br>문의주셔서 감사합니다. 보다 자세한 답변을 위해 에러메시지를 확인할 수 있는 Job URL을 공유 부탁드립니다.<br><br><br>고맙습니다.<br> <br><br>문의사항 또는 문제 진행 과정에서 연락이 필요할 경우에는 아래 연락처로 알려 주십시오. <br><br>임재성<br>한국 마이크로소프트<br>Microsoft Premier Support: 080-987-1000<br>Direct: 02-531-4721 (평일 9am – 6pm)<br><br>jaesung.lim@microsoft.com</div></div>
+</main>
+</body>
+</html>

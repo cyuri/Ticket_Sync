@@ -1,0 +1,150 @@
+2026-07-08 17:08:00 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None create_freshdesk_ticket=False
+2026-07-08 17:08:01 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 64, in open_browser_context
+    context = pw.chromium.launch_persistent_context(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 16816, in launch_persistent_context
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_browser_type.py", line 165, in launch_persistent_context
+    result = await self._channel.send_return_as_dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch_persistent_context: Executable doesn't exist at C:\Users\youre\AppData\Local\ms-playwright\chromium-1228\chrome-win64\chrome.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 167, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(app_config, mode, start_date, end_date)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 317, in collect_tickets
+    pw, context, page = open_browser_context(config)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 71, in open_browser_context
+    raise CrawlerError(
+crawler.CrawlerError: 브라우저를 실행하지 못했습니다. Playwright 브라우저가 설치되어 있는지 확인하세요 (최초 1회 'playwright install chromium' 필요).
+2026-07-08 17:08:01 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260708.xlsx'}
+2026-07-08 17:13:54 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None create_freshdesk_ticket=False
+2026-07-08 17:14:18 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 167, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(app_config, mode, start_date, end_date)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 318, in collect_tickets
+    ensure_logged_in(page, config)
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 88, in ensure_logged_in
+    page.goto(config.ms_account.case_management_url, wait_until="domcontentloaded")
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9770, in goto
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_page.py", line 560, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 156, in goto
+    await self._channel.send(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://engage.microsoft.com/Support/CaseManagement
+Call log:
+  - navigating to "https://engage.microsoft.com/Support/CaseManagement", waiting until "domcontentloaded"
+
+2026-07-08 17:14:18 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260708.xlsx'}
+2026-07-08 17:17:51 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None create_freshdesk_ticket=False
+2026-07-08 17:18:00 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-08 17:18:21 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-08 17:18:51 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 142, in export_case_csv
+    button.wait_for(state="visible", timeout=config.crawler.navigation_timeout_ms)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 20298, in wait_for
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 741, in wait_for
+    await self._frame.wait_for_selector(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_text("CSV로 다운로드").first to be visible
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 167, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(app_config, mode, start_date, end_date)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 320, in collect_tickets
+    csv_path = export_case_csv(page, context, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 144, in export_case_csv
+    raise PageStructureError(
+crawler.PageStructureError: 'CSV로 다운로드' 버튼을 찾지 못했습니다. 화면 구조가 바뀌었을 수 있으니 config/selectors.json 의 csv_download_button_text 를 확인하세요.
+2026-07-08 17:18:52 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260708.xlsx'}
+2026-07-08 17:27:39 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None create_freshdesk_ticket=False
+2026-07-08 17:27:48 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-08 17:27:54 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-08 17:28:25 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 143, in export_case_csv
+    button.wait_for(state="visible", timeout=config.crawler.navigation_timeout_ms)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 20298, in wait_for
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 741, in wait_for
+    await self._frame.wait_for_selector(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_text("CSV로 다운로드").first to be visible
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 167, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(app_config, mode, start_date, end_date)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 318, in collect_tickets
+    csv_path = export_case_csv(page, context, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 145, in export_case_csv
+    raise PageStructureError(
+crawler.PageStructureError: 'CSV로 다운로드' 버튼을 찾지 못했습니다. 화면 구조가 바뀌었을 수 있으니 config/selectors.json 의 csv_download_button_text 를 확인하세요.
+2026-07-08 17:28:25 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260708.xlsx'}

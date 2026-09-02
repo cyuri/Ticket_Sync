@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>[S-7754] VM 웹사이트 접속 불가</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>[S-7754] VM 웹사이트 접속 불가</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607300030002788</b></span>
+    <span>최근 발신자: <b>supportmail@techsupport.microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 30. 오후 03:59</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">supportmail@techsupport.microsoft.com · 2026. 7. 30. 오후 03:59</div><div class="thread-card-body">마이크로소프트 애저 기술지원에 문의해 주셔서 감사합니다.<br><br> <br><br>저는 본 케이스를 지원할 마이크로소프트 기술지원부 김용출 엔지니어입니다. <br><br>문의사항을 다음과 같이 정리하여 보내드리니 내용을 살펴보시고<br><br>문의사항이나 질문이 있으시면 언제든지 연락주시기 바랍니다.<br><br> <br><br>고객 데이터 보호를 위해 마이크로소프트 지원팀에서는<br><br>안전한 자료교환 솔루션인 DTM(Data Transfer &amp; Management)을 통해서만 데이터를 전달받고 있습니다.<br><br>첨부파일을 지원팀에 제공할 때에는 반드시 포털의 지원요청 페이지에서 파일을 업로드해주시거나, <br><br>지원 엔지니어로부터 제공받으신 DTM 링크를 통해 자료 업로드를 부탁드립니다.<br><br> <br><br>- 문의사항 : VM 웹사이트 접속 불가<br><br>VM에 구성된 웹사이트 접속이 불가해 문의드립니다.<br><br>방화벽 오픈 완료하여 Azure 방화벽측으로 통신 정상인거 확인했고,<br><br>iptable도 추가해두었는데도 접속이 안되고 있어 네트워크 상태 확인 요청드립니다.<br><br> <br><br>[Azure 방화벽 확인 내역]<br><br>2026. 7. 28. 오전 9:14:55.971<br><br>TCP<br><br>10.225.131.85<br><br>58167<br><br>10.241.132.36<br><br>443<br><br>Allow<br><br> <br><br>- 확인내용 : 해당 VM에 effective route rule 확인 시 10.0.0.0/8 룰을 통해서 10.241.4.132쪽 VPN gateway 연결을 통해서 연결이 될 것으로 보입니다.<br><br>VM의 NSG룰은 inbound 허용되어있는 것으로 확인됩니다.<br><br> <br><br>- 다음단계 : 확인해주신 Azure 방화벽 확인 부분이 10.241.4.132쪽 VPN gateway 연결 통해서 들어오는 부분의 방화벽인지 확인 부탁드립니다.<br><br>VM의 guest OS내에서 웹사이트 접속에 영향을 줄만한 부분 확인을 위해서 아래 명령어 수행 결과 공유 부탁드립니다.<br><br>그리고 혹시 80포트도 LISTEN중이라면 80포트로는 정상 접근되는지 확인 부탁드립니다.<br><br># 원격지에서 수행<br><br>nc -zv 10.241.132.36 443<br><br>또는<br><br>curl -vk https://10.241.132.36<br><br> <br><br># 해당 VM에서 수행<br><br>ss -lntp | grep 443<br><br>curl -vk https://localhost<br><br>firewall-cmd --list-all<br><br>iptables -L INPUT -n -v<br><br>cat /proc/sys/net/ipv6/bindv6only<br><br> <br><br> <br><br>수행한 결과를 아래 링크에 파일 업로드하여 공유 부탁드립니다.<br><br>File Transfer - Case 2607300030002788<br><br>yoonjeong.kang@kt.com<br><br> <br><br>문의사항이나 의견이 있으시면 언제든 저에게 연락부탁드립니다.<br><br>감사합니다.<br><br>즐거운 하루 되세요.<br><br> <br><br> <br><br>김용출 Yongchool Kim<br><br>Azure IaaS VM Support | Support Engineer <br><br>Microsoft Korea | Office: +82 (2) 531-4631 | E-mail: yongchoolkim@microsoft.com<br><br>Working hours: Mon-Fri 9:00 am - 6:00 pm (Korea, GMT+9)<br><br>Azure 기술 지원 플랜 비교 | Azure 상태 | Azure 최신 뉴스 | 케이스 생성 방법<br><br>근무 시간 외에 긴급한 Azure 기술지원이 필요한 경우, Azure 기술지원백업으로 연락 가능한 시간과 연락처 및 케이스 번호를 포함한 이메일을 보내주시면 연락 드리겠습니다.<br><br>마이크로소프트는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 Azure 기술지원팀 매니저에게 알려주십시오.<br><br> <br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.<br><br> <br><br>supportmail@techsupport.microsoft.com</div></div>
+</main>
+</body>
+</html>

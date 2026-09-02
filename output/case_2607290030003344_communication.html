@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>외부망 오픈된 환경임에도 불구하고 teams 사용시 오류 발생</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>외부망 오픈된 환경임에도 불구하고 teams 사용시 오류 발생</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607290030003344</b></span>
+    <span>최근 발신자: <b>soominlee@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 30. 오전 10:45</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">6</div><div class="thread-card-meta">soominlee@microsoft.com · 2026. 7. 30. 오전 10:45</div><div class="thread-card-body">안녕하세요. 마이크로소프트 이수민입니다.<br><br> <br><br>In-private 모드에서 로그 요청 드린 사항은 인증 과정부터 확인을 하기 위함인데, PSR과 HAR 로그 모두 확인 결과 사용자 분은 이미 로그인된 세션에서(이미 증상이 재현된 이후) 로그를 수집해주신 것으로 보입니다.<br><br> <br><br>현재 HAR 로그 상에는 특이사항이 없고, Teams 로그파일(PROD-WebLogs..)도 함께 비교를 해보아야 할 것으로 보이는데 혹시 원격으로 제가 사용자분 PC를 확인해볼 수 있을까요?<br><br> <br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">5</div><div class="thread-card-meta">Soomin Lee &lt;soominlee@microsoft.com&gt; · Thursday, July 30, 2026 9:55 AM</div><div class="thread-card-body">안녕하세요. 마이크로소프트 이수민입니다.<br><br> <br><br>In-private 모드에서 로그 수집을 요청드렸는데 팀즈 접속 시 이미 로그인 된 상태였을까요?<br><br>추가로, 증상이 로그인 시점에 발생하는 것이 아니라 사용 중에 발샐하는 것인지도 문의드립니다. <br><br> <br><br>PROD-WebLog는 증상이 재현된 직후 수집해주시면 됩니다. <br><br>네트워크 이슈가 아니라면 해당 로그를 통해 추가 분석이 필요합니다. <br><br>우선은 har로그 확인 후 업데이트 드리겠습니다.<br><br> <br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">4</div><div class="thread-card-meta">강동완(DWP서비스팀) &lt;dongwan.kang@kt.com&gt; · Thursday, 30 July 2026 09:45:48</div><div class="thread-card-body">안녕하세요.<br><br>kt ds 강동완 입니다.<br><br> <br><br>공유해주신 링크에 접속하여 파일 업로드도 하였으니 참고 부탁드립니다.<br><br> <br><br>브라우저에서 teams.microsoft.com 입력 후 접속 시 로그인 창이 나타나지 않고 일정시간 뒤 “실수~” 페이지가 나타나기 때문에 PROD-Weblog 수집은 못했습니다.<br><br> <br><br>감사합니다.<br><br>강동완 드림</div></div>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-meta">박길훈(DWP서비스팀) &lt;gilhoon.park@kt.com&gt; · Thursday, July 30, 2026 9:38 AM</div><div class="thread-card-body">안녕하세요, 매니저님 <br><br>kt ds 박길훈 입니다.<br><br> <br><br>사내 환경에서 파일업로드가 막히는 관계로 첨부파일로 전달드리는점 양해 부탁드립니다.<br><br> <br><br>오류 화면은 아래와 같습니다.<br><br>오류 당사자분께서 PROD 파일 수집이 안되신다고 하여 PROD 파일은 제외하고 전달 드립니다.<br><br> <br><br>오류 대상자는 91151348@ktcorp365.onmicrosoft.com 입니다.<br><br> <br><br>감사합니다.<br><br> <br><br> <br><br>   <br><br> 박길훈<br> 전임 · DWP서비스팀 <br> KTDS 플랫폼AX사업본부 서비스AX사업담당<br><br> <br><br> M 010-7234-0581<br><br>	<br><br> T 010-7234-0581<br><br> <br><br> H www.ktds.com<br><br>	<br><br> E gilhoon.park@kt.com</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-meta">Soomin Lee &lt;soominlee@microsoft.com&gt;</div><div class="thread-card-body">보냄: 2026 7월 29, 수요일 15:55<br><br> <br><br>안녕하세요. 마이크로소프트 이수민입니다.<br><br> <br><br>캐시된 데이터 영향을 배제하고 확인하기 위해 In-private 모드에서 재현 유무를 확인해주십시오.<br><br>In-private 모드에서도 동일하게 발생한다면 아래 절차에 따라 로그를 수집해주십시오. <br><br> <br><br> <br><br>&lt;로그 수집 단계&gt;<br><br>Windows 시작 메뉴에서 “단계 레코더” 앱을 실행하여 기록을 시작해주십시오.<br><br><br>(또는 PowerPoint 에서 Office 녹화를 진행해주셔도 무관합니다.)<br><br>웹브라우저 In-private 모드로 새 창을 열어주십시오.<br>아래 [HAR 파일 수집 가이드]에 따라 network 로그 수집을 시작해주십시오.<br>Teams에 접속해주십시오. <br>로그인하여 증상을 재현해주십시오.<br>재현 완료 후 .har 로그 저장해주십시오.<br>Teams에서 Ctrl+Alt+Shift+1을 동시 클릭하여 PROD-WebLog..로 시작하는 웹로그 폴더를 다운로드 받아주십시오.<br>** 다운로드가 시작되지 않는다면, 최상단 회색 바탕을 클릭하신 후 Ctrl+Alt+Shift+1을 다시 한번 입력해보시면 됩니다. (정상적으로 다운로드가 될 경우 “웹 로그 다운로드 중…”이 표시됩니다)<br><br><br>수집하신 로그는 아래 경로에 업로드해주십시오. (PROD-WebLog.. 폴더와 .har 로그, mht 로그를 모두 업로드해주십시오)<br><br>File Transfer - Case 2607290030003344<br><br> <br><br>[HAR 파일 수집 가이드]<br><br>** HAR 로그는 웹 브라우저와 Microsoft 365 서비스 간의 네트워크 통신 내역을 기록한 자료입니다.<br><br>문제 발생 시 어떤 요청이 실패했는지, 오류 코드가 반환되었는지, 특정 페이지나 기능이 정상적으로 로드되지 않는지 확인하여 원인을 분석하기 위해 수집합니다.<br><br>Edge 혹은 Chrome 브라우저에서 In-private 모드로 새 창을 열어주신 후 F12 버튼을 클릭해 주십시오. (새창이 팝업됩니다.)<br>※ 창의 위치(팝업/브라우저 임베디드)를 변경하고 싶으시면 … 에서 변경해주십시오.  <br><br>[Network] 탭 &gt; 로그 보존 &gt;  순으로 클릭해 주십시오.<br>※ ③번의 경우 이미 빨간불이 들어와 있는 상태라면 제외하셔도 됩니다. (빨간불 : 로그 수집 중)<br><br>Teams 접속 후 새로 로그인하여 해당 증상을 재현하신 후 로그를 저장해주십시오.<br>1) Edge 브라우저<br><br><br> <br><br>2) Chrome 브라우저<br>: 아무 행이나 선택 후 마우스 우클릭하시면 됩니다.<br><br><br><br>**브라우저 버전에 따라서는 Save all as HAR with content 항목이 보이지 않을 수 있습니다. 이 경우 아래 노란색 동그라미 표시한 다운로드 아이콘을 클릭하여 주십시오.<br><br> <br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">Soomin L &lt;supportmail@techsupport.microsoft.com&gt; · Wednesday, July 29, 2026 3:50 PM</div><div class="thread-card-body">한국마이크로소프트 기술지원 리포트<br><br>	<br><br> <br><br><br><br><br> <br><br>	<br><br> <br><br>	<br><br> <br><br>	<br><br> <br><br>	<br><br> <br><br><br><br><br>안녕하세요,  한국 마이크로소프트입니다.<br>한국마이크로소프트는 산업안전보건법에 따른고객 응대근로자 보호조치를따르고 있습니다.<br>엔지니어가 고객께 전화를드릴 때 수신번호가 1577-9700으로 표시되며, 상담내용은고객지원 및 서비스개선 등을<br>위해 녹음되며, 관련법안에 따라 일정기간보관됩니다.<br><br>	<br><br> <br><br>	<br><br> <br><br><br><br><br> <br><br>	<br><br> <br><br>	<br><br> <br><br>	<br><br> <br><br>안녕하세요. 한국마이크로소프트 이수민입니다.<br>기술지원 서비스를 이용해 주셔서 감사합니다.<br><br>문의하신 내용에 대한 지원 범위를 다음과 같이 정리합니다.<br><br><br>[문의번호]<br>2607290030003344<br><br>[문제증상]<br>아래 계정의 경우 외부망이 오픈된 환경임에도 Teams 사용 시 오류가 발생하고 있습니다. 118180903@ktcorp365.onmicrosoft.com 91151348@ktcorp365.onmicrosoft.com 증상은 teams 실행 시 &quot;실수~ &quot; 오류가 발생합니다. 오류화면은 첨부가 안되어 메일로 회신 드리겠습니다. 이전 분석 건에서 Teams 앱은 타사 보안 제품과의 충돌로 인해 문제가 발생한 것으로 확인되어, 이번에는 Teams 앱 확인은 제외하고 Teams Web 환경을 체크하고자 합니다. 관련하여 원인 분석을 요청드리고자 하오니, 분석 진행 절차 및 필요한 확인 사항에 대해 안내 부탁드립니다.<br><br>[안내사항]<br>본 케이스를 맡아 진행할 엔지니어 이수민입니다.<br>현재 요청 내용에 대해 확인 중에 있으며, 곧 연락 드릴 수 있도록 하겠습니다.<br><br>감사합니다.<br><br><br><br>이수민 | Soomin Lee<br>MW Team- Skype for Business / Microsoft Teams | Support Escalation Engineer<br>Office : +82) 2-531-4091 | Call Center : +82) 80-987-1000 | E-mail : soominlee@microsoft.com<br><br>soominlee@microsoft.com</div></div>
+</main>
+</body>
+</html>

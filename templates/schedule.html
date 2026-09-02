@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Ticket Sync · 예약 실행{% endblock %}
+{% block content %}
+
+<div class="card">
+  <div class="card-header">
+    <h2>
+      <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>예약 실행 (자동 배치)
+      <span class="info-tip" title="매일 정해진 시각에 자동으로: ① Engage Center에서 오늘 새로 생성된 오픈 케이스를 확인해 Freshdesk에 태그 기준으로 중복 없이 등록하고, ② 예전에 등록한 케이스가 Engage Center에서 완료됐는지 확인해 완료됐으면 마지막 대화 내용을 노트로 남깁니다. 이 과정은 케이스 보기(/cases) 화면에는 아무것도 남기지 않습니다 — 대시보드 &quot;지금 실행&quot;과는 완전히 별개입니다.">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </span>
+    </h2>
+  </div>
+
+  <div class="stats" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 22px;">
+    <div class="stat-card">
+      <div class="label">다음 실행 예정</div>
+      <div class="value" style="font-size:1.1rem;">{{ next_run or "설정 안 됨" }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">마지막 자동 실행</div>
+      <div class="value" style="font-size:1.1rem;">{{ schedule.last_triggered_at or "아직 없음" }}</div>
+    </div>
+  </div>
+
+  <form method="post" action="/freshdesk/schedule">
+    <div class="field-row">
+      <div class="field-group">
+        <label class="title">예약 실행 사용</label>
+        <div class="toggle-row">
+          <label class="switch">
+            <input type="checkbox" name="enabled" id="enabled" {{ "checked" if schedule.enabled }}>
+            <span class="track"></span>
+          </label>
+          <label for="enabled" style="font-size:0.88rem; cursor:pointer;">매일 자동 실행</label>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="title">실행 시각 (매일)</label>
+        <input type="time" name="run_time" value="{{ schedule.run_time }}">
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field-group">
+        <label class="title">신규 등록 시 최초 문의 노트 공개 여부</label>
+        <div class="segmented">
+          <input type="radio" name="creation_note_visibility" id="crnv-private" value="private" {{ "checked" if schedule.creation_note_visibility != "public" }}>
+          <label for="crnv-private">비공개</label>
+          <input type="radio" name="creation_note_visibility" id="crnv-public" value="public" {{ "checked" if schedule.creation_note_visibility == "public" }}>
+          <label for="crnv-public">공개</label>
+        </div>
+        <div class="hint" style="color:var(--warning, #b45309);">
+          신규 Freshdesk 티켓 생성 시 커뮤니케이션 중 가장 오래된(최초 문의) 1건을 노트로 함께
+          등록합니다. "공개"로 하면 실제 요청자에게도 보이며 이메일 알림이 갈 수 있습니다.
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="title">완료 케이스 최종 노트 공개 여부</label>
+        <div class="segmented">
+          <input type="radio" name="completion_note_visibility" id="cnv-private" value="private" {{ "checked" if schedule.completion_note_visibility != "public" }}>
+          <label for="cnv-private">비공개</label>
+          <input type="radio" name="completion_note_visibility" id="cnv-public" value="public" {{ "checked" if schedule.completion_note_visibility == "public" }}>
+          <label for="cnv-public">공개</label>
+        </div>
+        <div class="hint" style="color:var(--warning, #b45309);">
+          "공개"로 하면 실제 요청자에게도 보이는 노트로 등록되며, Freshdesk 설정에 따라 이메일
+          알림이 갈 수 있습니다. 확실하지 않으면 "비공개"를 권장합니다.
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-primary" type="submit">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+      저장
+    </button>
+  </form>
+</div>
+
+{% endblock %}

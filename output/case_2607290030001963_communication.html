@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Azure Backup could not get access to key vault / managed HSM associated with  some of the selected confidential VM(s)</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Azure Backup could not get access to key vault / managed HSM associated with  some of the selected confidential VM(s)</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607290030001963</b></span>
+    <span>최근 발신자: <b>dongh.kim@kt.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 29. 오후 07:06</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-meta">dongh.kim@kt.com · 2026. 7. 29. 오후 07:06</div><div class="thread-card-body">dongh.kim@kt.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br>추가적으로 CVM v2 opt-out&quot; 구독 기능 플래그의 경우, 저희 쪽에서 조회 가능한 CLI/PowerShell 명령어를 찾지 못했습니다.<br>확인 방법을 안내해 주시거나, 구독 85917d52-02ad-493b-a2f7-d6180b0750aa 에 이 플래그가 설정되어 있는지 직접 확인 부탁드립니다.<br><br><br><br>김동헌<br><br>Cloud 본부 Azure SRE 팀<br><br>M: 010-5539-3623  E: dongh.kim@kt.com<br><br><br><br><br>대한민국 No.1 DX 전문기업</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-meta">김동헌(Azure SRE팀) &lt;dongh.kim@kt.com&gt; · 2026년 7월 29일 수요일 오후 7:03</div><div class="thread-card-body">안녕하세요<br>Azure SRE 팀 김동헌입니다.<br><br><br>요청 주신 정보 확인하여 하기와 같이 정리하였습니다. 제가 잘못 이해한 부분이 있다면 말씀 부탁드리겠습니다.<br>RBAC 전파 지연 건 관련해서는 최근에 새로 추가된 것이 아닌 오래된 할당으로 전파 지연 가능성은 낮다고 판단하여, 제외하였습니다.<br><br><br><br>1. cvm-test-rhel-app의 정확한 VM 크기/SKU<br><br>- Standard_DC2as_v6 (v6 시리즈, 지원 대상)<br><br><br><br><br>2. OS 디스크의 Disk Encryption Set리소스 ID와 참조 키(HSM + 키 이름); 해당 키가 HSM-az01-azsec-mHSM-01에 있는지 확인<br><br>VM OS Disk : cvm-test-rhel-app_OsDisk_1_efdd327736a6472881d0d1f9bdef3ba1<br><br>Security Type : ConfidentialVM_DiskEncryptedWithCustomerKey<br>Disk Encryption Set : desc-az01-stg-cloudwiz-confidential-01<br>Managed HSM : hsm-az01-azsec-mhsm-01<br>Key : cmk-az03-azsec-mhsm-comconfi-02<br>Key Version : 2cbe3f6a7bf90bb99136a116ad75744c<br><br><br>3. 정확한 유효성 검사 오류 화면 캡처(타임스탬프 포함)<br><br>- Error 확인 시간 18:53 (KST) / 해당 화면 외에는 어떠한 곳에서도 관련 로그를 확인할 수 없었습니다.<br><br> <br><br><br>4. mHSM &quot;Backup Management Service&quot; 역할 할당의 개체/앱 ID<br><br>- 주체 ID: az ad sp list로 직접 조회한 결과 AppId 262044b1-e2ce-469f-a196-69ab7ada62d3로 정확히 일치함을 확인<br><br><br><br>5. 다음 명령 실행 결과: Get-AzProviderFeature -FeatureName RestorePointSupportForConfidentialVMV2 -ProviderNamespace Microsoft.Compute<br>- 프리뷰 기능 등록 상태: Registered<br><br><br><br><br>감사합니다.<br>김동헌 드림.<br><br><br><br>김동헌<br><br>Cloud 본부 Azure SRE 팀<br><br>M: 010-5539-3623  E: dongh.kim@kt.com<br><br><br><br><br>대한민국 No.1 DX 전문기업</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">Neeraj J &lt;supportmail@techsupport.microsoft.com&gt; · 2026년 7월 29일 수요일 오후 2:13</div><div class="thread-card-body">Hello,<br><br> <br><br>Good day.<br><br>My Name is Neeraj and I&#x27;m from Microsoft Azure backup Team.<br><br>Thank you for the detailed report and for sharing the steps and the Managed HSM RBAC configuration on case 2607290030001963. I have completed an initial analysis of the Confidential VM backup validation failure (&quot;Azure Backup could not get access to key vault / managed HSM associated with some of the selected confidential VM(s)&quot;) for VM cvm-test-rhel-app.<br><br>Most important finding<br><br>The Managed HSM RBAC you configured is actually correct — it is not the cause. You assigned the built-in role Managed HSM Crypto User to Backup Management Service at scope /. I verified against the Managed HSM built-in-roles matrix that this role already grants both data actions Azure Backup requires for a Confidential VM:<br><br>Microsoft.KeyVault/managedHsm/keys/read/action<br><br>Microsoft.KeyVault/managedHsm/keys/backup/action<br><br>Scope / is HSM-wide and covers the key. So the role, scope, and principal you set are valid and sufficient — the failure is not a wrong-role problem.<br><br>Where the validation failure actually comes from<br><br>Because your RBAC is correct, the wizard is failing preflight for one of the following reasons (in order of likelihood). Confirming a few data points below will let us isolate it quickly:<br><br>RBAC propagation delay — Managed HSM local-RBAC changes take time to propagate. Please wait 15–30 minutes after the assignment and re-run validation.<br><br>Principal identity — the &quot;Backup Management Service&quot; assignment must resolve to AppId 262044b1-e2ce-469f-a196-69ab7ada62d3 in your tenant. Please confirm the object/app ID shown on the mHSM role assignment.<br><br>DES → key → HSM chain — the CVM OS disk uses a Disk Encryption Set (type ConfidentialVmEncryptedWithCustomerKey) that points to a specific key. If that key lives in a different vault/HSM than HSM-az01-azsec-mHSM-01, granting on this HSM will not help. Please share the OS-disk DES resource ID and the key (HSM + key name) it references.<br><br>VM size — Confidential VM backup supports v6-series only; v5-series (DCasv5 / ECasv5) is not supported and fails validation. Please confirm the exact VM size/SKU of cvm-test-rhel-app.<br><br>&quot;CVM v2 opt-out&quot; subscription feature flag — backup/restore fail when this flag is enabled for the subscription. Please confirm it is not set.<br><br>Preview feature RestorePointSupportForConfidentialVMV2 (Microsoft.Compute) must read Registered (not Registering).<br><br>Please provide<br><br>Exact VM size/SKU of cvm-test-rhel-app.<br><br>OS-disk Disk Encryption Set resource ID and the key (HSM + key name) it references; confirm the key is in HSM-az01-azsec-mHSM-01.<br><br>Screenshot of the exact validation error, with timestamp.<br><br>Object/App ID on the mHSM &quot;Backup Management Service&quot; role assignment.<br><br>Output of: Get-AzProviderFeature -FeatureName RestorePointSupportForConfidentialVMV2 -ProviderNamespace Microsoft.Compute<br><br>Reference docs: Confidential VM backup (preview) – learn.microsoft.com/azure/backup/confidential-vm-backup and Managed HSM built-in roles – learn.microsoft.com/azure/key-vault/managed-hsm/built-in-roles.<br><br> <br><br>Best regards,<br>Neeraj<br>Azure Backup Support<br><br>[한국어 안내]<br><br>안녕하세요,<br><br>케이스2607290030001963에 대해상세한내용과재현절차, Managed HSM RBAC 구성을 공유해 주셔서감사합니다. Confidential VM cvm-test-rhel-app의 백업구성유효성검사실패 (&quot;Azure Backup could not get access to key vault / managed HSM associated with some of the selected confidential VM(s)&quot;)에대한초기분석을완료했습니다.<br><br>가장 중요한 확인 사항<br><br>고객님께서구성하신 Managed HSM RBAC은 실제로올바르며, 이번오류의원인이아닙니다. 고객님은기본제공역할Managed HSM Crypto User를Backup Management Service 주체에범위/로할당하셨습니다. Managed HSM 기본 역할 매트릭스를 확인한 결과, 이역할은 Confidential VM 백업에 필요한 두가지데이터작업을모두이미포함하고있습니다:<br><br>Microsoft.KeyVault/managedHsm/keys/read/action<br><br>Microsoft.KeyVault/managedHsm/keys/backup/action<br><br>범위/는 HSM 전체범위이므로해당키를포함합니다. 따라서고객님이설정하신역할, 범위, 주체는유효하고충분하며, 이번실패는역할(권한) 설정오류가아닙니다.<br><br>유효성 검사 실패의 실제 원인<br><br>RBAC이올바르므로, 아래원인중하나로사전검사(preflight)에서실패하는것으로추정됩니다 (가능성이높은순서). 아래정보를확인해주시면신속하게원인을좁힐수있습니다:<br><br>RBAC 전파 지연 — Managed HSM 로컬 RBAC 변경은 전파에 시간이 걸립니다. 할당 후 15–30분 기다린 뒤 유효성 검사를 다시 실행해 주세요.<br><br>주체(Principal) ID 확인 — &quot;Backup Management Service&quot; 할당이 테넌트 내에서 AppId 262044b1-e2ce-469f-a196-69ab7ada62d3로 정확히 확인되어야 합니다. mHSM 역할 할당에 표시된 개체/앱 ID를 확인해 주세요.<br><br>DES → 키 → HSM 연결 — CVM OS 디스크는 특정 키를 참조하는 Disk Encryption Set(유형: ConfidentialVmEncryptedWithCustomerKey)을 사용합니다. 해당 키가 HSM-az01-azsec-mHSM-01이 아닌 다른 볼트/HSM에 있다면 이 HSM에 권한을 부여해도 해결되지 않습니다. OS 디스크의 DES 리소스 ID와 참조하는 키(HSM + 키 이름)를 공유해 주세요.<br><br>VM 크기 — Confidential VM 백업은 v6 시리즈만 지원하며, v5 시리즈(DCasv5 / ECasv5)는 지원되지 않아 유효성 검사에서 실패합니다. cvm-test-rhel-app의 정확한 VM 크기/SKU를 확인해 주세요.<br><br>&quot;CVM v2 opt-out&quot; 구독 기능 플래그 — 이 플래그가 구독에 설정되어 있으면 백업/복원이 실패합니다. 설정되어 있지 않은지 확인해 주세요.<br><br>프리뷰 기능 RestorePointSupportForConfidentialVMV2(Microsoft.Compute)가 Registering이 아니라 Registered 상태인지 확인해 주세요.<br><br>요청 드리는 정보<br><br>cvm-test-rhel-app의 정확한 VM 크기/SKU<br><br>OS 디스크의 Disk Encryption Set리소스 ID와 참조 키(HSM + 키 이름); 해당 키가 HSM-az01-azsec-mHSM-01에 있는지 확인<br><br>정확한 유효성 검사 오류 화면 캡처(타임스탬프 포함)<br><br>mHSM &quot;Backup Management Service&quot; 역할 할당의 개체/앱 ID<br><br>다음 명령 실행 결과: Get-AzProviderFeature -FeatureName RestorePointSupportForConfidentialVMV2 -ProviderNamespace Microsoft.Compute<br><br>참고문서: Confidential VM 백업(프리뷰) – learn.microsoft.com/azure/backup/confidential-vm-backup, Managed HSM 기본 역할 – learn.microsoft.com/azure/key-vault/managed-hsm/built-in-roles<br><br>감사합니다.<br>Neeraj<br>Azure Backup 지원팀<br><br>dongh.kim@kt.com</div></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# config.json 을 그대로 ConfigMap 으로 마운트한다. 실제 저장소 루트의 config.json과
+# 같은 내용으로 유지하세요(Freshdesk 자격증명/그룹/우선순위는 더 이상 여기 없음 — DB의
+# freshdesk_connections 에서 관리). crawler/output 은 이 파드에서 브라우저를 직접 띄우지
+# 않아 사실상 안 쓰이지만(headless 등), config.py가 파일 존재를 요구하므로 그대로 둔다.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ticket-sync-config
+data:
+  config.json: |
+    {
+      "_comment": "민감하지 않은 기본값만 여기에 둡니다.",
+      "_comment_freshdesk": "Freshdesk 자격증명/그룹/우선순위 등은 DB(freshdesk_connections)에서 관리합니다 — 웹 UI의 Freshdesk Management > 설정 화면에서 저장.",
+
+      "crawler": {
+        "headless": true,
+        "enable_detail_page_enrichment": true,
+        "download_timeout_seconds": 600,
+        "navigation_timeout_seconds": 30
+      },
+
+      "freshdesk_priority_map": {
+        "낮음": 1,
+        "보통": 2,
+        "높음": 3,
+        "긴급": 4
+      },
+
+      "output": {
+        "excel_dir": "./output",
+        "log_dir": "./logs",
+        "db_path": "./data/tickets.db"
+      }
+    }

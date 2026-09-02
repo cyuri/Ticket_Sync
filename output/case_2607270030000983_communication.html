@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>er 메인터넌스 영향 범위</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>er 메인터넌스 영향 범위</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607270030000983</b></span>
+    <span>최근 발신자: <b>saewoomsong@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 27. 오후 01:50</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607270030000983<br><br>심각도<br>C - 최소 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 27. 오후 01:50<br><br>만들어짐<br>2026. 7. 27. 오전 11:44<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>saewoomsong@microsoft.com<br>2026. 7. 27. 오후 01:50<br><br>lee.sang_won@kt.com<br>2026. 7. 27. 오후 01:33<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 27. 오후 01:11<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 27. 오전 11:44<br><br>외부 메시지가 모든 사용자에게 표시됩니다.<br>메시지:<br>	<br>saewoomsong@microsoft.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br><br><br><br><br><br> <br><br>안녕하세요. Azure기술지원팀 송새움 입니다.<br><br><br><br>네, 이상적인 maintenance작업 시, <br><br><br><br>1번 장비의 traffic 을 2번으로 전환 시, 그리고 다시 원복 시, 총 2번이 예상되지만, maintenance의 진행 및 수행 완성도에 따라 이 숫자는 달라질 수도 있습니다.<br><br><br>최종적인 확인은 metric을 통해 maintenance완료 뒤 1번 장비를 통해 traffic이 정상적으로 흐르는지 확인을 진행해 주시면 될 것 같습니다.<br>(다만, 메인터넌스 진행 시 의도치 않은 1번 장비의 문제 발생이나 이슈로 인해 2번 장비로 지속적으로 트래픽이 흐르는 경우가 발생할 수 있으며, 이런 경우, 고객님의 공지를 받으신 방식대로 사전/사후 공지 사항이 전달될 수 있습니다.)<br><br><br><br>감사합니다.<br><br>Best regards<br><br>Saewoom Song<br><br>Azure Networking Technical Support | SR TECH SUPPORT ENG SEE<br><br>Microsoft Korea | Office : +82(2)531-4623 | E-mail : saewoomsong@microsoft.com<br><br>Working Hours : Mon-Fri 0900 – 1800 (Korea, GMT +9)<br><br> <br><br> <br><br>보낸 사람: 이상원(Azure SRE팀) &lt;lee.sang_won@kt.com&gt;<br>보낸 날짜: 2026년 7월 27일 월요일 13:32<br>받는 사람: External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>참조: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Saewoom Song &lt;saewoomsong@microsoft.com&gt;; Azure 랜딩존 &lt;az.msp@kt.com&gt;<br>제목: [EXTERNAL] Re: er 메인터넌스 영향 범위 - TrackingID#2607270030000983<br> <br>안녕하세요, kt cloud 이상원입니다.<br><br><br>확인 감사드립니다.<br>그러면 8월 2일 exr02.sel21장비의 유지보수 시 ext01.sel21장비로 트래픽이 넘어간다는 말씀이신건가요? exr01.sel21로 트래픽 전환 시 1회, 다시 ext02.sel21로 트래픽 원복 시 1회 총 2회로 인지를 하면 되는것인지 확인 부탁드립니다.<br><br><br>감사합니다.<br><br><br>보낸 사람: saewoomsong@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt;<br>보낸 날짜: 2026년 7월 27일 월요일 오후 1:11<br>받는 사람: 이상원(Azure SRE팀) &lt;lee.sang_won@kt.com&gt;<br>참조: Kenneth.Kim@microsoft.com &lt;Kenneth.Kim@microsoft.com&gt;; parkjay@microsoft.com &lt;parkjay@microsoft.com&gt;; yonghahwang@microsoft.com &lt;yonghahwang@microsoft.com&gt;; saewoomsong@microsoft.com &lt;saewoomsong@microsoft.com&gt;<br>제목: er 메인터넌스 영향 범위 - TrackingID#2607270030000983<br> <br> <br><br> <br><br>안녕하세요, 고객님.<br>본 케이스를 지원하게 된 Azure기술지원팀 송새움 입니다.<br>본 케이스를 아래와 같이 정리하며 혹 잘못 이해한 부분 있을 경우 언제든지 말씀 부탁드립니다.<br> <br>[문제 정의]<br> <br><br>Question: When did the problem start?<br><br>Answer: Not sure, use current time<br><br> <br><br>Question: Description<br><br>Answer: 안녕하세요,<br><br> <br><br>8/1일, 8/2일에 expressroute circuit 관련 er 메인터넌스 공지를 확인하였습니다.<br><br>현재 저희는 er-01,er-03, er-04 회선을 사용중이며 각각 active/standby로 사용중입니다.<br><br>메인터넌스 공지사항을 보니 primary와 secondary 모두 영향을 받는것으로 확인했습니다.<br><br>작업시간이 총 5시간으로 나오는데 그렇다면 랜딩존 전체에 순단이 발생하는것인지, 발생한다면 몇회가 발생하는지, 영향 범위에 대해 문의드립니다.<br><br> <br><br>급한건으로 빠른 확인을 요청드립니다.<br><br> <br><br> <br>[확인 내용]<br>공지된 내용을 확인 중 대상 장비와 구체적인 시간을 확인 시 아래와 같습니다.<br><br>      &lt;li&gt;&lt;strong&gt;Device Name:&lt;/strong&gt; exr02.sel21&lt;/li&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Maintenance Start Time:&lt;/strong&gt; 2026-08-01T12:00:00&lt;/li&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Maintenance End Time:&lt;/strong&gt; 2026-08-01T16:00:00&lt;/li&gt;<br><br>    &lt;/ul&gt;<br><br>    &lt;h3&gt;Azure Location and Primary/Secondary Pair&lt;/h3&gt;<br><br>    &lt;ul&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Peering Location:&lt;/strong&gt; Seoul2&lt;/li&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Primary Device:&lt;/strong&gt; exr01.sel21&lt;/li&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Secondary Device:&lt;/strong&gt; exr02.sel21&lt;/li&gt;<br><br>    &lt;/ul&gt;<br><br>    &lt;ul&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Device Name:&lt;/strong&gt; exr01.sel21&lt;/li&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Maintenance Start Time:&lt;/strong&gt; 2026-08-02T12:00:00&lt;/li&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Maintenance End Time:&lt;/strong&gt; 2026-08-02T16:00:00&lt;/li&gt;<br><br>    &lt;/ul&gt;<br><br>    &lt;h3&gt;Azure Location and Primary/Secondary Pair&lt;/h3&gt;<br><br>    &lt;ul&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Peering Location:&lt;/strong&gt; Seoul2&lt;/li&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Primary Device:&lt;/strong&gt; exr01.sel21&lt;/li&gt;<br><br>      &lt;li&gt;&lt;strong&gt;Secondary Device:&lt;/strong&gt; exr02.sel21&lt;/li&gt;<br><br>    &lt;/ul&gt;<br><br>    &lt;p&gt;<br><br>  <br><br>해당 장비는 2개의 장비가 pair로 구성되어 있으며,<br><br>2026-08-01T12:00:00 - 16:00:00 까지 4시간동안 exr02.sel21의 maintenance가 수행되며,<br><br>익일<br><br>2026-08-02T12:00:00 - 16:00:00까지 4시간동안 exr01.sel21의 maintenance가 수행됩니다.<br><br> <br><br>고객님께서 사용하시는 3개의 circuit은 모두 active -standby 구성으로<br><br>Primary 장비가 exr01.sel21<br><br>Secondary장비가 exr02.sel21로 확인됩니다.<br><br> <br><br>따라서 해당 maintenance로 인해 순차적으로 하루의 시간 차를 두고 작업을 수행하게 됩니다.<br><br>현재 고객님께서는 exr01.sel21을 main으로 사용하고 계시기 때문에 8월1일에는 서비스 영향이 없을 것으로 예상되며, maindevice작업인 8월 2일에 service traffic이 넘어가는 시간대에 1회, 그리고 다시 maintenance작업 이후 서비스가 main 회선으로 돌아올 때 1회, 총 2회정도 순단이 예상됩니다.<br><br>다만, 해당 순단은 작업 도중, 작업 진행에 따라 다소 차이는 있을 것으로 예상됩니다.<br><br>구체적인 maintenance의 진행 사항은 아래의 링크를 참조 부탁드립니다.<br><br>Planned maintenance guidance for ExpressRoute | Microsoft Learn<br><br> <br><br>해당 내용에 대해 문의가 있으시다면 회신 부탁드립니다.<br><br> <br><br>감사합니다.<br><br> <br><br>※회신주실 때, 반드시 전체 회신으로 보내주시기 바랍니다.<br>Best regards<br>Saewoom Song<br>Azure Networking Technical Support | Support Escalation Engineer<br>Microsoft Korea | Office : +82(2)531-4623 | E-mail : saewoomsong@microsoft.com<br>Working Hours : Mon-Fri 0900 – 1800 (Korea, GMT +9)<br><br> <br>Azure 기술 지원 플랜 비교 | Azure상태 | Azure최신 뉴스 | 케이스 생성 방법<br>근무 시간 외에 긴급한 Azure 기술지원이 필요한 경우, Azure기술지원백업으로 연락 가능한 시간과 연락처 및 케이스 번호를 포함한 이메일을 보내주시면 연락 드리겠습니다.<br>마이크로소프트는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 Azure 기술지원팀 매니저(Dennis.Lam@microsoft.com)에게 알려주십시요.<br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.<br><br><br><br>saewoomsong@microsoft.com</div></div>
+</main>
+</body>
+</html>

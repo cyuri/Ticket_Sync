@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>MDC</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>MDC</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607280030000733</b></span>
+    <span>최근 발신자: <b>jaeheelee@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 29. 오후 05:17</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">jaeheelee@microsoft.com · 2026. 7. 29. 오후 05:17</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607290030000261<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 29. 오후 05:17<br><br>만들어짐<br>2026. 7. 29. 오전 09:47<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>jaeheelee@microsoft.com<br>2026. 7. 29. 오후 05:17<br><br>jonghyun.hong@kt.com<br>2026. 7. 29. 오후 02:10<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 29. 오전 11:15<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 29. 오전 09:48<br><br>jaeheelee@microsoft.com</div></div>
+</main>
+</body>
+</html>

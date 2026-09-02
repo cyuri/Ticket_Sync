@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Ticket Sync{% endblock %}</title>
+{% if running %}<meta http-equiv="refresh" content="5">{% endif %}
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%234f46e5%22/><path d=%22M17 8a5 5 0 0 0-8.5-3.5M7 16a5 5 0 0 0 8.5 3.5M9 4.5 8 8l3.5.5M15 19.5 16 16l-3.5-.5%22 stroke=%22white%22 stroke-width=%222%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="shell">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M17 8a5 5 0 0 0-8.5-3.5M7 16a5 5 0 0 0 8.5 3.5M9 4.5 8 8l3.5.5M15 19.5 16 16l-3.5-.5"/></svg>
+      </div>
+      <div>
+        <h1>Ticket Sync</h1>
+        <div class="tagline">Engage Center → Freshdesk 자동 동기화</div>
+      </div>
+    </div>
+
+    <nav class="nav-tabs">
+      <a href="/" class="{{ 'active' if active_nav == 'dashboard' else '' }}">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></svg>
+        대시보드
+      </a>
+      <a href="/cases" class="{{ 'active' if active_nav == 'cases' else '' }}">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        케이스 보기
+      </a>
+      <div class="nav-group">
+        <a href="#" class="nav-group-title {{ 'active' if active_nav.startswith('freshdesk') else '' }}" onclick="toggleFreshdeskNav(event)">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Freshdesk Management
+          <svg class="icon nav-chevron {{ 'expanded' if active_nav.startswith('freshdesk') else '' }}" id="freshdesk-nav-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <div class="nav-subgroup {{ 'expanded' if active_nav.startswith('freshdesk') else '' }}" id="freshdesk-subgroup">
+          <a href="/freshdesk/settings" class="nav-sub {{ 'active' if active_nav == 'freshdesk_settings' else '' }}">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            설정
+          </a>
+          <a href="/freshdesk/sync" class="nav-sub {{ 'active' if active_nav == 'freshdesk_sync' else '' }}">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M17 8a5 5 0 0 0-8.5-3.5M7 16a5 5 0 0 0 8.5 3.5M9 4.5 8 8l3.5.5M15 19.5 16 16l-3.5-.5"/></svg>
+            동기화
+          </a>
+          <a href="/freshdesk/schedule" class="nav-sub {{ 'active' if active_nav == 'freshdesk_schedule' else '' }}">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            예약 실행
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      {% if running %}
+        <span class="status-pill running">
+          <span class="dot"></span>
+          {% if running_percent is not none %}{{ running_step or "실행 중" }} · {{ running_percent }}%
+          {% else %}실행 중 · {{ elapsed_seconds }}초{% endif %}
+        </span>
+      {% else %}
+        <span class="status-pill idle"><span class="dot"></span>대기 중</span>
+      {% endif %}
+    </div>
+  </aside>
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+    <footer class="hint-block">Ticket Sync · Engage Center → Freshdesk</footer>
+  </main>
+</div>
+<script>
+  (function () {
+    var subgroup = document.getElementById("freshdesk-subgroup");
+    var chevron = document.getElementById("freshdesk-nav-chevron");
+    if (!subgroup || !chevron) return;
+
+    // 페이지를 새로 열 때마다 항상 닫힌 상태로 시작한다(브라우저에 기억해두지 않는다) —
+    // CSS 자체가 기본값을 숨김으로 두므로(.nav-subgroup 에 별도 클래스가 없으면 안 보임),
+    // 누르는 순간에만 "expanded" 클래스가 붙어 펼쳐진다.
+    window.toggleFreshdeskNav = function (e) {
+      e.preventDefault();
+      var willExpand = !subgroup.classList.contains("expanded");
+      subgroup.classList.toggle("expanded", willExpand);
+      chevron.classList.toggle("expanded", willExpand);
+    };
+  })();
+</script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

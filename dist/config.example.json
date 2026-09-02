@@ -1,0 +1,46 @@
+{
+  "_comment": "민감하지 않은 기본값만 여기에 둡니다. API Key/비밀번호는 .env 에서 관리하세요.",
+  "_comment_default_group": "default_group/default_responder 는 Freshdesk 관리자 화면 > 그룹/에이전트 설정에서 확인한 '숫자 ID' 입니다 (이름이 아닙니다). 0 이나 빈 값이면 설정하지 않습니다.",
+  "_comment_custom_fields": "custom_field_case_id / custom_field_received_date 는 Freshdesk 관리자 화면 > 티켓 필드에서 실제로 만든 커스텀 필드의 이름(예: cf_xxxxx)입니다. 존재하지 않는 필드명을 넣으면 Freshdesk API 가 400 오류로 티켓 생성을 거부합니다. 필드가 없으면 빈 문자열로 두세요.",
+
+  "freshdesk_environments": {
+    "prod": {
+      "label": "운영 Freshdesk",
+      "default_group": 0,
+      "default_responder": 0,
+      "default_priority": 2,
+      "default_status": 2,
+      "custom_field_case_id": "",
+      "custom_field_received_date": ""
+    },
+    "test": {
+      "label": "테스트 Freshdesk",
+      "default_group": 0,
+      "default_responder": 0,
+      "default_priority": 2,
+      "default_status": 2,
+      "custom_field_case_id": "",
+      "custom_field_received_date": ""
+    }
+  },
+
+  "crawler": {
+    "headless": false,
+    "enable_detail_page_enrichment": true,
+    "download_timeout_seconds": 300,
+    "navigation_timeout_seconds": 30
+  },
+
+  "freshdesk_priority_map": {
+    "낮음": 1,
+    "보통": 2,
+    "높음": 3,
+    "긴급": 4
+  },
+
+  "output": {
+    "excel_dir": "./output",
+    "log_dir": "./logs",
+    "db_path": "./data/tickets.db"
+  }
+}

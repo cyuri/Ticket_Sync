@@ -1,0 +1,33 @@
+{
+  "_comment": "Engage Center 화면 요소 셀렉터 모음. 화면이 개편되면 코드를 고치지 말고 이 파일만 수정하세요.",
+
+  "navigation": {
+    "case_management_menu_text": "케이스 관리",
+    "logged_in_marker_text": "케이스 관리",
+    "login_timeout_seconds": 300
+  },
+
+  "case_list": {
+    "csv_download_button_text": "CSV로 다운로드",
+    "add_filter_button_text": "필터 추가",
+    "search_result_count_text": "케이스 검색 결과"
+  },
+
+  "case_detail": {
+    "_todo": "케이스 상세 화면에 보이는 라벨 텍스트를 key=내부 필드명, value=화면 라벨 문구로 등록하세요. 화면에 새 항목이 추가되면 코드를 고치지 말고 여기에 한 줄만 추가하면 됩니다.",
+    "field_labels": {
+      "severity": "심각도",
+      "status_message": "상태 메시지",
+      "modified_at": "업데이트됨",
+      "incident_manager": "인시던트 관리자",
+      "workspace": "작업 영역",
+      "country_region": "국가/지역",
+      "timezone": "표준 시간대",
+      "case_owner": "지원 요청 소유자",
+      "contact_method": "기본 연락 방법",
+      "category": "범주",
+      "problem_type": "문제",
+      "summary": "설명"
+    }
+  }
+}

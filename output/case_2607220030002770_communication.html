@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Databricks-Palantir 연동 시 TCP Reset 에러 발생</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Databricks-Palantir 연동 시 TCP Reset 에러 발생</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607220030002770</b></span>
+    <span>최근 발신자: <b>jaesung.lim@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 24. 오후 03:58</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607220030002770<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 24. 오후 03:58<br><br>만들어짐<br>2026. 7. 22. 오후 02:37<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>jaesung.lim@microsoft.com<br>2026. 7. 24. 오후 03:58<br><br>jaesung.lim@microsoft.com<br>2026. 7. 22. 오후 03:38<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 22. 오후 03:11<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 22. 오후 02:37<br><br>외부 메시지가 모든 사용자에게 표시됩니다.<br>메시지:<br>	<br>jaesung.lim@microsoft.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br><br> <br><br> <br><br>안녕하세요, 한국마이크로소프트 고객기술지원부 임재성입니다.<br><br> <br><br>본 메일은 케이스 관리를 위한 메일입니다.<br><br>별도의 Action이 필요하지 않습니다.<br><br> <br><br>TCP Rest 관련하여 07/22(수)에 Magma 구성도를 바탕으로 설명드렸습니다.<br><br>추가적으로 도움이 필요한 사항이 있다면 본 메일 쓰레드 혹은 기존 진행중이던 메일쓰레드에 공유 부탁드립니다.<br><br> <br><br>감사합니다.<br><br>임재성 드림.<br><br> <br><br>Jae Sung Lim<br><br>Support Engineer<br><br>Business hours: Mon-Fri:  9 AM - 6 PM | UTC+9<br>T: +82-2-531-4567<br><br>Email: jaesung.lim@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-body">From: Jaeseong Lim<br>Sent: Wednesday, July 22, 2026 3:39 PM<br>To: External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;; jae-won.lee@kt.com<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Junghyeon Ryu &lt;junghyeonryu@microsoft.com&gt;; Jinho Yoo &lt;jinhoyoo@microsoft.com&gt;; Kyubaek Kim &lt;kyubaekkim@microsoft.com&gt;; miinji.kim@kt.com<br>Subject: RE: Databricks-Palantir 연동 시 TCP Reset 에러 발생 - TrackingID#2607220030002770<br><br> <br><br> <br><br> <br><br>안녕하세요, 이재원(@jae-won.lee@kt.com)님.<br><br>한국마이크로소프트 고객기술지원부 임재성입니다.<br><br> <br><br>유선상으로 콜백 감사드립니다. 보다 자세한 논의를 위해 하기 미팅링크로 참석해주시면 감사하겠습니다.<br><br>2607220030002770 | Databricks-Palantir 연동 시 TCP Reset 에러 발생 | 모임 참가 | Microsoft Teams<br><br> <br><br> <br><br>감사합니다.<br><br>임재성 드림.<br><br> <br><br>Jae Sung Lim<br><br>Support Engineer<br><br>Business hours: Mon-Fri:  9 AM - 6 PM | UTC+9<br>T: +82-2-531-4567<br><br>Email: jaesung.lim@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-body">From: jaesunglim@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt;<br>Sent: Wednesday, July 22, 2026 3:11 PM<br>To: jae-won.lee@kt.com<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Jaeseong Lim &lt;jaesung.lim@microsoft.com&gt;; Junghyeon Ryu &lt;junghyeonryu@microsoft.com&gt;; Jinho Yoo &lt;jinhoyoo@microsoft.com&gt;; Kyubaek Kim &lt;kyubaekkim@microsoft.com&gt;; miinji.kim@kt.com<br>Subject: Databricks-Palantir 연동 시 TCP Reset 에러 발생 - TrackingID#2607220030002770<br><br> <br><br> <br><br>안녕하세요. 한국 마이크로소프트(유) 기술지원부 임재성입니다.<br>기술지원 서비스를 이용해 주셔서 감사합니다.<br> <br>문의하신 내용에 대해 아래와 같이 정리합니다. 잘못 이해한 부분이 있으면 알려 주시기 바랍니다.<br><br>[문의번호]<br>2607220030002770<br><br>[제목]<br>Databricks-Palantir 연동 시 TCP Reset 에러 발생 <br><br>[요약]<br>올해 4월에 팔란티어에서 새로 개발한 커넥터로 데이터브릭스에서 데이터를 추출할 때, 동시에 여러개를 실행하면 TCP 리셋이라는 에러가 발생했고,<br><br>그 원인에 대해 파악을 하던 중, Databricks Managed 스토리지와의 통신 과정에서 limit이 걸려있는 것 같다는 추측이 있어 해당 리소스에 대해 분석이 필요합니다.<br><br><br>[진행사항] <br>문의주셔서 감사합니다. 본 이슈 관련하여 논의드리고자 연락 드렸지만 연결되지 않았습니다.<br><br>편한 시간에 연락주시면 감사하겠습니다.<br><br><br>고맙습니다.<br> <br><br>문의사항 또는 문제 진행 과정에서 연락이 필요할 경우에는 아래 연락처로 알려 주십시오. <br><br>임재성<br>한국 마이크로소프트<br>Microsoft Premier Support: 080-987-1000<br>Direct: 02-531-4721 (평일 9am – 6pm)<br><br>jaesung.lim@microsoft.com</div></div>
+</main>
+</body>
+</html>

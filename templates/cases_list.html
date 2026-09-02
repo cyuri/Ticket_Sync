@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block title %}Ticket Sync · 케이스 보기{% endblock %}
+{% block content %}
+
+<div class="card">
+  <div class="card-header">
+    <h2><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>케이스 보기</h2>
+    <span class="count-chip">{{ tickets|length }}건</span>
+  </div>
+  {% if tickets %}
+  <div id="selection-status" style="font-size:0.78rem; color:var(--text-faint); margin:-10px 0 14px;">
+    선택 <span id="selected-count">0</span>건 / 총 {{ tickets|length }}건
+  </div>
+  {% endif %}
+
+  {% if fd_success is not none or fd_failed is not none %}
+    <div class="banner {{ 'error' if fd_failed else 'running' }}" style="margin-bottom:16px;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      <span>Freshdesk 등록 완료 — 성공 <strong>{{ fd_success or 0 }}</strong>건, 실패 <strong>{{ fd_failed or 0 }}</strong>건</span>
+    </div>
+  {% endif %}
+  {% if deleted is not none %}
+    <div class="banner running" style="margin-bottom:16px;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      <span>케이스 <strong>{{ deleted }}</strong>건을 목록에서 삭제했습니다 (Freshdesk 티켓 자체는 그대로 남아있습니다).</span>
+    </div>
+  {% endif %}
+
+  <form method="get" action="/cases" class="filter-bar" style="flex-wrap:wrap; row-gap:12px;">
+    <div class="segmented">
+      <input type="radio" name="status" id="st-open" value="open" onchange="this.form.submit()" {{ "checked" if status == "open" }}>
+      <label for="st-open">열기</label>
+      <input type="radio" name="status" id="st-closed" value="closed" onchange="this.form.submit()" {{ "checked" if status == "closed" }}>
+      <label for="st-closed">완료됨</label>
+      <input type="radio" name="status" id="st-all" value="all" onchange="this.form.submit()" {{ "checked" if status == "all" }}>
+      <label for="st-all">모두</label>
+    </div>
+    <div class="search-bar" style="max-width:280px;">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" name="q" value="{{ q or '' }}" placeholder="제목·케이스 번호·요청자로 검색">
+    </div>
+    <div class="segmented">
+      <input type="radio" name="date_basis" id="db-created" value="created" {{ "checked" if date_basis == "created" }}>
+      <label for="db-created">생성됨 기준</label>
+      <input type="radio" name="date_basis" id="db-updated" value="updated" {{ "checked" if date_basis == "updated" }}>
+      <label for="db-updated">최종 업데이트일 기준</label>
+    </div>
+    <input type="date" name="start_date" value="{{ start_date or '' }}" style="max-width:150px;">
+    <span style="align-self:center; color:var(--text-faint);">~</span>
+    <input type="date" name="end_date" value="{{ end_date or '' }}" style="max-width:150px;">
+    <select name="sort" onchange="this.form.submit()">
+      <option value="recent" {{ "selected" if sort == "recent" or not sort }}>최근 수집순</option>
+      <option value="created_desc" {{ "selected" if sort == "created_desc" }}>생성일 최신순</option>
+      <option value="created_asc" {{ "selected" if sort == "created_asc" }}>생성일 오래된순</option>
+      <option value="updated_desc" {{ "selected" if sort == "updated_desc" }}>업데이트일 최신순</option>
+      <option value="updated_asc" {{ "selected" if sort == "updated_asc" }}>업데이트일 오래된순</option>
+      <option value="title_asc" {{ "selected" if sort == "title_asc" }}>제목순</option>
+    </select>
+    <button class="btn-primary" type="submit" style="padding:9px 20px; box-shadow:none;">검색</button>
+  </form>
+
+  {% if tickets %}
+  <form method="post" action="/cases/register-freshdesk" id="fd-form">
+    <input type="hidden" name="status" value="{{ status }}">
+    <input type="hidden" name="q" value="{{ q or '' }}">
+    <input type="hidden" name="date_basis" value="{{ date_basis }}">
+    <input type="hidden" name="start_date" value="{{ start_date or '' }}">
+    <input type="hidden" name="end_date" value="{{ end_date or '' }}">
+    <input type="hidden" name="sort" value="{{ sort or 'recent' }}">
+
+    <div class="filter-bar" style="margin-bottom:12px;">
+      <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; cursor:pointer;">
+        <input type="checkbox" id="select-all" onclick="toggleAllCases(this)">
+        전체 선택
+      </label>
+      <div style="display:flex; gap:10px;">
+        <button class="btn-primary" type="submit" id="fd-submit-btn" disabled
+                formaction="/cases/register-freshdesk"
+                style="padding:9px 20px; box-shadow:none;"
+                onclick="return confirm('선택한 케이스를 Freshdesk에 등록하시겠습니까?')">
+          선택한 케이스 Freshdesk 등록
+        </button>
+        <button class="btn-primary" type="submit" id="del-submit-btn" disabled
+                formaction="/cases/delete-selected"
+                style="padding:9px 20px; box-shadow:none; background:var(--danger, #d0342c);"
+                onclick="return confirm('선택한 케이스를 목록에서 삭제하시겠습니까? (Freshdesk 티켓 자체는 삭제되지 않습니다)')">
+          선택한 케이스 삭제
+        </button>
+      </div>
+    </div>
+
+    <div class="case-list">
+      {% for t in tickets %}
+      <div class="case-row">
+        <input type="checkbox" name="ticket_ids" value="{{ t.id }}" class="case-checkbox" onchange="updateFdButton()">
+        <a class="case-row-link" href="/cases/{{ t.id }}?back={{ back_qs|urlencode }}">
+          <span class="case-id">{{ t.ms_case_id or "-" }}</span>
+          <span class="case-title">{{ t.title or "(제목 없음)" }}</span>
+          <span class="case-meta">
+            {{ t.product or "-" }} · {{ t.requester or "-" }}<br>
+            업데이트: {{ t.modified_at or "-" }}
+          </span>
+          <span class="status-badge {{ 'closed' if (t.status or '')|lower != 'open' else 'open' }}">
+            {{ t.status or "-" }}
+          </span>
+          <svg class="icon case-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </form>
+  {% else %}
+    <div class="empty">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      조건에 맞는 케이스가 없습니다. 대시보드에서 동기화를 먼저 실행해보세요.
+    </div>
+  {% endif %}
+</div>
+
+<script>
+function toggleAllCases(master) {
+  document.querySelectorAll('.case-checkbox').forEach(function (cb) { cb.checked = master.checked; });
+  updateFdButton();
+}
+function updateFdButton() {
+  var count = document.querySelectorAll('.case-checkbox:checked').length;
+  document.getElementById('fd-submit-btn').disabled = count === 0;
+  document.getElementById('del-submit-btn').disabled = count === 0;
+  var countEl = document.getElementById('selected-count');
+  if (countEl) countEl.textContent = count;
+}
+</script>
+
+{% endblock %}

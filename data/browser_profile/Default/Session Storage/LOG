@@ -1,0 +1,17 @@
+2026/08/27-14:34:35.200 25ac Reusing MANIFEST C:\Users\youre\Downloads\ticket_sync\data\browser_profile\Default\Session Storage/MANIFEST-000001
+2026/08/27-14:34:35.203 25ac Recovering log #666
+2026/08/27-14:34:35.204 25ac Level-0 table #669: started
+2026/08/27-14:34:35.217 25ac Level-0 table #669: 38626 bytes OK
+2026/08/27-14:34:35.248 25ac Delete type=0 #666
+2026/08/27-14:34:35.250 4dc8 Compacting 4@0 + 1@1 files
+2026/08/27-14:34:35.275 4dc8 Generated table #671@0: 4947 keys, 114491 bytes
+2026/08/27-14:34:35.276 4dc8 Compacted 4@0 + 1@1 files => 114491 bytes
+2026/08/27-14:34:35.279 4dc8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/08/27-14:34:35.280 4dc8 Delete type=2 #660
+2026/08/27-14:34:35.280 4dc8 Delete type=2 #662
+2026/08/27-14:34:35.280 4dc8 Delete type=2 #665
+2026/08/27-14:34:35.280 4dc8 Delete type=2 #667
+2026/08/27-14:34:35.281 4dc8 Delete type=2 #669
+2026/08/27-14:35:44.577 4dc8 Level-0 table #673: started
+2026/08/27-14:35:44.598 4dc8 Level-0 table #673: 24715 bytes OK
+2026/08/27-14:35:44.608 4dc8 Delete type=0 #670

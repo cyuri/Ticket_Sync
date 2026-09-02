@@ -1,0 +1,63 @@
+# CI/CD 는 "코드가 바뀌면 이미지를 새로 빌드해서 레지스트리에 올리고, 클러스터의
+# Deployment 가 그 새 이미지를 쓰도록 갱신"하는 데만 쓴다. 로그인(MFA)이나 실제 동기화
+# 실행 자체는 여기서 하지 않는다 — 그건 CI 러너 안에서 사람이 개입할 수 없어 애초에
+# 불가능하고, 이 PC에 상주하는 local_runner.py + 앱 내장 스케줄러(웹 UI의 /schedule)가
+# 그 역할을 대신한다(k8s/README.md 참고). CronJob은 쓰지 않는다 — 파드는 애초에 Engage
+# Center에 접근할 수 없다.
+#
+# 사용 전 GitHub 저장소 Settings > Secrets 에 REGISTRY_USERNAME / REGISTRY_PASSWORD /
+# KUBE_CONFIG(base64 인코딩된 kubeconfig) 를 등록하세요. 레지스트리 주소는 env 의
+# IMAGE_NAME 을 본인 것으로 바꾸세요(ACR 예: myregistry.azurecr.io/ticket-sync).
+
+name: Build and Deploy Ticket Sync
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "docs/**"
+      - "**.md"
+
+env:
+  IMAGE_NAME: your-registry.example.com/ticket-sync
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to container registry
+        uses: docker/login-action@v3
+        with:
+          registry: your-registry.example.com
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:latest
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up kubeconfig
+        run: |
+          mkdir -p "$HOME/.kube"
+          echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > "$HOME/.kube/config"
+
+      - name: Point Deployment at the new image and roll out
+        run: |
+          kubectl set image deployment/ticket-sync ticket-sync=${{ env.IMAGE_NAME }}:${{ github.sha }}
+          kubectl rollout status deployment/ticket-sync --timeout=120s
+
+      # 주의: 이 워크플로는 ConfigMap/Secret 은 건드리지 않는다. 로그인 세션
+      # (data/browser_profile)과 DB(rqlite)는 이 PC에만 있어 이미지 교체와 무관하다.

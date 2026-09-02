@@ -1,0 +1,135 @@
+2026-07-15 13:11:57 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None case_status=all date_basis=created create_freshdesk_ticket=False
+2026-07-15 13:12:06 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-15 13:12:08 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-15 13:12:11 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-15 13:12:11 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-15 13:12:11 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-15 13:12:13 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-15 13:12:14 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-15 13:12:16 [WARNING] ticket_sync.crawler: 상태 필터 적용 중 오류: Page.wait_for_timeout: Target page, context or browser has been closed
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 979, in _collect_for_single_status
+    _apply_status_filter(page, config, single_status)
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 299, in _apply_status_filter
+    frame, chip = _find_in_frames_with_frame(page, "상태 :", exact=False, timeout_ms=timeout_ms)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 108, in _find_in_frames_with_frame
+    page.wait_for_timeout(300)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 12529, in wait_for_timeout
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_page.py", line 1135, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 916, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-07-15 13:12:16 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 223, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 1063, in collect_tickets
+    context.close()
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 15212, in close
+    return mapping.from_maybe_impl(self._sync(self._impl_obj.close(reason=reason)))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_browser_context.py", line 585, in close
+    await self._channel.send("close", None, {"reason": reason})
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.close: Target page, context or browser has been closed
+2026-07-15 13:12:16 [ERROR] ticket_sync.main: 동기화 실행 중 예기치 못한 오류로 중단되었습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\excel_exporter.py", line 94, in export_excel
+    df_query = pd.DataFrame(list(query_info.items()), columns=["항목", "값"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\core\frame.py", line 836, in __init__
+    columns = ensure_index(columns)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 7973, in ensure_index
+    return Index(index_like, copy=copy, tupleize_cols=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 592, in __new__
+    return klass._simple_new(arr, name, refs=refs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 675, in _simple_new
+    result._references = BlockValuesRefs()
+                         ^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 408, in main
+    summary = run_sync(
+              ^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 299, in run_sync
+    excel_exporter.export_excel(
+  File "C:\Users\youre\Downloads\ticket_sync\excel_exporter.py", line 92, in export_excel
+    with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 1399, in __exit__
+    self.close()
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 1403, in close
+    self._save()
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 111, in _save
+    self.book.save(self._handles.handle)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\openpyxl\workbook\workbook.py", line 386, in save
+    save_workbook(self, filename)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\openpyxl\writer\excel.py", line 294, in save_workbook
+    writer.save()
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\openpyxl\writer\excel.py", line 275, in save
+    self.write_data()
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\openpyxl\writer\excel.py", line 89, in write_data
+    archive.writestr(ARC_WORKBOOK, writer.write())
+                                   ^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\openpyxl\workbook\_writer.py", line 150, in write
+    self.write_views()
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\openpyxl\workbook\_writer.py", line 137, in write_views
+    active = get_active_sheet(self.wb)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\openpyxl\workbook\_writer.py", line 35, in get_active_sheet
+    raise IndexError("At least one sheet must be visible")
+IndexError: At least one sheet must be visible
+2026-07-15 14:10:15 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None case_status=all date_basis=created create_freshdesk_ticket=False
+2026-07-15 14:10:19 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 223, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 1043, in collect_tickets
+    ensure_logged_in(page, config)
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 260, in ensure_logged_in
+    if _wait_for_login_marker(page, config, marker_text, timeout_ms=8000):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 246, in _wait_for_login_marker
+    page.wait_for_timeout(300)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 12529, in wait_for_timeout
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_page.py", line 1135, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 916, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-07-15 14:10:19 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260715.xlsx'}

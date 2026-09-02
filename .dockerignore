@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+data/
+output/
+logs/
+.env
+*.db
+docs/
+build_exe.bat
+*.spec

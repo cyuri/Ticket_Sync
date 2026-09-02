@@ -1,0 +1,351 @@
+2026-07-27 11:23:12 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=custom mode=today start=None end=None case_status=all date_basis=created create_freshdesk_ticket=False
+2026-07-27 11:23:19 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:21 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:23 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:24 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-27 11:23:24 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:26 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:28 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:29 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:31 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:34 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:36 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:38 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:39 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:41 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:43 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:45 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:46 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:48 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:49 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:51 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:53 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 11:23:54 [ERROR] asyncio: Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-07-27 11:23:54 [ERROR] asyncio: Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-07-27 14:01:05 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=prod mode=today start=None end=None case_status=all date_basis=created create_freshdesk_ticket=False
+2026-07-27 14:01:12 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 14:01:14 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-27 14:01:17 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-27 14:01:18 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 14:01:19 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 14:01:21 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-27 14:01:30 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-07-27 14:01:31 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-27 14:01:31 [INFO] ticket_sync.crawler: CSV에서 총 72건 파싱됨 (날짜 필터 전, status=open)
+2026-07-27 14:01:31 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 5건 (상세 보강 대상, status=open)
+2026-07-27 14:02:05 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:02:05 [INFO] ticket_sync.crawler: 커뮤니케이션 행 5개 중 데이터 행 4개 인식됨.
+2026-07-27 14:02:18 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 5131자 (source=saewoomsong@microsoft.com, updated=2026. 7. 27. 오후 01:50).
+2026-07-27 14:02:23 [INFO] ticket_sync.crawler: 상세 보강 진행 1/5 완료 (case=2607270030000983)
+2026-07-27 14:02:57 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:02:57 [INFO] ticket_sync.crawler: 커뮤니케이션 행 4개 중 데이터 행 3개 인식됨.
+2026-07-27 14:03:10 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 3818자 (source=seongeun.kim@microsoft.com, updated=2026. 7. 27. 오후 01:16).
+2026-07-27 14:03:15 [INFO] ticket_sync.crawler: 상세 보강 진행 2/5 완료 (case=2607270030000847)
+2026-07-27 14:03:48 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:03:48 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:04:01 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 14542자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 27. 오후 01:33).
+2026-07-27 14:04:06 [INFO] ticket_sync.crawler: 상세 보강 진행 3/5 완료 (case=2607270030000761)
+2026-07-27 14:04:39 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:04:39 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:04:52 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 1531자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 27. 오전 11:04).
+2026-07-27 14:04:54 [INFO] ticket_sync.crawler: 상세 보강 진행 4/5 완료 (case=2607270030000491)
+2026-07-27 14:05:13 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:05:13 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:05:18 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 1640자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 27. 오후 12:05).
+2026-07-27 14:05:21 [INFO] ticket_sync.crawler: 상세 보강 진행 5/5 완료 (case=2607270030000426)
+2026-07-27 14:05:27 [WARNING] ticket_sync.crawler: 상태 필터에서 '완료됨' 항목을 찾지 못했습니다.
+2026-07-27 14:05:30 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=closed (완료됨 체크=True)
+2026-07-27 14:05:30 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-27 14:05:30 [INFO] ticket_sync.crawler: CSV에서 총 72건 파싱됨 (날짜 필터 전, status=closed)
+2026-07-27 14:05:30 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 5건 (상세 보강 대상, status=closed)
+2026-07-27 14:06:03 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:06:04 [INFO] ticket_sync.crawler: 커뮤니케이션 행 5개 중 데이터 행 4개 인식됨.
+2026-07-27 14:06:16 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 5131자 (source=saewoomsong@microsoft.com, updated=2026. 7. 27. 오후 01:50).
+2026-07-27 14:06:21 [INFO] ticket_sync.crawler: 상세 보강 진행 1/5 완료 (case=2607270030000983)
+2026-07-27 14:06:55 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:06:55 [INFO] ticket_sync.crawler: 커뮤니케이션 행 4개 중 데이터 행 3개 인식됨.
+2026-07-27 14:07:07 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 3790자 (source=seongeun.kim@microsoft.com, updated=2026. 7. 27. 오후 01:16).
+2026-07-27 14:07:11 [INFO] ticket_sync.crawler: 상세 보강 진행 2/5 완료 (case=2607270030000847)
+2026-07-27 14:07:45 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:07:45 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:07:57 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 14542자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 27. 오후 01:33).
+2026-07-27 14:08:01 [INFO] ticket_sync.crawler: 상세 보강 진행 3/5 완료 (case=2607270030000761)
+2026-07-27 14:08:35 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:08:35 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:08:48 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 1531자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 27. 오전 11:04).
+2026-07-27 14:08:53 [INFO] ticket_sync.crawler: 상세 보강 진행 4/5 완료 (case=2607270030000491)
+2026-07-27 14:09:26 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:09:26 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:09:39 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 1640자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 27. 오후 12:05).
+2026-07-27 14:09:44 [INFO] ticket_sync.crawler: 상세 보강 진행 5/5 완료 (case=2607270030000426)
+2026-07-27 14:09:45 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 5, 'new_count': 5, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260727.xlsx'}
+2026-07-27 14:16:29 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=prod mode=range start=2026-07-20 end=2026-07-27 case_status=all date_basis=created create_freshdesk_ticket=False
+2026-07-27 14:16:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 14:16:35 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-27 14:16:38 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-27 14:16:38 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 14:16:40 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-27 14:16:41 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-27 14:16:49 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-07-27 14:17:00 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-07-20 ~ 2026-07-27
+2026-07-27 14:17:01 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-27 14:17:01 [INFO] ticket_sync.crawler: CSV에서 총 29건 파싱됨 (날짜 필터 전, status=open)
+2026-07-27 14:17:01 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 29건 (상세 보강 대상, status=open)
+2026-07-27 14:17:37 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:17:37 [INFO] ticket_sync.crawler: 커뮤니케이션 행 5개 중 데이터 행 4개 인식됨.
+2026-07-27 14:17:49 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 5131자 (source=saewoomsong@microsoft.com, updated=2026. 7. 27. 오후 01:50).
+2026-07-27 14:17:54 [INFO] ticket_sync.crawler: 상세 보강 진행 1/29 완료 (case=2607270030000983)
+2026-07-27 14:18:28 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:18:28 [INFO] ticket_sync.crawler: 커뮤니케이션 행 4개 중 데이터 행 3개 인식됨.
+2026-07-27 14:18:40 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 3818자 (source=seongeun.kim@microsoft.com, updated=2026. 7. 27. 오후 01:16).
+2026-07-27 14:18:43 [INFO] ticket_sync.crawler: 상세 보강 진행 2/29 완료 (case=2607270030000847)
+2026-07-27 14:19:19 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:19:19 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:19:32 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 14542자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 27. 오후 01:33).
+2026-07-27 14:19:36 [INFO] ticket_sync.crawler: 상세 보강 진행 3/29 완료 (case=2607270030000761)
+2026-07-27 14:20:09 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:20:10 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:20:22 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 1531자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 27. 오전 11:04).
+2026-07-27 14:20:27 [INFO] ticket_sync.crawler: 상세 보강 진행 4/29 완료 (case=2607270030000491)
+2026-07-27 14:21:00 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:21:00 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:21:13 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 1640자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 27. 오후 12:05).
+2026-07-27 14:21:17 [INFO] ticket_sync.crawler: 상세 보강 진행 5/29 완료 (case=2607270030000426)
+2026-07-27 14:21:53 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:21:53 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:22:05 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 7045자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 24. 오후 06:28).
+2026-07-27 14:22:10 [INFO] ticket_sync.crawler: 상세 보강 진행 6/29 완료 (case=2607240030002777)
+2026-07-27 14:22:44 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:22:44 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:22:57 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 11180자 (source=siset@microsoft.com, updated=2026. 7. 27. 오전 09:11).
+2026-07-27 14:23:02 [INFO] ticket_sync.crawler: 상세 보강 진행 7/29 완료 (case=2607240030002315)
+2026-07-27 14:23:36 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:23:36 [INFO] ticket_sync.crawler: 커뮤니케이션 행 5개 중 데이터 행 4개 인식됨.
+2026-07-27 14:23:49 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 4682자 (source=jinmoyi@microsoft.com, updated=2026. 7. 24. 오후 04:16).
+2026-07-27 14:23:54 [INFO] ticket_sync.crawler: 상세 보강 진행 8/29 완료 (case=2607240030001376)
+2026-07-27 14:24:27 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:24:27 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:24:40 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 1941자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 24. 오전 10:40).
+2026-07-27 14:24:44 [INFO] ticket_sync.crawler: 상세 보강 진행 9/29 완료 (case=2607240030000297)
+2026-07-27 14:25:19 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:25:19 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:25:31 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 9003자 (source=jaehyeon.jeong@kt.com, updated=2026. 7. 24. 오후 03:13).
+2026-07-27 14:25:36 [INFO] ticket_sync.crawler: 상세 보강 진행 10/29 완료 (case=2607230030008811)
+2026-07-27 14:26:09 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:26:09 [INFO] ticket_sync.crawler: 커뮤니케이션 행 5개 중 데이터 행 4개 인식됨.
+2026-07-27 14:26:22 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 3981자 (source=Yeseul.Cho@microsoft.com, updated=2026. 7. 24. 오후 02:45).
+2026-07-27 14:26:27 [INFO] ticket_sync.crawler: 상세 보강 진행 11/29 완료 (case=2607230030003570)
+2026-07-27 14:27:01 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:27:01 [INFO] ticket_sync.crawler: 커뮤니케이션 행 5개 중 데이터 행 4개 인식됨.
+2026-07-27 14:27:13 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 19295자 (source=jinmoyi@microsoft.com, updated=2026. 7. 24. 오후 07:14).
+2026-07-27 14:27:18 [INFO] ticket_sync.crawler: 상세 보강 진행 12/29 완료 (case=2607230030002732)
+2026-07-27 14:27:51 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:27:51 [INFO] ticket_sync.crawler: 커뮤니케이션 행 5개 중 데이터 행 4개 인식됨.
+2026-07-27 14:28:04 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 5304자 (source=jaewonpark@microsoft.com, updated=2026. 7. 24. 오후 03:20).
+2026-07-27 14:28:08 [INFO] ticket_sync.crawler: 상세 보강 진행 13/29 완료 (case=2607230030002221)
+2026-07-27 14:28:44 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:28:44 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:28:57 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 14551자 (source=haneuljang@microsoft.com, updated=2026. 7. 27. 오후 12:44).
+2026-07-27 14:29:02 [INFO] ticket_sync.crawler: 상세 보강 진행 14/29 완료 (case=2607230030002141)
+2026-07-27 14:29:37 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:29:37 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:29:50 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 8958자 (source=jaesung.lim@microsoft.com, updated=2026. 7. 24. 오후 05:25).
+2026-07-27 14:29:54 [INFO] ticket_sync.crawler: 상세 보강 진행 15/29 완료 (case=2607220030005704)
+2026-07-27 14:30:29 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:30:29 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:30:41 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 8255자 (source=Hwajeong.Son@microsoft.com, updated=2026. 7. 24. 오후 05:59).
+2026-07-27 14:30:46 [INFO] ticket_sync.crawler: 상세 보강 진행 16/29 완료 (case=2607220030005394)
+2026-07-27 14:31:19 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:31:19 [INFO] ticket_sync.crawler: 커뮤니케이션 행 5개 중 데이터 행 4개 인식됨.
+2026-07-27 14:31:32 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 2910자 (source=jaesung.lim@microsoft.com, updated=2026. 7. 24. 오후 03:58).
+2026-07-27 14:31:36 [INFO] ticket_sync.crawler: 상세 보강 진행 17/29 완료 (case=2607220030002770)
+2026-07-27 14:32:10 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:32:10 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:32:23 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 1654자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 22. 오후 04:14).
+2026-07-27 14:32:27 [INFO] ticket_sync.crawler: 상세 보강 진행 18/29 완료 (case=2607220030002453)
+2026-07-27 14:33:00 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:33:00 [INFO] ticket_sync.crawler: 커뮤니케이션 행 5개 중 데이터 행 4개 인식됨.
+2026-07-27 14:33:13 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 4404자 (source=jiwonyang@microsoft.com, updated=2026. 7. 27. 오전 09:36).
+2026-07-27 14:33:17 [INFO] ticket_sync.crawler: 상세 보강 진행 19/29 완료 (case=2607220030002356)
+2026-07-27 14:33:53 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:33:53 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:34:06 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 9591자 (source=jiyoung97.oh@kt.com, updated=2026. 7. 27. 오전 09:16).
+2026-07-27 14:34:11 [INFO] ticket_sync.crawler: 상세 보강 진행 20/29 완료 (case=2607210030008777)
+2026-07-27 14:34:44 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:34:44 [INFO] ticket_sync.crawler: 커뮤니케이션 행 3개 중 데이터 행 2개 인식됨.
+2026-07-27 14:34:57 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 2429자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 22. 오전 09:10).
+2026-07-27 14:34:59 [INFO] ticket_sync.crawler: 상세 보강 진행 21/29 완료 (case=2607210030005897)
+2026-07-27 14:35:37 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:35:37 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:35:49 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 8426자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 24. 오후 04:53).
+2026-07-27 14:35:54 [INFO] ticket_sync.crawler: 상세 보강 진행 22/29 완료 (case=2607210030002868)
+2026-07-27 14:36:29 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:36:29 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:36:41 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 9252자 (source=moonsoyoung@microsoft.com, updated=2026. 7. 24. 오후 01:37).
+2026-07-27 14:36:46 [INFO] ticket_sync.crawler: 상세 보강 진행 23/29 완료 (case=2607210030002416)
+2026-07-27 14:37:19 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-27 14:37:19 [INFO] ticket_sync.crawler: 커뮤니케이션 행 4개 중 데이터 행 3개 인식됨.
+2026-07-27 14:37:32 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 2428자 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 22. 오후 04:34).
+2026-07-27 14:37:37 [INFO] ticket_sync.crawler: 상세 보강 진행 24/29 완료 (case=2607210030000935)
+2026-07-27 14:38:12 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-27 14:38:12 [INFO] ticket_sync.crawler: 커뮤니케이션 행 6개 중 데이터 행 5개 인식됨.
+2026-07-27 14:38:25 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 6779자 (source=Youngju.Park@microsoft.com, updated=2026. 7. 24. 오후 01:53).
+2026-07-27 14:38:29 [INFO] ticket_sync.crawler: 상세 보강 진행 25/29 완료 (case=2607200030003414)
+2026-07-27 14:38:59 [WARNING] ticket_sync.crawler: 목록에서 'SLA Service Credit Eligibility for GitHub Enterprise' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-27 14:38:59 [INFO] ticket_sync.crawler: 상세 보강 진행 26/29 완료 (case=2607200030003057)
+2026-07-27 14:39:29 [WARNING] ticket_sync.crawler: 목록에서 '[S-7460] 경고 규칙 이벤트 SMS 수신 불가' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-27 14:39:29 [INFO] ticket_sync.crawler: 상세 보강 진행 27/29 완료 (case=2607200030002079)
+2026-07-27 14:39:55 [WARNING] ticket_sync.crawler: 상세 보강 중 오류: Page.wait_for_timeout: Target page, context or browser has been closed
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 1011, in _collect_for_single_status
+    filtered[i - 1] = enrich_ticket_from_detail_page(page, t, config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 903, in enrich_ticket_from_detail_page
+    if not _click_case_row_by_title(page, title, timeout_ms):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 694, in _click_case_row_by_title
+    link = _find_locator_in_frames(page, title, exact=True, timeout_ms=timeout_ms)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 113, in _find_locator_in_frames
+    _, loc = _find_in_frames_with_frame(page, text, exact=exact, timeout_ms=timeout_ms)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 108, in _find_in_frames_with_frame
+    page.wait_for_timeout(300)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 12529, in wait_for_timeout
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_page.py", line 1135, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 916, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-07-27 14:39:55 [WARNING] ticket_sync.crawler: 상세 보강 중 오류: Page.wait_for_timeout: Target page, context or browser has been closed
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 1011, in _collect_for_single_status
+    filtered[i - 1] = enrich_ticket_from_detail_page(page, t, config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 903, in enrich_ticket_from_detail_page
+    if not _click_case_row_by_title(page, title, timeout_ms):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 694, in _click_case_row_by_title
+    link = _find_locator_in_frames(page, title, exact=True, timeout_ms=timeout_ms)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 113, in _find_locator_in_frames
+    _, loc = _find_in_frames_with_frame(page, text, exact=exact, timeout_ms=timeout_ms)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 108, in _find_in_frames_with_frame
+    page.wait_for_timeout(300)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 12529, in wait_for_timeout
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_page.py", line 1135, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 916, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-07-27 14:39:55 [WARNING] ticket_sync.crawler: 상태 필터 적용 중 오류: Page.wait_for_timeout: Target page, context or browser has been closed
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 979, in _collect_for_single_status
+    _apply_status_filter(page, config, single_status)
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 299, in _apply_status_filter
+    frame, chip = _find_in_frames_with_frame(page, "상태 :", exact=False, timeout_ms=timeout_ms)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 108, in _find_in_frames_with_frame
+    page.wait_for_timeout(300)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 12529, in wait_for_timeout
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_page.py", line 1135, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 916, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-07-27 14:39:55 [WARNING] ticket_sync.crawler: 생성일 화면 필터 적용 중 오류: Page.wait_for_timeout: Target page, context or browser has been closed
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 991, in _collect_for_single_status
+    _apply_created_date_range_filter(page, config, start_date, end_date)
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 476, in _apply_created_date_range_filter
+    frame, add_filter = _find_in_frames_with_frame(page, "필터 추가", exact=False, timeout_ms=timeout_ms)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 108, in _find_in_frames_with_frame
+    page.wait_for_timeout(300)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 12529, in wait_for_timeout
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_page.py", line 1135, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 916, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-07-27 14:39:55 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 223, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 1048, in collect_tickets
+    tickets = _collect_for_single_status(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 996, in _collect_for_single_status
+    csv_path = export_case_csv_with_retry(page, context, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 550, in export_case_csv_with_retry
+    return export_case_csv(page, context, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 519, in export_case_csv
+    button = _find_locator_in_frames(page, button_text, exact=False, timeout_ms=config.crawler.navigation_timeout_ms)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 113, in _find_locator_in_frames
+    _, loc = _find_in_frames_with_frame(page, text, exact=exact, timeout_ms=timeout_ms)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 108, in _find_in_frames_with_frame
+    page.wait_for_timeout(300)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 12529, in wait_for_timeout
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_page.py", line 1135, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 916, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+2026-07-27 14:39:55 [WARNING] ticket_sync.main: C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260727.xlsx 파일이 다른 프로그램에서 열려 있어 저장할 수 없습니다. 대신 C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260727_143955.xlsx 로 저장합니다.
+2026-07-27 14:39:55 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260727_143955.xlsx'}

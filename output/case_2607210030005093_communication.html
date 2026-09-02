@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Redis 연결 신뢰성을 위한 TCP 커널 파라미터 문의</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Redis 연결 신뢰성을 위한 TCP 커널 파라미터 문의</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607210030005093</b></span>
+    <span>최근 발신자: <b>siset@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 22. 오후 02:01</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">7</div><div class="thread-card-meta">siset@microsoft.com · 2026. 7. 22. 오후 02:01</div><div class="thread-card-body">안녕하십니까 고객님, 한국마이크로소프트 고객기술지원 시투 엔지니어입니다.  <br><br> <br><br>지금까지 문의 진행을 도와주셔서 감사합니다. 문의 종료에 동의해 주셔서 다음과 같이 정리하여 종료하겠습니다. 종료 이후에도 동일한 문제가 다시 발생하거나 추가로 궁금한 사항이 있으시면 재오픈을 도와드리겠습니다. <br><br> <br><br>문의 종료 후에는 지원 경험에 대한 간단한 웹 설문을 요청하는 메일을 받으실 수 있습니다. <br><br>저희 지원이 도움이 되셨다면, 케이스 종료 후 1분가량 소요되는 설문에 응해 주시면 고객님의 소중한 의견을 마이크로소프트 기술지원 서비스를 지속적으로 향상시키는 데에 소중하게 이용하도록 하겠습니다. <br><br><br><br> <br><br>문의 번호: <br><br>2607210030005093<br><br><br><br> <br><br>문의 사항: <br><br><br><br>Redis Client가 AKS 노드(리눅스)에서 구동중이며, Redis 문서에 명시된 net.ipv4.tcp_retries2 파라미터를 적용하고자 합니다,<br>https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-best-practices-connection#tcp-settings-for-linux-hosted-client-applications<br> <br>AKS 환경에 Redis Client가 구동중일 경우 해당 설정을 어떻게 적용해야 하는지 가이드 받을 수 있을까요?<br> <br>지난번 2605260030000494 AKS SR 케이스에서 확인한 내용은<br>unsafe sysctl 허용 목록을 추가한 kubelet config을 가지고 신규 노드풀을 생성한 뒤에<br> redis client pod의 securitycontext를 통해 net.ipv4.tcp_retries2 파라미터를 세팅하는 것으로 이해하였습니다.<br>혹시 해당 방식이 맞을지도 확인 부탁드립니다.<br> <br><br> <br><br>결과 요약: <br><br>문의주신 내용과 관련하여, 저희 Azure Cache for Redis에서 권장하는 Linux TCP 설정인 net.ipv4.tcp_retries2 적용 방법 및 동작 방식에 대해 다음과 같이 안내드렸습니다.<br>먼저 Redis Client가 AKS 환경에서 구동되는 경우에는 Kubernetes에서 net.ipv4.tcp_retries2가 unsafe sysctl로 분류되므로, 해당 값을 적용하기 위해서는 allowedUnsafeSysctls가 포함된 kubelet 설정으로 신규 Node Pool을 생성한 후, Redis Client Pod의 securityContext.sysctls를 통해 값을 설정하는 방식이 맞는 것으로 안내드렸습니다.<br>또한 net.ipv4.tcp_retries2=5는 시간을 의미하는 값이 아니라 Linux 운영체제의 TCP 재전송 동작을 제어하는 커널 파라미터이며, 기본값보다 응답이 없는 TCP 연결을 보다 빠르게 실패로 판단하여 Redis Client가 재연결을 시작할 수 있도록 도와주는 설정임을 설명드렸습니다.<br>아울러 해당 설정 자체가 Redis 리소스에 직접적인 부하를 발생시키는 것은 아니며, 장애 또는 Failover 발생 시 다수의 Client가 동시에 재연결을 수행하는 경우 일시적인 연결 부하가 발생할 수 있으므로, Exponential Backoff, Jitter, ConnectionMultiplexer 재사용 등의 Client 측 연결 복원 방식을 함께 적용하는 것을 권장드렸습니다.<br>추가적으로 net.ipv4.tcp_retries2와 StackExchange.Redis의 ForceReconnect Pattern은 서로 다른 계층에서 동작하는 보완적인 기능이며, 일반적인 환경에서는 StackExchange.Redis의 기본 자동 재연결 기능으로 충분한 경우가 많고, ForceReconnect Pattern은 장시간 연결이 복구되지 않는 예외적인 상황에서 고려할 수 있는 복구 방법임을 안내드렸습니다.<br>마지막으로 해당 net.ipv4.tcp_retries2 설정은 Redis 서비스의 설정이 아닌 Linux Client 운영체제의 TCP 설정이므로, Azure Cache for Redis뿐만 아니라 Azure Managed Redis 환경에서도 동일한 원리로 적용 가능한 설정임을 안내드렸습니다.<br><br>저희 지원이 도움이 되셨다면, 케이스 종료 후 1분가량 소요되는 설문에 응해 주시면 감사하겠습니다.<br><br><br><br>항상 저희 Microsoft 기술지원을 이용해 주셔서 진심으로 감사드리며,<br>오늘도 좋은 하루 보내시길 바랍니다.<br><br> <br><br>시투 <br><br>Azure PaaS Support Engineer <br><br>한국마이크로소프트 고객기술지원 | siset@microsoft.com | 직통번호 02-531-8227 | 근무시간 9:00-18:00<br><br><br><br><br>________________________________________________________________________________________________________________________ <br>지원 과정에 대한 의견이나 경험을 직접 전달하고 싶으신 경우, 저희 김수정 팀장(sujkim@microsoft.com)에게 연락하실 수 있습니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">6</div><div class="thread-card-meta">hyukjun.nam@kt.com · 2026. 7. 22. 오후 01:51</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607210030005093<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Closed<br><br>업데이트됨<br>2026. 7. 22. 오후 02:11<br><br>만들어짐<br>2026. 7. 21. 오후 05:44<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>siset@microsoft.com<br>2026. 7. 22. 오후 02:01<br><br>hyukjun.nam@kt.com<br>2026. 7. 22. 오후 01:51<br><br>siset@microsoft.com<br>2026. 7. 22. 오후 01:40<br><br>hyukjun.nam@kt.com<br>2026. 7. 22. 오전 10:02<br><br>siset@microsoft.com<br>2026. 7. 22. 오전 09:00<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 21. 오후 06:11<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 21. 오후 05:44<br><br>hyukjun.nam@kt.com</div></div>
+<div class="thread-card"><div class="thread-card-index">5</div><div class="thread-card-meta">siset@microsoft.com · 2026. 7. 22. 오후 01:40</div><div class="thread-card-body">안녕하십니까,<br>한국 Microsoft 기술지원부 시투 엔지니어입니다.<br><br><br><br>추가로 문의해 주신 내용에 대해 확인해보았으며, 아래와 같이 안내드립니다.<br><br><br>먼저 net.ipv4.tcp_retries2 값과 Redis 부하에 대한 부분을 확인해보았을 때, 고객님께서 이해하신 방향은 전반적으로 맞는 것으로 보여집니다.<br><br><br>다만 한 가지 말씀드리고 싶은 부분은 net.ipv4.tcp_retries2=5는 &quot;5분&quot;을 의미하는 값이 아니라, Linux TCP Stack에서 이미 연결된 TCP 세션에 대해 응답이 없는 경우 몇 번의 재전송을 수행한 후 연결 실패로 판단할지를 결정하는 커널 파라미터입니다.<br>따라서 실제 연결 실패를 감지하는 시간은 네트워크 상태 및 TCP 재전송 타이머에 따라 달라질 수 있습니다.<br><br><br>기본값인 15를 사용할 경우에는 Linux에서 응답이 없는 TCP 연결을 상당 시간 동안 유지하려고 하기 때문에, Redis Client가 이미 끊어진 연결을 인지하기까지 오랜 시간이 소요될 수 있습니다.<br>반면 5로 설정하면 운영체제가 연결 실패를 보다 빠르게 감지하게 되어 Redis Client도 보다 빠르게 재연결을 시작할 수 있습니다.<br><br><br>다만 해당 설정 자체가 Redis에 지속적으로 새로운 연결을 생성하거나 부하를 발생시키는 것은 아닌 것으로 보여집니다.<br>Redis 리소스에 대한 부하는 주로 장애나 Failover 이후 다수의 Client가 동시에 재연결을 시도하는 경우 발생할 수 있습니다.<br><br><br>특히 여러 AKS Pod가 동일한 시점에 즉시 재시도를 수행하거나, Exponential Backoff 또는 Jitter 없이 동일한 간격으로 반복적으로 재시도하는 경우에는 일시적으로 Redis 연결 요청이 집중될 수 있습니다.<br><br><br>이에 따라 net.ipv4.tcp_retries2=5 설정과 함께 Client 측에서는 Exponential Backoff 및 Jitter를 적용하여 재연결 시점을 분산시키고, ConnectionMultiplexer를 장기간 재사용하도록 구성하는 것을 권장드립니다.<br>이러한 구성을 통해 장애 복구 시 Redis 및 Client 측의 일시적인 부하를 효과적으로 줄일 수 있을 것으로 보여집니다.<br><br><br>다음으로 문의주신 ForceReconnect Pattern과의 차이에 대해 안내드립니다.<br>net.ipv4.tcp_retries2는 Linux 운영체제(TCP Layer)에서 동작하는 설정으로, 응답이 없는 TCP 연결을 운영체제가 얼마나 빠르게 실패로 판단할지를 결정합니다.<br><br><br>반면 ForceReconnect Pattern은 StackExchange.Redis 애플리케이션 계층에서 동작하는 복구 패턴으로, ConnectionMultiplexer가 장시간 정상적으로 복구되지 않는 경우 기존 객체를 새로 생성하여 연결을 복구하는 방식입니다.<br><br><br>즉, 두 기능은 서로 대체하는 관계가 아니라 서로 다른 계층에서 동작하는 보완적인 기능으로 이해해주시면 감사하겠습니다.<br>또한 net.ipv4.tcp_retries2 값을 조정하지 않은 경우에는 Linux 운영체제가 오랜 시간 동안 TCP 재전송을 계속 수행하게 되어, 애플리케이션에서는 연결 오류 대신 Timeout이 지속적으로 발생할 수 있습니다.<br><br><br>반대로 net.ipv4.tcp_retries2 값을 낮추면 운영체제가 연결 실패를 보다 빠르게 애플리케이션에 전달할 수 있으므로 Redis Client도 보다 빠르게 복구 절차를 시작할 수 있습니다.<br>일반적인 환경에서는 StackExchange.Redis의 기본 자동 재연결 기능만으로도 충분한 경우가 많으며, ForceReconnect Pattern은 ConnectionMultiplexer가 장시간 정상적으로 복구되지 않는 예외적인 상황에서 추가적으로 고려할 수 있는 복구 방법으로 이해해주시면 감사하겠습니다.<br><br><br>마지막으로 Azure Managed Redis에서도 동일한 내용이 적용되는지에 대해서도 확인해보았습니다.<br>해당 net.ipv4.tcp_retries2 설정은 Azure Cache for Redis 또는 Azure Managed Redis 서버의 설정이 아니라, Redis Client가 실행되는 Linux 운영체제의 TCP 동작을 제어하는 Client 측 설정입니다.<br><br><br>따라서 Redis Client가 Linux 기반 AKS 환경에서 Azure Managed Redis에 연결하는 경우에도 동일한 원리로 적용되며, Azure Managed Redis 환경에서도 의미 있는 설정으로 보시면 될 것으로 보여집니다.<br><br><br>추가로 궁금하신 Redis 관련 사항이나 확인이 필요하신 부분이 있으시면 언제든지 편하게 회신 부탁드립니다.<br><br>항상 저희 Microsoft 기술지원을 이용해 주셔서 감사드리며,<br>오늘도 좋은 하루 보내시길 바랍니다.<br><br>감사합니다.<br>시투 드림<br><br>Sithu Kaung Set<br><br>Azure PaaS Support Engineer<br>Customer Service &amp; Support - Azure PaaS<br>Office : +82 (2) 5318227<br><br>siset@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">4</div><div class="thread-card-meta">hyukjun.nam@kt.com · 2026. 7. 22. 오전 10:02</div><div class="thread-card-body">hyukjun.nam@kt.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br>안녕하세요<br>kt cloud Azure SRE팀 남혁준 입니다.<br><br><br>확인 감사드립니다.<br>AKS 환경의 적합한 구성에 대해서는 AKS 케이스로 재문의 하겠습니다.<br><br><br>혹시 아래 깃헙 이슈에 나와 있는 것처럼 tcp_retries2 커널 파라미터를 5분 이하로 설정해도 무방하지만, 재연결이 많아질 경우 Redis 리소스에 부하가 발생할 우려는 고려해야 하는 것으로 이해하면 될까요?<br>그리고,  ForceReconnect pattern 과 다른점이 무엇인지 궁금합니다.<br>https://github.com/StackExchange/StackExchange.Redis/issues/1848#issuecomment-913064646<br><br><br>추가적으로, tcp_retries2 파라미터가 나와 있는 문서가 기존 Azure Cache for Redis 문서인데, Azure Managed Redis 사용 시에도 유의미한 내용일까요? <br>https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-best-practices-connection#tcp-settings-for-linux-hosted-client-applications<br><br><br>감사합니다.<br>남혁준 드림.<br><br><br><br><br>남혁준<br><br><br>직원 주식회사 케이티클라우드 Cloud본부 그룹사업담당 Azure SRE팀<br><br><br><br><br><br><br>	<br>01071757103<br>	<br>	<br>hyukjun.nam@kt.com<br><br><br><br><br><br><br><br><br>보낸 사람: Sithu Kaung Set &lt;siset@microsoft.com&gt;<br>보낸 날짜: 2026년 7월 22일 수요일 오전 9:00<br>받는 사람: 남혁준(Azure SRE팀) &lt;hyukjun.nam@kt.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>참조: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Azure 랜딩존 &lt;az.msp@kt.com&gt;<br>제목: Re: Redis 연결 신뢰성을 위한 TCP 커널 파라미터 문의 - TrackingID#2607210030005093<br> <br><br>안녕하십니까,<br>한국 Microsoft 기술지원부 시투 엔지니어입니다.<br><br><br><br>어제 제가 전달드린 메일을 통해 케이스 #2607210030005093 관련하여 안내드린 바 있습니다.<br><br>혹시 메일을 확인해보셨을까요?<br><br>안내드린 내용을 바탕으로 문제 해결이 원활히 진행되고 계신지 확인차 다시 한 번 연락드립니다.<br>진행 중 어려운 점이 있으시거나 추가로 도움이 필요하신 부분이 있으시다면 언제든지 편하게 회신 주시기 바랍니다.<br><br>항상 저희 Microsoft 기술지원을 이용해 주셔서 감사드리며,<br>오늘도 좋은 하루 보내시길 바랍니다.<br><br>감사합니다.<br>시투 드림<br><br>Sithu Kaung Set<br><br>Azure PaaS Support Engineer<br>Customer Service &amp; Support - Azure PaaS<br>Office : +82 (2) 5318227<br><br>siset@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-meta">siset@microsoft.com · 2026. 7. 22. 오전 09:00</div><div class="thread-card-body">안녕하십니까,<br>한국 Microsoft 기술지원부 시투 엔지니어입니다.<br><br><br><br>어제 제가 전달드린 메일을 통해 케이스 #2607210030005093 관련하여 안내드린 바 있습니다.<br><br>혹시 메일을 확인해보셨을까요?<br><br>안내드린 내용을 바탕으로 문제 해결이 원활히 진행되고 계신지 확인차 다시 한 번 연락드립니다.<br>진행 중 어려운 점이 있으시거나 추가로 도움이 필요하신 부분이 있으시다면 언제든지 편하게 회신 주시기 바랍니다.<br><br>항상 저희 Microsoft 기술지원을 이용해 주셔서 감사드리며,<br>오늘도 좋은 하루 보내시길 바랍니다.<br><br>감사합니다.<br>시투 드림<br><br>Sithu Kaung Set<br><br>Azure PaaS Support Engineer<br>Customer Service &amp; Support - Azure PaaS<br>Office : +82 (2) 5318227<br><br>siset@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-meta">supportmail@techsupport.microsoft.com · 2026. 7. 21. 오후 06:11</div><div class="thread-card-body">안녕하십니까, 저희 고객기술지원 서비스를 이용해 주셔서 감사합니다. 저는 이 케이스를 지원할 한국마이크로소프트 고객기술지원 엔지니어 시투입니다. 서명란의 연락처를 통해 언제나 연락주실 수 있습니다. <br><br> <br><br>문의하신 사항에 대해 아래와 같이 정리합니다. 내용을 살펴보시고 잘못 이해하였거나, 궁금하신 점이 있다면 알려주시기 바랍니다. 빠른 확인 및 시스템 기록을 위해 반드시 전체 회신(supportmail@techsupport.microsoft.com 포함)으로 응답 부탁드립니다. <br><br> <br><br>문의 사항: <br><br>안녕하세요<br> <br>Redis Client가 AKS 노드(리눅스)에서 구동중이며, Redis 문서에 명시된 net.ipv4.tcp_retries2 파라미터를 적용하고자 합니다,<br>https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-best-practices-connection#tcp-settings-for-linux-hosted-client-applications<br> <br>AKS 환경에 Redis Client가 구동중일 경우 해당 설정을 어떻게 적용해야 하는지 가이드 받을 수 있을까요?<br> <br>지난번 2605260030000494 AKS SR 케이스에서 확인한 내용은<br>unsafe sysctl 허용 목록을 추가한 kubelet config을 가지고 신규 노드풀을 생성한 뒤에<br> redis client pod의 securitycontext를 통해 net.ipv4.tcp_retries2 파라미터를 세팅하는 것으로 이해하였습니다.<br>혹시 해당 방식이 맞을지도 확인 부탁드립니다.<br> <br>감사합니다.;<br> <br> <br> <br><br>진행 사항: <br><br>문의주신 내용을 확인해보았을때, 고객님께서 이해하고 계신 내용이 맞는 것으로 보여집니다.<br>Redis Client가 AKS Linux 노드에서 구동되는 환경에서 net.ipv4.tcp_retries2 값을 적용하기 위해서는, 이전 AKS SR에서 안내받으신 것과 같이 unsafe sysctl을 허용하도록 kubelet configuration이 적용된 신규 Node Pool을 생성한 후, Redis Client Pod의 securityContext.sysctls를 통해 net.ipv4.tcp_retries2 값을 설정하는 방식으로 구성하시는 것이 맞습니다.<br>해당 설정이 필요한 이유는 net.ipv4.tcp_retries2가 Kubernetes에서 unsafe sysctl로 분류되어 기본적으로는 Pod에서 설정이 허용되지 않기 때문입니다.<br>따라서 먼저 Node Pool의 kubelet에서 해당 sysctl을 허용해야 하며, 이후 각 Redis Client Pod에서 securityContext.sysctls를 통해 값을 적용하는 구조로 동작하게 됩니다.<br>저희 Azure Redis 관점에서는 Linux 기본값인 net.ipv4.tcp_retries2=15를 사용할 경우, 예기치 않은 Failover 또는 네트워크 장애 발생 시 이미 끊어진 TCP 연결을 Client가 감지하기까지 상당한 시간이 소요될 수 있습니다.<br>이러한 이유로 저희 Azure Cache for Redis 공식 문서에서는 net.ipv4.tcp_retries2=5 설정을 권장드리고 있습니다.<br>다만, 문의주신 AKS Node Pool 생성 방법, kubelet의 allowedUnsafeSysctls 설정, Pod securityContext 구성 등 AKS 플랫폼 구성 방법에 대한 부분은 AKS 제품 지원 범위에 해당합니다.<br>현재 저희 Redis 관점에서는 고객님께서 이해하고 계신 구성 방향이 맞는 것으로 확인되며, 실제 AKS 환경에서의 구현 방법이나 세부 구성에 대해서는 AKS 제품팀에서 가장 정확한 가이드를 제공드릴 수 있을 것으로 판단됩니다.<br>혹시 해당 부분에 대해 보다 상세한 AKS 구성 가이드가 필요하시다면 AKS 지원팀으로 새로운 지원 케이스를 생성하여 문의해 주시는 것을 권장드립니다.<br>저희 Azure Redis 관점에서 궁금하신 사항이나 추가로 확인이 필요한 부분이 있으시면 언제든지 편하게 회신 부탁드리겠습니다.<br> <br>다음 단계: <br>문의주신 내용에 대해 안내드렸습니다. 추가로 궁금하신 사항이나 확인이 필요하신 부분이 있으시면, 언제든지 편하게 회신 주시면 감사하겠습니다.<br> <br><br>항상 저희 Microsoft 기술지원을 이용해 주셔서 감사드리며,<br><br>오늘도 좋은 하루 보내시길 바랍니다.<br><br> <br><br>감사합니다.  <br><br> <br><br>시투 <br><br>Azure PaaS Support Engineer <br><br>한국마이크로소프트 고객기술지원 | siset@microsoft.com | 직통번호 02-531-8227 | 근무시간 9:00-18:00 <br> <br><br> <br><br>______________________________________________________________________________________________________________________<br><br>한국마이크로소프트는 산업안전보건법에 따른 고객 응대 근로자 보호조치를 따르고 있습니다. 전화 상담 내용은 고객 지원 및 서비스 품질 향상을 위해 녹음되며, 관련 법령에 따라 일정 기간 보관됩니다. 고객께 전화를 드릴 경우 수신번호가 1577-9700(고객기술지원센터)으로 표시됩니다. 한국마이크로소프트는 개인정보처리방침을 준수합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">supportmail@techsupport.microsoft.com · 2026. 7. 21. 오후 05:44</div><div class="thread-card-body">이 전자 메일을 보는 데 문제가 있으신가요? 온라인으로 요청 보기<br><br><br><br> 	<br>지원<br><br><br> <br>질문하신 내용이 Enterprise Azure PRH As-needed 계획을 사용하여 Microsoft 지원에 성공적으로 제출되었습니다. Microsoft 지원 전문가가 연락을 드릴 것입니다.<br> <br>참고: 첫 번째 시간은 케이스가 “24x7”로 분류된 경우 심각도를 기반으로 정해집니다(“심각도 A” 응대 케이스는 항상 24x7이고, “심각도 B”는 선택적으로 24x7, “심각도 C” 케이스는 영업 시간에만 해당). 더 자세히 알고 싶으면 지원 응대 시간을 확인하세요.<br> <br>다음을 잊지 마세요. techsupport.microsoft.com, microsoftsupport.com, microsoft.com은 지원 요청과 관련된 소통에 사용되는 유효한 이메일 도메인입니다.<br> <br><br><br>인시던트 제목	Redis 연결 신뢰성을 위한 TCP 커널 파라미터 문의<br>지원 요청 번호:	2607210030005093<br>심각도 등급:	B<br>기본 연락 방법:	<br>Email<br><br>이름:	hyukjun.nam@kt.com 남혁준<br>전자 메일 주소:	<br>hyukjun.nam@kt.com<br><br>연락처 번호:	<br>01071757103<br><br><br> <br>이 인시던트와 관련하여 언제든지 Microsoft Azure portal에서 문의할 수 있습니다. 계약조건을 포함하여 Azure 지원에 대한 자세한 정보는 Azure 지원 FAQ를 참조하세요.<br> <br>본 전자 메일은 모니터링되지 않은 계정에서 발송된 것입니다. 회신하지 마세요.<br><br>감사합니다.<br>Microsoft Azure 지원<br> <br><br><br> <br>추가 정보<br><br>제품: Azure/Azure Managed Redis/Performance and Throughput/Timeout<br>Azure 구독: sub-az01-og064303-prd-iamui<br>Azure 구독 ID: 0e3446b0-3ad0-44b9-844b-d9b8870b2938<br> <br><br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매하거나 참가한 프로그램, 서비스 또는 제품의 중요한 일부로 제공되는 것입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 당사의 개인정보처리방침을 참조하세요.<br> <br><br>One Microsoft Way, Redmond, WA 98052 USA<br> 	<br> <br><br>supportmail@techsupport.microsoft.com</div></div>
+</main>
+</body>
+</html>

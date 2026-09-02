@@ -1,0 +1,24 @@
+{
+  "_comment": "민감하지 않은 기본값만 여기에 둡니다. API Key/비밀번호는 .env 에서 관리하세요.",
+  "_comment_freshdesk": "Freshdesk 자격증명/그룹/우선순위 등은 더 이상 여기서 관리하지 않습니다 — Freshdesk Management > 설정(/freshdesk/settings) 화면에서 저장한 연결을 DB에서 읽습니다.",
+
+  "crawler": {
+    "headless": false,
+    "enable_detail_page_enrichment": true,
+    "download_timeout_seconds": 600,
+    "navigation_timeout_seconds": 30
+  },
+
+  "freshdesk_priority_map": {
+    "낮음": 1,
+    "보통": 2,
+    "높음": 3,
+    "긴급": 4
+  },
+
+  "output": {
+    "excel_dir": "./output",
+    "log_dir": "./logs",
+    "db_path": "./data/tickets.db"
+  }
+}

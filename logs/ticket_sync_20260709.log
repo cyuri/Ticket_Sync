@@ -1,0 +1,653 @@
+2026-07-09 08:33:52 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None create_freshdesk_ticket=False
+2026-07-09 08:34:05 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 08:35:14 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 167, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(app_config, mode, start_date, end_date)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 329, in collect_tickets
+    ensure_logged_in(page, config)
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 106, in ensure_logged_in
+    page.get_by_text(marker_text, exact=False).first.wait_for(timeout=login_timeout_s * 1000)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 20298, in wait_for
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 741, in wait_for
+    await self._frame.wait_for_selector(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Locator.wait_for: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_text("케이스 관리").first to be visible
+    - waiting for" https://login.microsoftonline.com/common/login" navigation to finish...
+    - navigated to "https://login.microsoftonline.com/common/login"
+
+2026-07-09 08:35:14 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 08:36:06 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None create_freshdesk_ticket=False
+2026-07-09 08:36:15 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 08:36:24 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 08:36:54 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 143, in export_case_csv
+    button.wait_for(state="visible", timeout=config.crawler.navigation_timeout_ms)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 20298, in wait_for
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 741, in wait_for
+    await self._frame.wait_for_selector(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_text("CSV로 다운로드").first to be visible
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 167, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(app_config, mode, start_date, end_date)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 331, in collect_tickets
+    csv_path = export_case_csv(page, context, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 145, in export_case_csv
+    raise PageStructureError(
+crawler.PageStructureError: 'CSV로 다운로드' 버튼을 찾지 못했습니다. 화면 구조가 바뀌었을 수 있으니 config/selectors.json 의 csv_download_button_text 를 확인하세요.
+2026-07-09 08:36:55 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 08:40:06 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None create_freshdesk_ticket=False
+2026-07-09 08:40:15 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 08:40:19 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 08:40:49 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 143, in export_case_csv
+    button.wait_for(state="visible", timeout=config.crawler.navigation_timeout_ms)
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 20298, in wait_for
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 741, in wait_for
+    await self._frame.wait_for_selector(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 394, in wait_for_selector
+    await self._channel.send(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_text("CSV로 다운로드").first to be visible
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 167, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(app_config, mode, start_date, end_date)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 331, in collect_tickets
+    csv_path = export_case_csv(page, context, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 145, in export_case_csv
+    raise PageStructureError(
+crawler.PageStructureError: 'CSV로 다운로드' 버튼을 찾지 못했습니다. 화면 구조가 바뀌었을 수 있으니 config/selectors.json 의 csv_download_button_text 를 확인하세요.
+2026-07-09 08:40:50 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 08:42:32 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=today start=None end=None create_freshdesk_ticket=False
+2026-07-09 08:42:41 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 08:42:49 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 08:42:54 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 08:42:54 [WARNING] ticket_sync.crawler: CSV 헤더 중 매핑되지 않은 컬럼이 있습니다 (config/column_map.json 확인 필요): ['RequestId', 'Title', 'Severity', 'State', 'ContractId', 'CaseType', 'CreatedDate', 'LastUpdatedDate', 'ClosedDate', 'Product', 'ProductFamily', 'StatusMessage', 'TenantId', 'SubscriptionId', 'PrimaryContact', 'Tenant', 'Workspace']
+2026-07-09 08:42:54 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전)
+2026-07-09 08:42:54 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 0건 (상세 보강 대상)
+2026-07-09 08:42:55 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 08:45:30 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=all start=None end=None create_freshdesk_ticket=False
+2026-07-09 08:45:39 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 08:45:42 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 08:45:47 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 08:45:47 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전)
+2026-07-09 08:45:47 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 4건 (상세 보강 대상)
+2026-07-09 08:45:56 [INFO] ticket_sync.crawler: 상세 보강 진행 1/4 완료 (case=2604200040001007)
+2026-07-09 08:46:03 [INFO] ticket_sync.crawler: 상세 보강 진행 2/4 완료 (case=2604020030000671)
+2026-07-09 08:46:10 [INFO] ticket_sync.crawler: 상세 보강 진행 3/4 완료 (case=2604010030001820)
+2026-07-09 08:46:17 [INFO] ticket_sync.crawler: 상세 보강 진행 4/4 완료 (case=2602100030000865)
+2026-07-09 08:46:18 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 4, 'new_count': 4, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 08:50:18 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=all start=None end=None create_freshdesk_ticket=False
+2026-07-09 08:50:28 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 08:50:31 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 08:50:36 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 08:50:36 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전)
+2026-07-09 08:50:36 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 4건 (상세 보강 대상)
+2026-07-09 08:51:11 [INFO] ticket_sync.crawler: 상세 보강 진행 1/4 완료 (case=2604200040001007)
+2026-07-09 08:51:46 [INFO] ticket_sync.crawler: 상세 보강 진행 2/4 완료 (case=2604020030000671)
+2026-07-09 08:52:21 [INFO] ticket_sync.crawler: 상세 보강 진행 3/4 완료 (case=2604010030001820)
+2026-07-09 08:52:56 [INFO] ticket_sync.crawler: 상세 보강 진행 4/4 완료 (case=2602100030000865)
+2026-07-09 08:52:56 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 4, 'new_count': 0, 'duplicate_count': 4, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 08:54:00 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=all start=None end=None create_freshdesk_ticket=False
+2026-07-09 08:54:09 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 08:59:10 [ERROR] ticket_sync.main: 티켓 수집 중 오류가 발생했습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 167, in run_sync
+    all_tickets, crawl_warnings = crawler.collect_tickets(app_config, mode, start_date, end_date)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 378, in collect_tickets
+    ensure_logged_in(page, config)
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 131, in ensure_logged_in
+    raise SessionExpiredError(
+crawler.SessionExpiredError: 제한 시간 내에 로그인이 완료되지 않았습니다. 프로그램을 다시 실행해 로그인을 완료해주세요.
+2026-07-09 08:59:10 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 0, 'new_count': 0, 'duplicate_count': 0, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 1, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 08:59:50 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=all start=None end=None create_freshdesk_ticket=False
+2026-07-09 09:00:02 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 브라우저 창에서 직접 로그인(및 MFA)을 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 09:05:02 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 09:05:07 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 09:05:07 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전)
+2026-07-09 09:05:07 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 4건 (상세 보강 대상)
+2026-07-09 09:05:43 [INFO] ticket_sync.crawler: 상세 보강 진행 1/4 완료 (case=2604200040001007)
+2026-07-09 09:06:17 [INFO] ticket_sync.crawler: 상세 보강 진행 2/4 완료 (case=2604020030000671)
+2026-07-09 09:06:52 [INFO] ticket_sync.crawler: 상세 보강 진행 3/4 완료 (case=2604010030001820)
+2026-07-09 09:07:27 [INFO] ticket_sync.crawler: 상세 보강 진행 4/4 완료 (case=2602100030000865)
+2026-07-09 09:07:28 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 4, 'new_count': 0, 'duplicate_count': 4, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 09:12:48 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=all start=None end=None create_freshdesk_ticket=False
+2026-07-09 09:12:51 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:52 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:52 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:53 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:54 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:54 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:55 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:55 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:57 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:57 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 09:12:58 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:58 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:59 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:12:59 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:00 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:00 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:01 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:01 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:02 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:03 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:03 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:04 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:04 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:05 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:05 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:06 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:06 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:07 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:08 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:08 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:09 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:09 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:10 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:10 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:11 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:11 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:12 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:13 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:13 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:14 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:14 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:15 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:15 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:16 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:16 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:17 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:18 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:18 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:19 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:19 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:20 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:20 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:21 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:22 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:22 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:23 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:23 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:24 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:24 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:25 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:25 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:26 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:27 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:27 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:28 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:28 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:29 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:29 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:30 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:30 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:31 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:32 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:32 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:34 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:34 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:35 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:35 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:36 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:37 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:37 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:38 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:38 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:39 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:39 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:40 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:40 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:41 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:42 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:42 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:43 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:43 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:44 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:44 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:45 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:46 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:46 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:47 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:47 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:48 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:48 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:49 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:49 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:50 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:50 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:51 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:52 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:52 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:53 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:53 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:54 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:54 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:55 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:57 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:57 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:58 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:58 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:59 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:13:59 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:00 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:01 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:01 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:02 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:02 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:03 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:03 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:04 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:04 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:05 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:06 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:06 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:07 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:07 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:08 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:08 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:09 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:09 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:10 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:10 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:11 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:12 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:12 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:13 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:13 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:14 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:14 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:15 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:15 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:16 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:17 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:17 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:18 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:18 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:19 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:19 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:20 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:20 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:21 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:22 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:22 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:23 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:23 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:24 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:24 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:25 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:26 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:26 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:27 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:27 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:28 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:28 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:29 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:29 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:30 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:31 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:31 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:32 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:32 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:34 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:34 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:35 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:36 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:36 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:37 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:37 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:38 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:38 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:39 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:39 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:40 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:41 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:41 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:42 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:42 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:43 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:43 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:44 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:44 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:45 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:46 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:49 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:50 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:50 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:51 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:51 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:14:52 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 09:14:56 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 09:14:56 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전)
+2026-07-09 09:14:56 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 4건 (상세 보강 대상)
+2026-07-09 09:15:32 [INFO] ticket_sync.crawler: 상세 보강 진행 1/4 완료 (case=2604200040001007)
+2026-07-09 09:16:07 [INFO] ticket_sync.crawler: 상세 보강 진행 2/4 완료 (case=2604020030000671)
+2026-07-09 09:16:42 [INFO] ticket_sync.crawler: 상세 보강 진행 3/4 완료 (case=2604010030001820)
+2026-07-09 09:17:16 [INFO] ticket_sync.crawler: 상세 보강 진행 4/4 완료 (case=2602100030000865)
+2026-07-09 09:17:17 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 4, 'new_count': 0, 'duplicate_count': 4, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 09:18:54 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=all start=None end=None create_freshdesk_ticket=False
+2026-07-09 09:18:57 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:18:59 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:01 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:02 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:03 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 09:19:03 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:05 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:06 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:08 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:09 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:11 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:13 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:14 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:19 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:21 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:19:22 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 09:19:27 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 09:19:27 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전)
+2026-07-09 09:19:27 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 4건 (상세 보강 대상)
+2026-07-09 09:19:59 [INFO] ticket_sync.crawler: 상세 보강 진행 1/4 완료 (case=2604200040001007)
+2026-07-09 09:20:37 [INFO] ticket_sync.crawler: 상세 보강 진행 2/4 완료 (case=2604020030000671)
+2026-07-09 09:21:12 [INFO] ticket_sync.crawler: 상세 보강 진행 3/4 완료 (case=2604010030001820)
+2026-07-09 09:21:47 [INFO] ticket_sync.crawler: 상세 보강 진행 4/4 완료 (case=2602100030000865)
+2026-07-09 09:21:47 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 4, 'new_count': 0, 'duplicate_count': 4, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 09:26:28 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=all start=None end=None create_freshdesk_ticket=False
+2026-07-09 09:26:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:34 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:36 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:37 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 09:26:37 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:39 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:41 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:42 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:44 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:46 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:47 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:49 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:51 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:52 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:54 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:57 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:26:59 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:01 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:02 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:04 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:06 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:07 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:09 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:10 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:12 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:14 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:15 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:17 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:19 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:20 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:22 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:24 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:25 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:27 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:28 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:30 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:32 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:35 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:37 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:38 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:40 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:42 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:43 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:45 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:47 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:48 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:50 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:52 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:53 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:55 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:27:58 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:00 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:01 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:03 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:05 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:06 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:08 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:10 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:11 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:16 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:17 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:28:19 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 09:28:23 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 09:28:23 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전)
+2026-07-09 09:28:23 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 4건 (상세 보강 대상)
+2026-07-09 09:28:59 [INFO] ticket_sync.crawler: 상세 보강 진행 1/4 완료 (case=2604200040001007)
+2026-07-09 09:29:34 [INFO] ticket_sync.crawler: 상세 보강 진행 2/4 완료 (case=2604020030000671)
+2026-07-09 09:30:09 [INFO] ticket_sync.crawler: 상세 보강 진행 3/4 완료 (case=2604010030001820)
+2026-07-09 09:30:43 [INFO] ticket_sync.crawler: 상세 보강 진행 4/4 완료 (case=2602100030000865)
+2026-07-09 09:30:44 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 4, 'new_count': 0, 'duplicate_count': 4, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 09:31:48 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=all start=None end=None create_freshdesk_ticket=False
+2026-07-09 09:31:53 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:31:55 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-09 09:31:57 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 09:31:58 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:32:00 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 09:32:00 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 09:32:04 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 09:32:04 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전)
+2026-07-09 09:32:04 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 4건 (상세 보강 대상)
+2026-07-09 09:32:40 [INFO] ticket_sync.crawler: 상세 보강 진행 1/4 완료 (case=2604200040001007)
+2026-07-09 09:33:15 [INFO] ticket_sync.crawler: 상세 보강 진행 2/4 완료 (case=2604020030000671)
+2026-07-09 09:33:49 [INFO] ticket_sync.crawler: 상세 보강 진행 3/4 완료 (case=2604010030001820)
+2026-07-09 09:34:24 [INFO] ticket_sync.crawler: 상세 보강 진행 4/4 완료 (case=2602100030000865)
+2026-07-09 09:34:25 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 4, 'new_count': 0, 'duplicate_count': 4, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'}
+2026-07-09 10:50:08 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=range start=2026-04-01 end=2026-07-09 case_status=open create_freshdesk_ticket=False
+2026-07-09 10:50:12 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 10:50:14 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-09 10:50:17 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 10:50:17 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 10:50:18 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 10:50:19 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 10:50:20 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 10:50:31 [INFO] ticket_sync.crawler: 상태 필터를 '열기' 로 적용했습니다.
+2026-07-09 10:50:41 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-04-01 ~ 2026-07-09
+2026-07-09 10:50:42 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 10:50:42 [INFO] ticket_sync.crawler: CSV에서 총 3건 파싱됨 (날짜 필터 전)
+2026-07-09 10:50:42 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 3건 (상세 보강 대상)
+2026-07-09 10:51:16 [INFO] ticket_sync.crawler: 상세 보강 진행 1/3 완료 (case=2604200040001007)
+2026-07-09 10:51:46 [WARNING] ticket_sync.crawler: 목록에서 'databricks' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-09 10:51:46 [INFO] ticket_sync.crawler: 상세 보강 진행 2/3 완료 (case=2604020030000671)
+2026-07-09 10:52:16 [WARNING] ticket_sync.crawler: 목록에서 'Databricks Cloud Fetch를 통해 Azure Blob Storage에서 데이터를 병렬 다운로드할 때, 총 동시 연결 수가 128개를 초과하면 서버 측에서 TCP RST 패킷을 전송하여 'Connection reset' 에러가 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-09 10:52:16 [INFO] ticket_sync.crawler: 상세 보강 진행 3/3 완료 (case=2604010030001820)
+2026-07-09 10:52:17 [ERROR] ticket_sync.main: 동기화 실행 중 예기치 못한 오류로 중단되었습니다
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 355, in main
+    summary = run_sync(app_config, mode, start_date, end_date, case_status, do_freshdesk, run_date_str)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\main.py", line 264, in run_sync
+    excel_exporter.export_excel(excel_path, all_tickets, new_tickets, freshdesk_results, errors)
+  File "C:\Users\youre\Downloads\ticket_sync\excel_exporter.py", line 91, in export_excel
+    with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 62, in __init__
+    super().__init__(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 1281, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\pandas\io\common.py", line 939, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709.xlsx'
+2026-07-09 10:56:10 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=range start=2026-04-01 end=2026-07-09 case_status=open create_freshdesk_ticket=False
+2026-07-09 10:56:15 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 10:56:17 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-09 10:56:20 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 10:56:20 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 10:56:20 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 10:56:22 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 10:56:24 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 10:56:34 [INFO] ticket_sync.crawler: 상태 필터를 '열기' 로 적용했습니다.
+2026-07-09 10:56:45 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-04-01 ~ 2026-07-09
+2026-07-09 10:56:46 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 10:56:46 [INFO] ticket_sync.crawler: CSV에서 총 3건 파싱됨 (날짜 필터 전)
+2026-07-09 10:56:46 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 3건 (상세 보강 대상)
+2026-07-09 10:57:25 [INFO] ticket_sync.crawler: 상세 보강 진행 1/3 완료 (case=2604200040001007)
+2026-07-09 10:58:03 [INFO] ticket_sync.crawler: 상세 보강 진행 2/3 완료 (case=2604020030000671)
+2026-07-09 10:58:41 [INFO] ticket_sync.crawler: 상세 보강 진행 3/3 완료 (case=2604010030001820)
+2026-07-09 10:58:41 [WARNING] ticket_sync.main: C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260709.xlsx 파일이 다른 프로그램에서 열려 있어 저장할 수 없습니다. 대신 C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260709_105841.xlsx 로 저장합니다.
+2026-07-09 10:58:41 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 3, 'new_count': 0, 'duplicate_count': 3, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709_105841.xlsx'}
+2026-07-09 11:00:14 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=range start=2026-04-01 end=2026-07-09 case_status=open create_freshdesk_ticket=False
+2026-07-09 11:00:18 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:00:20 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-09 11:00:23 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 11:00:23 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:00:25 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 11:00:36 [INFO] ticket_sync.crawler: 상태 필터를 '열기' 로 적용했습니다.
+2026-07-09 11:00:47 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-04-01 ~ 2026-07-09
+2026-07-09 11:00:47 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 11:00:47 [INFO] ticket_sync.crawler: CSV에서 총 3건 파싱됨 (날짜 필터 전)
+2026-07-09 11:00:47 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 3건 (상세 보강 대상)
+2026-07-09 11:01:22 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-09 11:01:22 [INFO] ticket_sync.crawler: 커뮤니케이션 행 1개 중 데이터 행 0개 인식됨.
+2026-07-09 11:01:27 [INFO] ticket_sync.crawler: 상세 보강 진행 1/3 완료 (case=2604200040001007)
+2026-07-09 11:02:00 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함.
+2026-07-09 11:02:00 [INFO] ticket_sync.crawler: 커뮤니케이션 행 1개 중 데이터 행 0개 인식됨.
+2026-07-09 11:02:04 [INFO] ticket_sync.crawler: 상세 보강 진행 2/3 완료 (case=2604020030000671)
+2026-07-09 11:02:38 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-09 11:02:38 [INFO] ticket_sync.crawler: 커뮤니케이션 행 1개 중 데이터 행 0개 인식됨.
+2026-07-09 11:02:43 [INFO] ticket_sync.crawler: 상세 보강 진행 3/3 완료 (case=2604010030001820)
+2026-07-09 11:02:43 [WARNING] ticket_sync.main: C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260709.xlsx 파일이 다른 프로그램에서 열려 있어 저장할 수 없습니다. 대신 C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260709_110243.xlsx 로 저장합니다.
+2026-07-09 11:02:43 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 3, 'new_count': 0, 'duplicate_count': 3, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709_110243.xlsx'}
+2026-07-09 11:03:45 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=range start=2026-04-01 end=2026-07-09 case_status=open create_freshdesk_ticket=False
+2026-07-09 11:03:49 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:03:51 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-09 11:03:53 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:03:55 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 11:03:55 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:03:56 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 11:04:07 [INFO] ticket_sync.crawler: 상태 필터를 '열기' 로 적용했습니다.
+2026-07-09 11:04:17 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-04-01 ~ 2026-07-09
+2026-07-09 11:04:18 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 11:04:18 [INFO] ticket_sync.crawler: CSV에서 총 3건 파싱됨 (날짜 필터 전)
+2026-07-09 11:04:18 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 3건 (상세 보강 대상)
+2026-07-09 11:04:53 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-09 11:04:53 [INFO] ticket_sync.crawler: 커뮤니케이션 행 1개 중 데이터 행 0개 인식됨.
+2026-07-09 11:04:58 [INFO] ticket_sync.crawler: 상세 보강 진행 1/3 완료 (case=2604200040001007)
+2026-07-09 11:05:32 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-09 11:05:32 [INFO] ticket_sync.crawler: 커뮤니케이션 행 1개 중 데이터 행 0개 인식됨.
+2026-07-09 11:05:37 [INFO] ticket_sync.crawler: 상세 보강 진행 2/3 완료 (case=2604020030000671)
+2026-07-09 11:06:11 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-09 11:06:11 [INFO] ticket_sync.crawler: 커뮤니케이션 행 1개 중 데이터 행 0개 인식됨.
+2026-07-09 11:06:16 [INFO] ticket_sync.crawler: 상세 보강 진행 3/3 완료 (case=2604010030001820)
+2026-07-09 11:06:16 [WARNING] ticket_sync.main: C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260709.xlsx 파일이 다른 프로그램에서 열려 있어 저장할 수 없습니다. 대신 C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260709_110616.xlsx 로 저장합니다.
+2026-07-09 11:06:16 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 3, 'new_count': 0, 'duplicate_count': 3, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709_110616.xlsx'}
+2026-07-09 11:07:22 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=range start=2026-04-01 end=2026-07-09 case_status=open create_freshdesk_ticket=False
+2026-07-09 11:07:26 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:07:28 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-09 11:07:30 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:07:32 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 11:07:32 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:07:33 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 11:07:44 [INFO] ticket_sync.crawler: 상태 필터를 '열기' 로 적용했습니다.
+2026-07-09 11:07:50 [WARNING] ticket_sync.crawler: '필터 추가' 메뉴에서 '만들어짐' 항목을 찾지 못했습니다.
+2026-07-09 11:07:50 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-09 11:07:50 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전)
+2026-07-09 11:07:50 [INFO] ticket_sync.crawler: 날짜 필터 적용 후 3건 (상세 보강 대상)
+2026-07-09 11:08:25 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-09 11:08:27 [INFO] ticket_sync.crawler: 커뮤니케이션 행 11개 중 데이터 행 10개 인식됨.
+2026-07-09 11:08:40 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 22755자 (source=
+suachoi@microsoft.com, updated=2026. 6. 30. 오전 09:39).
+2026-07-09 11:08:44 [INFO] ticket_sync.crawler: 상세 보강 진행 1/3 완료 (case=2604200040001007)
+2026-07-09 11:09:19 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-09 11:09:20 [INFO] ticket_sync.crawler: 커뮤니케이션 행 11개 중 데이터 행 10개 인식됨.
+2026-07-09 11:09:33 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 94908자 (source=
+junghyeonryu@microsoft.com, updated=2026. 7. 8. 오후 04:57).
+2026-07-09 11:09:37 [INFO] ticket_sync.crawler: 상세 보강 진행 2/3 완료 (case=2604020030000671)
+2026-07-09 11:10:13 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 1회 클릭함.
+2026-07-09 11:10:16 [INFO] ticket_sync.crawler: 커뮤니케이션 행 11개 중 데이터 행 10개 인식됨.
+2026-07-09 11:10:28 [INFO] ticket_sync.crawler: 커뮤니케이션 본문 길이 173878자 (source=
+aszekely@palantir.com, updated=2026. 7. 8. 오후 10:36).
+2026-07-09 11:10:33 [INFO] ticket_sync.crawler: 상세 보강 진행 3/3 완료 (case=2604010030001820)
+2026-07-09 11:10:34 [WARNING] ticket_sync.main: C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260709.xlsx 파일이 다른 프로그램에서 열려 있어 저장할 수 없습니다. 대신 C:\Users\youre\Downloads\ticket_sync\output\serviceshub_ticket_sync_20260709_111034.xlsx 로 저장합니다.
+2026-07-09 11:10:34 [INFO] ticket_sync.main: 동기화 종료 | {'total_collected': 3, 'new_count': 0, 'duplicate_count': 3, 'freshdesk_success': 0, 'freshdesk_failed': 0, 'error_count': 0, 'excel_path': 'C:\\Users\\youre\\Downloads\\ticket_sync\\output\\serviceshub_ticket_sync_20260709_111034.xlsx'}
+2026-07-09 11:16:05 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=range start=2026-07-08 end=2026-07-09 case_status=all create_freshdesk_ticket=False
+2026-07-09 11:16:09 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:16:11 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-09 11:16:14 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:16:14 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 11:16:15 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:16:16 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 11:16:17 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 11:16:32 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-07-08 ~ 2026-07-09
+2026-07-09 11:17:23 [ERROR] asyncio: Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-07-09 13:01:17 [INFO] ticket_sync.main: 동기화 시작 | freshdesk=test mode=range start=2026-07-08 end=2026-07-09 case_status=all create_freshdesk_ticket=False
+2026-07-09 13:01:26 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-09 13:01:27 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 13:01:29 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-09 13:01:31 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 13:01:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-09 13:01:34 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-09 13:01:42 [INFO] ticket_sync.crawler: 상태 필터 적용: 열기=True, 완료됨=True (case_status=all)
+2026-07-09 13:01:53 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-07-08 ~ 2026-07-09
+2026-07-09 13:02:13 [ERROR] asyncio: Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed

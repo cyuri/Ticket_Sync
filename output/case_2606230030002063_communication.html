@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 방법</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 방법</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2606230030002063</b></span>
+    <span>최근 발신자: <b>wylee@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 6. 25. 오후 01:35</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">8</div><div class="thread-card-meta">wylee@microsoft.com · 2026. 6. 25. 오후 01:35</div><div class="thread-card-body">안녕하세요? 김동현 고객님,<br><br> <br><br>문의하신 내용에 대하여 다음과 같이 정리하며, 본 문의는 종료하도록 하겠습니다.<br><br>케이스에 대해 추가 진행이 필요하신 경우, 다시 오픈하시어 진행하실 수 있습니다.<br><br> <br><br>문의가 종료된 후에 Microsoft 지원 서비스에 대한 고객님의 소중한 의견을 여쭙는 설문 조사가 발송될 수 있으니, 많은 참여와 의견 부탁 드립니다. 고객님이 원하시는 서비스를 제공하는 것이 저희의 최우선 목표입니다. 더불어, 하단 연락처 정보를 참고하시어 저 또는 저희 팀장님에게 메일 또는 전화로 의견을 주실 수도 있습니다.<br><br> <br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">7</div><div class="thread-card-meta">wylee@microsoft.com · 2026. 6. 25. 오전 10:39</div><div class="thread-card-body">네 확인 감사합니다. <br><br><br>수고 많으셨습니다. <br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">6</div><div class="thread-card-meta">kim92.dh@kt.com · 2026. 6. 25. 오전 10:38</div><div class="thread-card-body">kim92.dh@kt.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br>네 안녕하세요 <br>내부적으로 추가적인 검토가 필요한 상황이라 케이스는 종료 해주셔도 될 것 같습니다.<br>지원 감사드립니다 .<br>보낸 사람: Won Young Lee &lt;wylee@microsoft.com&gt;<br>보냄: 2026 6월 25, 목요일 09:48<br>받는 사람: 김동현(DWP서비스팀) &lt;kim92.dh@kt.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;; 손임식(DWP서비스팀) &lt;yellrace@kt.com&gt;<br>참조: dm.kim@sqisoft.com &lt;dm.kim@sqisoft.com&gt;; 박수진(DWP서비스팀) &lt;su_jin.park@kt.com&gt;; 지범선(DWP서비스팀) &lt;bs.ji@kt.com&gt;; 강동완(DWP서비스팀) &lt;dongwan.kang@kt.com&gt;; 박길훈(DWP서비스팀) &lt;gilhoon.park@kt.com&gt;; 최광훈(DWP서비스팀) &lt;choi.kwanghoon@kt.com&gt;; Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Eun Sung Choi &lt;eschoi@microsoft.com&gt;; azure-support@ktds.co.kr &lt;azure-support@ktds.co.kr&gt;; 최수한(IT성과팀) &lt;soohan.choi@kt.com&gt;; Topaz Oh &lt;dooh@microsoft.com&gt;<br>제목: Re: 이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 방법 - TrackingID#2606230030002063<br><br><br>김동현님 안녕하세요 <br><br><br>추가로 확인이 필요한 내용이 있으신지요?<br>편하신 시간에 회신 부탁드립니다. <br><br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">5</div><div class="thread-card-meta">wylee@microsoft.com · 2026. 6. 25. 오전 09:48</div><div class="thread-card-body">김동현님 안녕하세요 <br><br><br>추가로 확인이 필요한 내용이 있으신지요?<br>편하신 시간에 회신 부탁드립니다. <br><br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">4</div><div class="thread-card-meta">wylee@microsoft.com · 2026. 6. 23. 오후 03:58</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2606230030002063<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Closed<br><br>업데이트됨<br>2026. 7. 9. 오전 10:13<br><br>만들어짐<br>2026. 6. 23. 오후 01:29<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>wylee@microsoft.com<br>2026. 6. 25. 오후 01:35<br><br>wylee@microsoft.com<br>2026. 6. 25. 오전 10:39<br><br>kim92.dh@kt.com<br>2026. 6. 25. 오전 10:38<br><br>wylee@microsoft.com<br>2026. 6. 25. 오전 09:48<br><br>wylee@microsoft.com<br>2026. 6. 23. 오후 03:58<br><br>kim92.dh@kt.com<br>2026. 6. 23. 오후 03:48<br><br>supportmail@techsupport.microsoft.com<br>2026. 6. 23. 오후 02:05<br><br>supportmail@techsupport.microsoft.com<br>2026. 6. 23. 오후 01:30<br><br>wylee@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-meta">kim92.dh@kt.com · 2026. 6. 23. 오후 03:48</div><div class="thread-card-body">kim92.dh@kt.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br>안녕하세요<br>KTDS 김동현입니다 .<br><br><br>네, 말씀하신대로 사이트간 복제가 완료되기 전 다른 사이트에서 인증을 수행하여 발생하는 오류로 예상되어 문의드렸습니다 .<br>회신 주신 내용중, 특정 DC 또는 특정 사이트 고정 구성이 비권장이라는 점과 우선순위도 설정할 수 없는 부분까지 이해하였습니다 .<br><br><br>공유해주신 문서를 확인해보면, 현재 저희 환경에서 우선적으로 검토 가능한 항목은  Change Notification 활성화로 보입니다.<br>현재 확인한 설정은 아래와 같습니다.<br>천안 사이트 → 대전 사이트 간 Site Link 복제 주기: 15분<br>Change Notification: 비활성화<br><br><br>추가로 문의 드립니다 .<br>Change Notification 활성화 시, 사이트 간 변경 사항이 즉시 복제되는 것으로 이해해야 하나요? 아니면 기존 Site Link 복제 주기(15분)보다 더 빠르게 변경 전파가 이루어질 수 있도록 하는 설정정도로 이해하면 되나요 ?<br>위와 같은 다중 사이트 AD + PTA 환경에서, 패스워드 변경 직후 타 사이트 인증 실패 가능성을 줄이기 위한 방안으로 해당 기능 활성화가 일반적으로 권장되는지 , 활성화 전 검토가 필요한 사항(네트워크, 복제 트래픽)이 있는지<br>가능하다면 타사에서 해당 기능을 활성화 사례가 있는지 <br><br><br>감사합니다.<br><br><br>보낸 사람: wylee@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt;<br>보냄: 2026 6월 23, 화요일 14:05<br>받는 사람: 김동현(DWP서비스팀) &lt;kim92.dh@kt.com&gt;<br>참조: Kenneth.Kim@microsoft.com &lt;Kenneth.Kim@microsoft.com&gt;; parkjay@microsoft.com &lt;parkjay@microsoft.com&gt;; yonghahwang@microsoft.com &lt;yonghahwang@microsoft.com&gt;; wylee@microsoft.com &lt;wylee@microsoft.com&gt;; eschoi@microsoft.com &lt;eschoi@microsoft.com&gt;; azure-support@ktds.co.kr &lt;azure-support@ktds.co.kr&gt;; 최수한(IT성과팀) &lt;soohan.choi@kt.com&gt;<br>제목: 이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 방법 - TrackingID#2606230030002063<br><br><br><br> <br><br> <br><br>안녕하세요. 한국마이크로소프트 고객기술지원부 이원영입니다.<br><br>기술지원 서비스를 이용해 주셔서 감사합니다.<br><br> <br><br>한국마이크로소프트는 산업안전보건법에 따른 고객 응대근로자 보호조치를 따르고 있습니다.<br><br>엔지니어가 고객께 전화를 드릴 때 수신번호가 1577-9700으로 표시되며, 상담내용은 고객지원 및 서비스 개선 등을 위해 녹음되며, 관련 법안에 따라 일정기간 보관됩니다.<br><br> <br><br>문의하신 내용에 대해 아래와 같이 정리합니다. 잘못 이해한 부분이 있으면 알려 주시기 바랍니다.<br><br> <br><br> <br><br>[문의내용]<br><br>현재 당사에서는 PTA 인증 방식을 사용 중이며, PTA 서버는 총 3대 구성으로 운영하고 있습니다. 또한 AD 서버는 총 5대로, 천안 3대 / 대전 2대의 사이트 이중화 환경으로 구성되어 있습니다.<br><br>현재 SSO를 통한 패스워드 변경 시, SSO는 천안 AD 서버 중 1대만 바라보도록 설정되어 있습니다. 이로 인해 사용자가 패스워드 변경 직후 대전 AD로 연결되는 경우, Entra 로그인 실패가 발생하고 있습니다. 다만, 특정 사이트 또는 특정AD 서버만 고정적으로 바라보도록 설정하는 방식은 인증 이중화를 저해할 수 있어 권장되지 않는 구성으로 알고 있습니다 .<br><br>아래 2가지 문의 드립니다.<br><br>1. 천안 AD 서버를 우선 순위로 두고 사용하도록 설정할 수 있는 방법이 있는지<br><br>2. 또는 사이트 이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 권장 구성 또는 설정 방법이 있는지 관련하여 안내 부탁드립니다.<br><br> <br><br>[요청사항]<br><br>위 문의내용에 대한 확인 <br><br> <br><br>[확인내용]<br><br>Q1. 천안 AD 서버를 우선 순위로 두고 사용하도록 설정할 수 있는 방법이 있는지?<br><br>A1. PTA(Pass-through Authentication)는 특정 AD 서버 또는 특정 사이트의 Domain Controller를 우선적으로 사용하도록 설정하는 기능을 제공하지 않습니다. PTA는 고가용성(HA)을 전제로 설계되어 있으며, 인증 시 사용 가능한 온-프레미스 AD 환경을 통해 자격 증명을 검증합니다. 따라서 특정 DC 또는 특정 사이트로 인증을 고정하는 구성은 권장되지 않습니다.<br><br> <br><br>(참고자료) Microsoft Learn – Pass-through Authentication 동작 방식<br><br>https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-pta-how-it-works<br><br> <br><br>Q2. 사이트 이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 권장 구성 또는 설정 방법이 있는지<br><br>A2. 설명해 주신 현상은 PTA 자체의 문제라기보다, 패스워드 변경 후 AD 사이트 간 복제가 완료되기 전에 인증이 다른 사이트의 DC에서 수행되어 발생하는 AD Replication 지연 시나리오로 판단됩니다. 이를 방지하기 위해서는 AD 복제 구조를 개선하여 어느 사이트의 DC가 인증을 수행하더라도 최신 패스워드 정보를 참조할 수 있도록 구성하는 것이 Microsoft 권장 방식입니다. AD Sites and Services의 Replication Interval, Site Link Cost, Change Notification 설정 등을 검토하여 사이트 간 패스워드 복제가 최대한 신속하게 이루어지도록 검토가 필요한 것으로 보입니다. <br><br> <br><br>(참고자료) Active Directory Replication Concepts<br><br>https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/replication/active-directory-replication-concepts<br><br> <br><br> <br><br>이원영<br><br>Azure &amp; Identity Technical Support | Sr. Support Escalation Engineer<br><br>Microsoft Korea | Office: +82 (2) 531-8343 | E-mail: wylee@microsoft.com <br><br>Working hours: Mon-Fri 9:00 am - 6:00 pm (Korea, GMT+9)<br><br>Azure 기술 지원 플랜 비교| Azure 상태| Azure 최신 뉴스| 케이스생성 방법<br><br> <br><br> <br><br>근무 시간 외에 긴급한 Azure 기술지원이 필요한 경우, Azure 기술지원백업으로 연락 가능한 시간과 연락처 및 케이스 번호를 포함한 이메일을 보내주시면 연락 드리겠습니다.<br><br>마이크로소프트는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 Azure 기술지원팀 매니저에게 알려주십시요.<br><br> <br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.<br><br> <br><br> <br><br> <br><br>kim92.dh@kt.com</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-meta">supportmail@techsupport.microsoft.com · 2026. 6. 23. 오후 02:05</div><div class="thread-card-body">안녕하세요. 한국마이크로소프트 고객기술지원부 이원영입니다.<br><br>기술지원 서비스를 이용해 주셔서 감사합니다.<br><br> <br><br>한국마이크로소프트는 산업안전보건법에 따른 고객 응대근로자 보호조치를 따르고 있습니다.<br><br>엔지니어가 고객께 전화를 드릴 때 수신번호가 1577-9700으로 표시되며, 상담내용은 고객지원 및 서비스 개선 등을 위해 녹음되며, 관련 법안에 따라 일정기간 보관됩니다.<br><br> <br><br>문의하신 내용에 대해 아래와 같이 정리합니다. 잘못 이해한 부분이 있으면 알려 주시기 바랍니다.<br><br> <br><br> <br><br>[문의내용]<br><br>현재 당사에서는 PTA 인증 방식을 사용 중이며, PTA 서버는 총 3대 구성으로 운영하고 있습니다. 또한 AD 서버는 총 5대로, 천안 3대 / 대전 2대의 사이트 이중화 환경으로 구성되어 있습니다.<br><br>현재 SSO를 통한 패스워드 변경 시, SSO는 천안 AD 서버 중 1대만 바라보도록 설정되어 있습니다. 이로 인해 사용자가 패스워드 변경 직후 대전 AD로 연결되는 경우, Entra 로그인 실패가 발생하고 있습니다. 다만, 특정 사이트 또는 특정AD 서버만 고정적으로 바라보도록 설정하는 방식은 인증 이중화를 저해할 수 있어 권장되지 않는 구성으로 알고 있습니다 .<br><br>아래 2가지 문의 드립니다.<br><br>1. 천안 AD 서버를 우선 순위로 두고 사용하도록 설정할 수 있는 방법이 있는지<br><br>2. 또는 사이트 이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 권장 구성 또는 설정 방법이 있는지 관련하여 안내 부탁드립니다.<br><br> <br><br>[요청사항]<br><br>위 문의내용에 대한 확인 <br><br> <br><br>[확인내용]<br><br>Q1. 천안 AD 서버를 우선 순위로 두고 사용하도록 설정할 수 있는 방법이 있는지?<br><br>A1. PTA(Pass-through Authentication)는 특정 AD 서버 또는 특정 사이트의 Domain Controller를 우선적으로 사용하도록 설정하는 기능을 제공하지 않습니다. PTA는 고가용성(HA)을 전제로 설계되어 있으며, 인증 시 사용 가능한 온-프레미스 AD 환경을 통해 자격 증명을 검증합니다. 따라서 특정 DC 또는 특정 사이트로 인증을 고정하는 구성은 권장되지 않습니다.<br><br> <br><br>(참고자료) Microsoft Learn – Pass-through Authentication 동작 방식<br><br>https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-pta-how-it-works<br><br> <br><br>Q2. 사이트 이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 권장 구성 또는 설정 방법이 있는지<br><br>A2. 설명해 주신 현상은 PTA 자체의 문제라기보다, 패스워드 변경 후 AD 사이트 간 복제가 완료되기 전에 인증이 다른 사이트의 DC에서 수행되어 발생하는 AD Replication 지연 시나리오로 판단됩니다. 이를 방지하기 위해서는 AD 복제 구조를 개선하여 어느 사이트의 DC가 인증을 수행하더라도 최신 패스워드 정보를 참조할 수 있도록 구성하는 것이 Microsoft 권장 방식입니다. AD Sites and Services의 Replication Interval, Site Link Cost, Change Notification 설정 등을 검토하여 사이트 간 패스워드 복제가 최대한 신속하게 이루어지도록 검토가 필요한 것으로 보입니다. <br><br> <br><br>(참고자료) Active Directory Replication Concepts<br><br>https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/replication/active-directory-replication-concepts<br><br> <br><br> <br><br>이원영<br><br>Azure &amp; Identity Technical Support | Sr. Support Escalation Engineer<br><br>Microsoft Korea | Office: +82 (2) 531-8343 | E-mail: wylee@microsoft.com <br><br>Working hours: Mon-Fri 9:00 am - 6:00 pm (Korea, GMT+9)<br><br>Azure 기술 지원 플랜 비교| Azure 상태| Azure 최신 뉴스| 케이스생성 방법<br><br> <br><br> <br><br>근무 시간 외에 긴급한 Azure 기술지원이 필요한 경우, Azure 기술지원백업으로 연락 가능한 시간과 연락처 및 케이스 번호를 포함한 이메일을 보내주시면 연락 드리겠습니다.<br><br>마이크로소프트는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 Azure 기술지원팀 매니저에게 알려주십시요.<br><br> <br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.<br><br> <br><br> <br><br> <br><br>supportmail@techsupport.microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">supportmail@techsupport.microsoft.com · 2026. 6. 23. 오후 01:30</div><div class="thread-card-body">이 전자 메일을 보는 데 문제가 있으신가요? 온라인으로 요청 보기<br><br><br><br> 	<br>지원<br><br><br> <br>질문하신 내용이 Enterprise Azure PRH As-needed 계획을 사용하여 Microsoft 지원에 성공적으로 제출되었습니다. Microsoft 지원 전문가가 연락을 드릴 것입니다.<br> <br>참고: 첫 번째 시간은 케이스가 “24x7”로 분류된 경우 심각도를 기반으로 정해집니다(“심각도 A” 응대 케이스는 항상 24x7이고, “심각도 B”는 선택적으로 24x7, “심각도 C” 케이스는 영업 시간에만 해당). 더 자세히 알고 싶으면 지원 응대 시간을 확인하세요.<br> <br>다음을 잊지 마세요. techsupport.microsoft.com, microsoftsupport.com, microsoft.com은 지원 요청과 관련된 소통에 사용되는 유효한 이메일 도메인입니다.<br> <br><br><br>인시던트 제목	이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 방법<br>지원 요청 번호:	2606230030002063<br>심각도 등급:	B<br>기본 연락 방법:	<br>Email<br><br>이름:	동현 김<br>전자 메일 주소:	<br>kim92.dh@kt.com<br><br>연락처 번호:	<br>010-2938-2650<br><br><br> <br>이 인시던트와 관련하여 언제든지 Microsoft Azure portal에서 문의할 수 있습니다. 계약조건을 포함하여 Azure 지원에 대한 자세한 정보는 Azure 지원 FAQ를 참조하세요.<br> <br>본 전자 메일은 모니터링되지 않은 계정에서 발송된 것입니다. 회신하지 마세요.<br><br>감사합니다.<br>Microsoft Azure 지원<br> <br><br><br> <br>추가 정보<br><br>제품: Azure/Microsoft Entra Sign-in and Multifactor Authentication/AD domain-joined Seamless SSO with PTA or PHS/Troubleshoot AD domain-joined Seamless SSO with PTA or PHS<br>Azure 구독: <br>Azure 구독 ID: <br> <br><br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매하거나 참가한 프로그램, 서비스 또는 제품의 중요한 일부로 제공되는 것입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 당사의 개인정보처리방침을 참조하세요.<br> <br><br>One Microsoft Way, Redmond, WA 98052 USA<br> 	<br> <br><br>supportmail@techsupport.microsoft.com</div></div>
+</main>
+</body>
+</html>

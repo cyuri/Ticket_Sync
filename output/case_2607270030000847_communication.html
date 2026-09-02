@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>오픈 AI - 콘텐츠 필터링</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>오픈 AI - 콘텐츠 필터링</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607270030000847</b></span>
+    <span>최근 발신자: <b>seongeun.kim@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 27. 오후 01:16</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607270030000847<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 27. 오후 01:16<br><br>만들어짐<br>2026. 7. 27. 오전 11:26<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>seongeun.kim@microsoft.com<br>2026. 7. 27. 오후 01:16<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 27. 오전 11:56<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 27. 오전 11:27<br><br>외부 메시지가 모든 사용자에게 표시됩니다.<br>메시지:<br>	<br>You don&#x27;t often get email from seongeun.kim@microsoft.com. Learn why this is important<br>	<br><br>안녕하세요.<br>마이크로소프트 김성은입니다.<br><br>gpt-image-2 이미지 생성 시 로맨스 계열 이미지가 Sexual(성적) 콘텐츠 필터에 걸리는 현상에 대해 문의 주셔서 감사합니다.<br>결론부터 말씀드리면 콘텐츠 필터의 차단 강도(심각도 임계값)를 조정하여 완화가 가능하며, 방법은 다음과 같습니다.<br><br><br>1. 현재 동작 원인<br><br>Microsoft Foundry의 콘텐츠 필터는 이미지 생성 모델에도 동일하게 적용되며, 기본값은 &quot;중간(Medium blocking)&quot; 입니다. 즉 중간·높음으로 판정된 콘텐츠는 차단되고, 낮음·안전은 통과됩니다. 로맨스 포스터 등 경미한 이미지가 medium으로 분류되어 차단되는 것으로 보입니다.<br><br><br>&lt;참고문서&gt;<br>콘텐츠 필터 구성(클래식) - Microsoft Foundry (classic) portal | Microsoft Learn<br>&quot;Microsoft Foundry에 통합된 콘텐츠 필터링 시스템은 이미지 생성 모델을 비롯한 핵심 모델과 함께 실행됩니다.&quot;<br><br>&quot;기본 콘텐츠 필터링 구성은 프롬프트와 완료 모두에 대해 … 중간 심각도 임계값으로 필터링하도록 설정됩니다. 심각도 수준이 중간 또는 높음으로 검색된 콘텐츠는 필터링되는 반면 낮음 또는 안전으로 검색된 콘텐츠는 필터링되지 않습니다.&quot;<br><br> <br><br>2. 1차 권장 방안 — Sexual 범주를 &quot;Lowest blocking(높음만 차단)&quot;으로 설정<br><br>Foundry 포털의 콘텐츠 필터 설정에서 Sexual 범주 슬라이더를 &quot;Lowest blocking&quot; 으로 조정하면 가장 심각한(높음) 콘텐츠만 차단되고 낮음·중간은 통과되어, 경미한 로맨스 이미지의 오탐이 크게 줄어듭니다. (포털 UI의 &quot;Lowest blocking&quot; = 공개 문서상 심각도 임계값 &quot;높음(High)&quot; 과 동일한 설정입니다.)<br><br>포털 슬라이더<br><br>	<br><br>설명<br><br>	<br><br>문서상 임계값<br><br><br><br><br>Highest blocking<br><br>	<br><br>모든 심각도 차단<br><br>	<br><br>낮음·중간·높음<br><br><br><br><br>Medium blocking (기본값)<br><br>	<br><br>중간·높음 차단<br><br>	<br><br>중간·높음<br><br><br><br><br>Lowest blocking (권장)<br><br>	<br><br>가장 심각한 콘텐츠만 차단<br><br>	<br><br>높음(High)만<br><br><br>설정 절차<br><br>Microsoft Foundry 로그인 → 프로젝트 선택.<br>왼쪽 메뉴 Guardrails + 컨트롤 → 콘텐츠 필터 탭 → + 콘텐츠 필터 만들기.<br>입력/출력 필터 화면에서 Sexual 범주의 Text / Image 토글을 확인하여, 이미지 생성이므로 Image(생성 이미지)의 슬라이더를 &quot;Lowest blocking&quot; 으로 조정합니다. 프롬프트 텍스트도 차단된다면 Text도 함께 낮춰 주세요.<br>연결 페이지에서 해당 gpt-image-2 배포에 필터를 연결하고 필터 만들기.<br>이미 배포가 있는 경우: 모델 + 엔드포인트 → 해당 배포 편집 → 생성한 콘텐츠 필터 선택 → 저장.<br>플레이그라운드에서 로맨스 프롬프트로 재테스트하여 정상 통과하는지 확인.<br> <br><br>3. 2차 방안 — &quot;Lowest blocking&quot;으로도 부족한 경우, 콘텐츠 필터 해제(off) 검토<br><br>위 설정으로도 필요한 이미지가 계속 차단된다면, Sexual 범주 필터를 &quot;필터 없음(off)&quot; 또는 &quot;주석만 달기(Annotate only)&quot; 로 설정하는 방안을 검토하실 수 있습니다. 단, 콘텐츠 필터를 부분/완전 해제하려면 수정된 콘텐츠 필터(Modified Content Filters) 승인이 필요합니다.<br><br><br><br>&lt;참고문서&gt;<br>콘텐츠 필터 구성(클래식) - Microsoft Foundry (classic) portal | Microsoft Learn<br>&quot; Azure OpenAI 모델의 경우 수정된 콘텐츠 필터링에 대해 승인된 고객만 전체 콘텐츠 필터링 제어를 가지며 콘텐츠 필터를 끌 수 있습니다. 제한된 액세스 검토: 수정된 콘텐츠 필터 양식을 통해 수정된 콘텐츠 필터를 신청합니다.&quot;<br><br><br>고객님 구독은 이미 수정된 콘텐츠 필터가 적용되어 있어 별도 신청 없이 위 &quot;필터 없음/주석만 달기&quot; 옵션을 바로 사용하실 수 있습니다. (향후 다른 구독에서 동일 설정이 필요할 경우 위 신청 양식을 참고해 주세요.)<br><br><br>감사합니다.<br>김성은 드림</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-body">From: seongeunkim@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt;<br>Sent: Monday, July 27, 2026 11:57 AM<br>To: minsub.yun@kt.com<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Seongeun Kim &lt;seongeun.kim@microsoft.com&gt;<br>Subject: 오픈 AI - 콘텐츠 필터링 - TrackingID#2607270030000847<br><br> <br><br>안녕하세요.<br><br>한국마이크로소프트 고객기술지원부 김성은입니다.<br><br>마이크로소프트 기술지원 서비스를 이용해 주셔서 감사합니다.<br><br> <br><br>한국마이크로소프트는 산업안전보건법에 따른 고객 응대근로자 보호조치를 따르고 있습니다.<br><br>엔지니어가 고객께 전화를 드릴 때 수신번호가 1577-9700으로 표시되며, 상담내용은 고객지원 및 서비스 개선 등을 위해 녹음되며, 관련 법안에 따라 일정기간 보관됩니다.<br><br> <br><br>이후 커뮤니케이션 시 전체 수신자가 포함될 수 있도록 &quot;Reply all&quot;로 회신 부탁드립니다.<br><br>문의하신 내용에 대해 아래와 같이 정리 드립니다.<br><br> <br><br>[문의번호]<br><br>2607270030000847<br><br> <br><br>[이슈]<br><br>오픈 AI - 콘텐츠 필터링<br><br> <br><br>[문의내용]<br><br>OpenAI의 gpt-image-2 모델을 미디어 서비스에 적용하고자 합니다.<br><br>테스트 과정 중, 로맨스(남녀가 같이 있는 포스터 등)에서도 Sexual 필터가 적용되는 것을 확인했습니다.<br><br>상용 적용을 위해서는 이부분이 해결되야 할것같은데, 가능한지 그리고 가능하다면 방법 문의드립니다.<br><br> <br><br>[지원 범위]<br><br>Content Filter의 필터링 관련 안내<br><br> <br><br>[진행사항]<br><br>문의주신 내용을 확인 후, 다시 연락드릴 수 있도록 하겠습니다.<br><br> <br><br>위의 내용에 대한 기타 다른 궁금한 사항이 있으면 다시 말씀 부탁드립니다. <br><br>그럼 좋은 하루 보내세요. <br><br>감사합니다. <br><br> <br><br>김성은<br><br>Support Engineer | AI Intelligent Devices Korea<br><br>Customer Service &amp; Support | Microsoft Korea<br><br>Office : +82 (2) 531-4962 | E-mail: seongeun.kim@microsoft.com<br><br> <br><br>Working hours: Mon-Fri 9:00 AM -17:30 PM KST (UTC+9:00)<br><br>seongeun.kim@microsoft.com</div></div>
+</main>
+</body>
+</html>

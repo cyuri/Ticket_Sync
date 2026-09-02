@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>vm window update 시 periodic assessment가 disable이어도 window update가 자동으로 이루어지는지</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>vm window update 시 periodic assessment가 disable이어도 window update가 자동으로 이루어지는지</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607240030001376</b></span>
+    <span>최근 발신자: <b>jinmoyi@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 24. 오후 04:16</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607240030001376<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 24. 오후 04:16<br><br>만들어짐<br>2026. 7. 24. 오전 10:57<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>jinmoyi@microsoft.com<br>2026. 7. 24. 오후 04:16<br><br>taehyeong_2019.kim@kt.com<br>2026. 7. 24. 오후 01:44<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 24. 오후 12:25<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 24. 오전 10:57<br><br>외부 메시지가 모든 사용자에게 표시됩니다.<br>메시지:<br>	<br>jinmoyi@microsoft.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br>안녕하세요 김태형님,<br><br>마이크로소프트 기술지원 이진모입니다.<br><br><br><br>추가 정보 확인 감사합니다.<br>스크린샷 내 VM 이름을 통해 확인해본 결과, 해당 VM의 경우 설정은 아래와 같았습니다:<br>Assessment Mode : ImageDefault<br>Patch Mode: AutomaticByOS (Windows Automatic updates)<br>EnableAutomaticUpdates: True<br><br><br>해당 VM은 생성 시 사용된 이미지 기본값에 따라 업데이트가 자동으로 수행되고 있으며, Azure Update Manager를 통해 중앙 관제되는 것과 별도로 자동 업데이트 기능이 동작 중인 것으로 파악하였습니다. AUM 내 중앙 관제를 원하신다면 &#x27;Azure Managed 옵션을 선택해주십시오.<br>이에 따라 AUM 메뉴 내 히스토리가 비어 있더라도 실제로 업데이트는 OS 내부 설정에 따라 이루어졌을 가능성이 높아 알려주신 시나리오와도 부합하는 내용으로 보입니다.<br><br><br>해당 설정을 포털 UI상에서 보거나 수정하시려면 해당 VM 내 Operation &gt; Updates 메뉴에서 Update settings 버튼 선택으로 확인 부탁드립니다:<br>Periodic assessment<br>Patch orchestration (AUM 사용시 매니지드 옵션 선택)<br>EnableAutomaticUpdates : 이 설정값은 VM 생성시에만 변경이 가능한 값이라 변경하시려면 해당 VM을 새로 생성하셔야 한다고 합니다.<br><br><br>관련 문서 링크를 아래와 같이 보내드리오니 같이 참조 부탁드립니다.<br>Azure Virtual Machines 및 확장 집합에 대한 자동 게스트 패치 - Azure Virtual Machines | Microsoft Learn<br><br><br>Assessment 가 정상 수행되는 것과 스크린샷 내 최신 버전의 폴더들이 존재하는 것으로 보아 VM 확장도 올바르게 설치되어 동작 중입니다.<br><br><br>파워쉘 관련해서는 해당 VM에서 Azure 엔드포인트로 Outbound 연결이 잘 되시는 지 확인이 필요할 것 같습니다.<br>마찬가지로 관련문서를 아래와 같이 보내드리오니 제한점, 요구사항 및 문제 해결 방안 섹션을 참조 부탁드립니다.<br>실행 명령 작업을 사용하여 Azure의 Windows VM에서 스크립트 실행 - Azure Virtual Machines | Microsoft Learn<br><br><br><br><br>업데이트 사항이 있거나 확인이 필요하신 부분이 있으시다면 회신을 부탁드립니다. <br><br><br><br><br><br>Thank you,<br><br>감사합니다<br><br><br><br><br>Jinmo Yi | 이진모 드림<br><br>Support Engineer, Azure Monitoring Enterprise<br><br>Customer Service &amp; Support<br><br>Microsoft Korea | Office: +82 (2) 531-8917 | E-mail: jinmoyi@microsoft.com<br><br>Working hours: Mon-Fri 9:00am - 6:00pm (Korea, GMT+9)<br><br><br><br><br><br>보낸 사람: 김태형(Foundation AI팀) &lt;taehyeong_2019.kim@kt.com&gt;<br>보냄: 2026 7월 24, 금요일 13:43<br>받는 사람: External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>참조: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; 류휘정(Foundation AI팀) &lt;hwijung.ryu@kt.com&gt;; Jinmo Yi &lt;jinmoyi@microsoft.com&gt;<br>제목: [EXTERNAL] RE: vm window update 시 periodic assessment가 disable... - TrackingID#2607240030001376<br><br><br><br> <br><br>안녕하세요. 김태형입니다.<br><br> <br><br>회신 감사드립니다.<br><br>말씀주신 VM 내 VM 확장 설치 경로는 있는 것으로 보입니다.<br><br> <br><br> <br><br> <br><br>다만 history 탭에는 근 30일 내 업데이트 내역은 없습니다.<br><br>한 건 보이는 건 제가 오늘 “check for updates”를 수행한 내용입니다.<br><br> <br><br> <br><br>이런 경우는 어떻게 해석하면 좋을지 문의 드립니다.<br><br> <br><br>p.s. 처음엔 공유주신 power shell기반으로 스크립트를 실행했으나 몇 분째 응답이 없었습니다.<br><br>해당 기능 사용하려면 별도 권한이 필요한가요?<br><br> <br><br> <br><br>감사합니다.<br><br>김태형 드림</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-body">From: Jinmo Y &lt;supportmail@techsupport.microsoft.com&gt;<br>Sent: Friday, July 24, 2026 12:26 PM<br>To: 김태형(Foundation AI팀) &lt;taehyeong_2019.kim@kt.com&gt;<br>Cc: Kenneth.Kim@microsoft.com; parkjay@microsoft.com; yonghahwang@microsoft.com; 류휘정(Foundation AI팀) &lt;hwijung.ryu@kt.com&gt;; jinmoyi@microsoft.com<br>Subject: vm window update 시 periodic assessment가 disable... - TrackingID#2607240030001376<br><br> <br><br> <br><br>안녕하세요.<br><br>마이크로소프트 기술지원에 문의 주셔서 감사합니다. 저는 이번 케이스를 지원할 이진모 엔지니어입니다.<br><br> <br><br>관련 내용을 다음과 같이 정리하여 보내 드리니 내용을 살펴보시고 문의사항이 있으시면 언제든지 연락주시기 바랍니다.<br><br> <br><br>[요청내용]<br><br>Azure update Manager설정 중입니다.<br><br>현재 periodic assessment는 disable이고 patch orchestration은 Windows automatic updates 입니다. 이런 설정일 때도 자동으로 업데이트가 진행되는지 문의 드립니다.<br><br> <br><br>혹시나 Periodic assessment를 enable해야 자동 업데이트가 되는지 확인을 하기 위함 입니다.<br><br> <br><br>[최초 답변]<br><br>Azure Update Manager로 VM을 관리하시기 위해서는 해당 VM에 Update Manager VM 확장이 설치가 되어야 합니다.<br><br>이 확장이 설치가 안된 상태라면 보통 Periodic Assessment가 No로 표시가 되며, 자체 OS 내 설정을 따라 갑니다. <br><br>기본 윈도우 설정에서 자동 업데이트가 활성화되어 있는 경우에는 Azure Update Manager를 사용하지 않더라도 운영체제 자체 기능에 의해 업데이트가 자동으로 설치될 수 있습니다.<br><br> <br><br>혹시 이와 다른 현상을 발견하셨다면, 아래 정보 확인 부탁드립니다:<br><br>해당 VM 의 리소스 ID<br>해당 VM 내 VM 확장 설치 여부 확인<br>포털 &gt; 해당 VM &gt; Operations &gt; Run command &gt; RunPowerShellScript &gt; 아래 스크립트 실행<br>$InstallPath =&#x27;C:\WindowsAzure\Logs\Plugins\Microsoft.Cplat.Core.WindowsPatchExtension&#x27;<br>if(Test-Path $InstallPath -PathType Container){Get-ChildItem $InstallPath}<br>혹은 해당 VM에 직접 접근 하셔서 위 폴더 내 파일이 있는지 확인 부탁드립니다.<br>해당 VM &gt; Operations &gt; Updates &gt; History 탭 내 레코드 확인<br><br> <br><br>[다음단계]<br><br>추가 문의사항이 있으시면 반드시 전체회신 부탁드립니다.<br><br> <br><br>Thank you,<br><br>감사합니다.<br><br> <br><br>Jinmo Yi | 이진모 드림<br><br>Support Engineer, Azure Monitoring Enterprise<br><br>Customer Service &amp; Support<br><br>Microsoft Korea | Office: +82 (2) 531-8917 | E-mail: jinmoyi@microsoft.com<br><br>Working hours: Mon-Fri 9:00am - 6:00pm (Korea, GMT+9)<br><br> <br><br>Microsoft는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 기술지원팀 매니저에게 알려주십시오. <br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.<br><br> <br><br>jinmoyi@microsoft.com</div></div>
+</main>
+</body>
+</html>

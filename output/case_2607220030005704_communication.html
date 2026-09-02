@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>databricks delta 에서 delta uniform 변환 시 에러 발생</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>databricks delta 에서 delta uniform 변환 시 에러 발생</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607220030005704</b></span>
+    <span>최근 발신자: <b>jaesung.lim@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 24. 오후 05:25</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">6</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607220030005704<br><br>심각도<br>C - 최소 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 24. 오후 05:25<br><br>만들어짐<br>2026. 7. 22. 오후 06:35<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>jaesung.lim@microsoft.com<br>2026. 7. 24. 오후 05:25<br><br>seungseob.park@kt.com<br>2026. 7. 24. 오후 05:19<br><br>jaesung.lim@microsoft.com<br>2026. 7. 24. 오후 03:55<br><br>jaesung.lim@microsoft.com<br>2026. 7. 23. 오후 05:53<br><br>jaesung.lim@microsoft.com<br>2026. 7. 23. 오전 10:42<br><br>soojeong.park@kt.com<br>2026. 7. 23. 오전 10:01<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 23. 오전 09:35<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 22. 오후 06:35<br><br>외부 메시지가 모든 사용자에게 표시됩니다.<br>메시지:<br>	<br>jaesung.lim@microsoft.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br><br> <br><br> <br><br>안녕하세요, 박승섭(@박승섭(Data서비스팀))님.<br><br>한국마이크로소프트 고객기술지원부 임재성입니다.<br><br> <br><br>All-purpose로 확인 감사합니다.<br><br>Databricks 팀에게 내부적으로 로깅되는 것이 있는지 혹은 다른 Cluster로 확인이 필요한지 확인 후 답변드리겠습니다.<br><br> <br><br>감사합니다.<br><br>임재성 드림.<br><br> <br><br>Jae Sung Lim<br><br>Support Engineer<br><br>Business hours: Mon-Fri:  9 AM - 6 PM | UTC+9<br>T: +82-2-531-4567<br><br>Email: jaesung.lim@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">5</div><div class="thread-card-body">From: 박승섭(Data서비스팀) &lt;seungseob.park@kt.com&gt;<br>Sent: Friday, July 24, 2026 5:18 PM<br>To: Jaeseong Lim &lt;jaesung.lim@microsoft.com&gt;; 박수정(Data플랫폼팀) &lt;soojeong.park@kt.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Junghyeon Ryu &lt;junghyeonryu@microsoft.com&gt;; Jinho Yoo &lt;jinhoyoo@microsoft.com&gt;; Kyubaek Kim &lt;kyubaekkim@microsoft.com&gt;; 오광석(Data서비스팀) &lt;gsoh@kt.com&gt;; 신동식(kt ds협력사) &lt;200661592@ktpartners.com&gt;<br>Subject: [EXTERNAL] Re: databricks delta 에서 delta uniform 변환 시 에러 발생 - TrackingID#2607220030005704<br><br> <br><br>안녕하세요. @Jaeseong Lim 님<br><br> <br><br>DBR 18.2  All-Purpose로 시도시, SQL STATE : KD00E 가 나오는 것을 확인했습니다.<br><br> <br><br>Spark Compute 외, SQL Warehouse로 시도 시에는 에러코드가 안나오는 게 맞는지요?<br><br> <br><br> <br><br>[DBR 18.2 환경]<br><br> <br><br>감사합니다.<br><br> <br><br> <br><br>보낸 사람: Jaeseong Lim &lt;jaesung.lim@microsoft.com&gt;<br>보냄: 2026 7월 24, 금요일 오후 3:54<br>받는 사람: 박수정(Data플랫폼팀) &lt;soojeong.park@kt.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>참조: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Junghyeon Ryu &lt;junghyeonryu@microsoft.com&gt;; Jinho Yoo &lt;jinhoyoo@microsoft.com&gt;; Kyubaek Kim &lt;kyubaekkim@microsoft.com&gt;; 박승섭(Data서비스팀) &lt;seungseob.park@kt.com&gt;<br>제목: RE: databricks delta 에서 delta uniform 변환 시 에러 발생 - TrackingID#2607220030005704<br><br> <br><br> <br><br> <br><br>안녕하세요, 박수정(@&#x27;박수정(Data플랫폼팀)&#x27;)님<br><br>한국마이크로소프트 고객기술지원부 임재성입니다.<br><br> <br><br>어제 문의드린 DBR 18.x 환경에서의 동일 노트북 테스트와 관련하여 다시 한번 확인 부탁드립니다.<br><br>가능하실 때 테스트를 진행하시고 결과를 공유해 주시면 감사하겠습니다. 확인되는 대로 후속 조치를 검토하겠습니다<br><br> <br><br>감사합니다.<br><br>임재성 드림.<br><br> <br><br>Jae Sung Lim<br><br>Support Engineer<br><br>Business hours: Mon-Fri:  9 AM - 6 PM | UTC+9<br>T: +82-2-531-4567<br><br>Email: jaesung.lim@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">4</div><div class="thread-card-body">From: Jaeseong Lim<br>Sent: Thursday, July 23, 2026 5:54 PM<br>To: &#x27;박수정(Data플랫폼팀)&#x27; &lt;soojeong.park@kt.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Junghyeon Ryu &lt;junghyeonryu@microsoft.com&gt;; Jinho Yoo &lt;jinhoyoo@microsoft.com&gt;; Kyubaek Kim &lt;kyubaekkim@microsoft.com&gt;; &#x27;박승섭(Data서비스팀)&#x27; &lt;seungseob.park@kt.com&gt;<br>Subject: RE: databricks delta 에서 delta uniform 변환 시 에러 발생 - TrackingID#2607220030005704<br><br> <br><br> <br><br> <br><br>안녕하세요, 박수정(@&#x27;박수정(Data플랫폼팀)&#x27;)님.<br><br>한국마이크로소프트 고객기술지원부 임재성입니다.<br><br> <br><br>Databricks 팀과 확인 결과, 해당 오류는 워크스페이스나 데이터, 테이블 정의의 문제가 아니라 현재 Delta UniForm(IcebergCompatV3)의 지원 제한으로 확인되었습니다.<br><br>DEFAULT (-998)는 괄호로 인해 단순 값이 아닌 표현식으로 해석되며, 현재 IcebergCompatV3에서는 표현식 기반 DEFAULT를 지원하지 않아 변환 시 오류가 발생합니다. 반면 DEFAULT -998은 리터럴 값으로 인식되어 정상적으로 변환됩니다.<br><br>따라서 임시 조치로는 다음과 d같이 괄호 없이 DEFAULT를 정의하거나, UniForm 활성화 후 DEFAULT를 추가해야 합니다.<br><br>DEFAULT -998<br><br>또한 Databricks 측에서는 DBR 18.x 최신 유지보수 빌드에서 해당 제한을 보다 명확한 오류 메시지로 안내하도록 개선했다고 합니다.<br><br>DBR 18.x에서 동일한 노트북을 실행 후 공유해주실 수있으실까요?<br><br> <br><br>케이스 진행에 도움주셔서 감사합니다.<br><br> <br><br>감사합니다.<br><br>임재성 드림.<br><br> <br><br>Jae Sung Lim<br><br>Support Engineer<br><br>Business hours: Mon-Fri:  9 AM - 6 PM | UTC+9<br>T: +82-2-531-4567<br><br>Email: jaesung.lim@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-body">From: Jaeseong Lim<br>Sent: Thursday, July 23, 2026 10:41 AM<br>To: &#x27;박수정(Data플랫폼팀)&#x27; &lt;soojeong.park@kt.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Junghyeon Ryu &lt;junghyeonryu@microsoft.com&gt;; Jinho Yoo &lt;jinhoyoo@microsoft.com&gt;; Kyubaek Kim &lt;kyubaekkim@microsoft.com&gt;; 박승섭(Data서비스팀) &lt;seungseob.park@kt.com&gt;<br>Subject: RE: databricks delta 에서 delta uniform 변환 시 에러 발생 - TrackingID#2607220030005704<br><br> <br><br> <br><br> <br><br>안녕하세요, 박수정(@박수정(Data플랫폼팀))님.<br><br>한국마이크로소프트 고객기술지원부 임재성입니다.<br><br> <br><br>자세한 답변 감사합니다.<br><br>DEFAULT 값에 괄호 포함 시 Delta UniForm(Iceberg) 변환 실패 관련하여 Databricks팀과 확인 후 답변드리겠습니다.<br><br>조사가 진행되는 중에 도움이 필요하신 사항이 있다면 공유 부탁드립니다.<br><br> <br><br>감사합니다.<br><br>임재성 드림.<br><br> <br><br>Jae Sung Lim<br><br>Support Engineer<br><br>Business hours: Mon-Fri:  9 AM - 6 PM | UTC+9<br>T: +82-2-531-4567<br><br>Email: jaesung.lim@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-body">From: 박수정(Data플랫폼팀) &lt;soojeong.park@kt.com&gt;<br>Sent: Thursday, July 23, 2026 10:01 AM<br>To: External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Jaeseong Lim &lt;jaesung.lim@microsoft.com&gt;; Junghyeon Ryu &lt;junghyeonryu@microsoft.com&gt;; Jinho Yoo &lt;jinhoyoo@microsoft.com&gt;; Kyubaek Kim &lt;kyubaekkim@microsoft.com&gt;; 박승섭(Data서비스팀) &lt;seungseob.park@kt.com&gt;<br>Subject: [EXTERNAL] RE: databricks delta 에서 delta uniform 변환 시 에러 발생 - TrackingID#2607220030005704<br><br> <br><br>안녕하세요 KT 박수정입니다.<br><br> <br><br>Notebook 공유 드립니다.<br><br>Databricks Delta → Delta UniForm 전환 시, Default 값으로 인한 오류 확인 - Databricks<br><br> <br><br>그리고 테스트 상세 내용 공유 드립니다.<br><br> <br><br>[요약]<br>ㅇ Workspace : adb-7405617489826213.13.azuredatabricks.net<br><br>ㅇ 현상 : Delta → Delta UniForm 전환(ALTER TBLPROPERTIES) 시,  DEFAULT 값에 괄호( &#x27;(&#x27;, &#x27;)&#x27; ) 가 포함되어 있으면 UniForm으로 ALTER 시 오류가 발생하는 것으로 추정.<br><br>Delta 테이블 생성 시에는 정상이나, Delta UniForm 전환 시 오류 발생.<br><br>ㅇ 컴퓨트 : WH-BDW-TST-IND-S (ID: 45642867c4fe9152) (v 2026.15)<br><br>ㅇ 재현 시나리오  : <br><br>STEP1) Delta 테이블 생성 <br><br>&gt;&gt; DEFAULT (-998) 설정<br><br>CREATE TABLE magma_bdw_tst.bdw_ta_db.test_sds_1 (<br><br>          aaa BIGINT NOT NULL DEFAULT (-998) COMMENT &#x27;최초위탁별정상품대체아이디&#x27;)<br><br>USING DELTA<br><br> TBLPROPERTIES(<br><br>      &#x27;delta.parquet.compression.codec&#x27; = &#x27;zstd&#x27;<br><br>      ,&#x27;delta.columnMapping.mode&#x27; = &#x27;name&#x27;<br><br>      ,&#x27;delta.logRetentionDuration&#x27; = &#x27;interval 7 days&#x27;<br><br>      ,&#x27;delta.autoOptimize.autoCompact&#x27; = &#x27;true&#x27;<br><br>      ,&#x27;delta.autoOptimize.optimizeWrite&#x27; = &#x27;true&#x27;<br><br>      ,&#x27;delta.enableTypeWidening&#x27; = &#x27;true&#x27;<br><br>      ,&#x27;delta.enableDeletionVectors&#x27; = &#x27;true&#x27;<br><br>      ,&#x27;delta.feature.allowColumnDefaults&#x27; = &#x27;supported&#x27; )<br><br> <br><br>STEP2) Delta → Delta UniForm으로 전환<br><br>ALTER TABLE magma_bdw_tst.bdw_ta_db.test_sds_1 SET TBLPROPERTIES (<br><br>    &#x27;delta.universalFormat.enabledFormats&#x27; = &#x27;iceberg&#x27;<br><br>    , &#x27;delta.enableIcebergCompatV3&#x27; = &#x27;true&#x27;<br><br>);<br><br> <br><br>[DELTA_ICEBERG_COMPAT_VIOLATION.UNSUPPORTED_DATA_TYPE] The validation of IcebergCompatV3 has failed. IcebergCompatV3 does not support the data type long:aaa in your schema. Your schema:<br><br>root<br><br> |-- aaa: long (nullable = false)<br><br> <br><br>STEP3) 다른 Delta 테이블 생성<br><br>&gt;&gt; DEFAULT -998 설정<br><br>CREATE TABLE magma_bdw_tst.bdw_ta_db.test_sds_2 (<br><br>          aaa BIGINT NOT NULL DEFAULT -998 COMMENT &#x27;최초위탁별정상품대체아이디&#x27;)<br><br>USING DELTA<br><br> TBLPROPERTIES(<br><br>      &#x27;delta.parquet.compression.codec&#x27; = &#x27;zstd&#x27;<br><br>      ,&#x27;delta.columnMapping.mode&#x27; = &#x27;name&#x27;<br><br>      ,&#x27;delta.logRetentionDuration&#x27; = &#x27;interval 7 days&#x27;<br><br>      ,&#x27;delta.autoOptimize.autoCompact&#x27; = &#x27;true&#x27;<br><br>      ,&#x27;delta.autoOptimize.optimizeWrite&#x27; = &#x27;true&#x27;<br><br>      ,&#x27;delta.enableTypeWidening&#x27; = &#x27;true&#x27;<br><br>      ,&#x27;delta.enableDeletionVectors&#x27; = &#x27;true&#x27;<br><br>      ,&#x27;delta.feature.allowColumnDefaults&#x27; = &#x27;supported&#x27; )<br><br> <br><br>STEP4) Delta → Delta UniForm으로 전환<br><br> <br><br>ALTER TABLE magma_bdw_tst.bdw_ta_db.test_sds_2 SET TBLPROPERTIES (<br><br>    &#x27;delta.universalFormat.enabledFormats&#x27; = &#x27;iceberg&#x27;<br><br>    , &#x27;delta.enableIcebergCompatV3&#x27; = &#x27;true&#x27;<br><br>);<br><br> <br><br>&gt;&gt; 성공<br><br> <br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-body">From: jaesunglim@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt;<br>Sent: Thursday, July 23, 2026 9:36 AM<br>To: 박수정(Data플랫폼팀) &lt;soojeong.park@kt.com&gt;<br>Cc: Kenneth.Kim@microsoft.com; parkjay@microsoft.com; yonghahwang@microsoft.com; jaesung.lim@microsoft.com; junghyeonryu@microsoft.com; jinhoyoo@microsoft.com; kyubaekkim@microsoft.com<br>Subject: databricks delta 에서 delta uniform 변환 시 에러 발생 - TrackingID#2607220030005704<br><br> <br><br> <br><br>안녕하세요. 한국 마이크로소프트(유) 기술지원부 임재성입니다.<br>기술지원 서비스를 이용해 주셔서 감사합니다.<br> <br>문의하신 내용에 대해 아래와 같이 정리합니다. 잘못 이해한 부분이 있으면 알려 주시기 바랍니다.<br><br>[문의번호]<br>2607220030005704<br><br>[제목]<br>databricks delta 에서 delta uniform 변환 시 에러 발생<br><br>[요약]<br>현상 : Delta → Delta UniForm 전환(ALTER TBLPROPERTIES) 시,  DEFAULT 값에 괄호( &#x27;(&#x27;, &#x27;)&#x27; ) 가 포함되어 있으면 UniForm으로 ALTER 시 오류가 발생하는 것으로 추정.<br><br>Delta 테이블 생성 시에는 정상이나, Delta UniForm 전환 시 오류 발생.<br><br><br>[진행사항] <br>문의주셔서 감사합니다. 보다 자세한 분석을 위해 현상을 확인하신 Job 혹은 Notebook URL 공유부탁드립니다.<br><br>케이스 진행에 도움주셔서 감사합니다.<br><br><br>고맙습니다.<br> <br><br>문의사항 또는 문제 진행 과정에서 연락이 필요할 경우에는 아래 연락처로 알려 주십시오. <br><br>임재성<br>한국 마이크로소프트<br>Microsoft Premier Support: 080-987-1000<br>Direct: 02-531-4721 (평일 9am – 6pm)<br><br>jaesung.lim@microsoft.com</div></div>
+</main>
+</body>
+</html>

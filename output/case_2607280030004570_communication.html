@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>mde 설치 운영을 위한 사전 네트워크 설정 사항</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>mde 설치 운영을 위한 사전 네트워크 설정 사항</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607280030004570</b></span>
+    <span>최근 발신자: <b>Yonggi.Min@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 29. 오후 02:23</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">7</div><div class="thread-card-meta">Yonggi.Min@microsoft.com · 2026. 7. 29. 오후 02:23</div><div class="thread-card-body">안녕하세요 선임님, <br><br><br>VDI라서 Windows OS만 사용할 예정이신가 보네요.<br>그럼 아래 표의 URL이 필수 구성 목록이 맞습니다.<br>아래 4개는 필수는 아니지만 EDR의 부가기능용 URL이니 사용환경을 고려하여 허용/차단만 고려해주시면 될 것 같습니다.<br>감사합니다<br>민용기</div></div>
+<div class="thread-card"><div class="thread-card-index">6</div><div class="thread-card-meta">정재현(엔드포인트보안팀) &lt;jaehyeon.jeong@kt.com&gt; · Wednesday, July 29, 2026 1:56 PM</div><div class="thread-card-body">안녕하세요 매니저님<br><br>엔드포인트보안팀 정재현 선임입니다.<br><br> <br><br><br><br>제가 정리한 MDE 필수 FQDN을 정리했었는데<br>해당 내용이 맞는지 확인 부탁드립니다.<br><br><br>서비스 명<br>	<br>시스템명<br>	<br>IP (도메인)<br>	<br>Port<br>	<br>TCP/UDP<br>	<br>사유<br><br><br>엔드포인트용 핵심 Defender 서비스<br>	<br>MDE<br>	<br>*.endpoint.security.microsoft.com<br>	<br>443<br>	<br>TCP<br>	<br>엔드포인트용 핵심 Defender 서비스. 새 URL 연결<br><br><br>웹 &amp; 네트워크 보호<br>	<br>MDE<br>	<br>*.smartscreen-prod.microsoft.com<br>*.smartscreen.microsoft.com<br>	<br>443<br>	<br>TCP<br>	<br>SmartScreen 검색 보호, 보고, 알림 및 웹 콘텐츠 필터링을 Microsoft Defender 데 사용<br><br><br>Smartscreen<br>	<br>MDE<br>	<br>*.smartscreen.microsoft.com<br>*.checkappexec.microsoft.com<br>*.urs.microsoft.com<br>	<br>443<br>	<br>TCP<br>	<br>다운로드한 애플리케이션에 대한 평판/신뢰를 확인하는 데 필요<br><br><br>엔드포인트용 Defender<br>	<br>MDE<br>	<br>reflector.defender.microsoft.com<br>	<br>443<br>	<br>TCP<br>	<br>Microsoft Defender IPv6 연결을 검색하는 데 사용<br><br><br>Windows/Mac/Linux 보안 인텔리전스 업데이트<br>	<br>MDE<br>	<br>go.microsoft.com<br>definitionupdates.microsoft.com<br>https://www.microsoft.com/security/encyclopedia/adlpackages.aspx<br>	<br>443<br>	<br>TCP<br>	<br>Windows 맬웨어 방지 플랫폼 업데이트<br><br><br>Windows 보안 인텔리전스 및 맬웨어 방지 플랫폼 업데이트, EDR 센서에 대한 제품 업데이트<br>	<br>MDE<br>	<br>*.update.microsoft.com<br>*.delivery.mp.microsoft.com<br>*.windowsupdate.com<br>*.download.windowsupdate.com<br>*.download.microsoft.com<br>	<br>443<br>	<br>TCP<br>	<br>보안 인텔리전스 및 맬웨어 방지 플랫폼 업데이트<br><br><br>Windows 운영 체제 인증서 유효성 검사<br>	<br>MDE<br>	<br>www.microsoft.com/pkiops/*<br>www.microsoft.com/pki/*<br>	<br>80<br>	<br>TCP<br>	<br>CRL(인증서 해지 목록)을 업데이트하기 위해 MAPS에 대한 SSL 연결을 만들 때 사용<br><br><br>MDE<br>	<br>ctldl.windowsupdate.com<br>	<br>80<br>	<br>TCP<br>	<br>기존 자동 루트 업데이트 기술을 확장합니다. 이 서비스는 신뢰할 수 없는 것으로 손상된 인증서에 플래그를 지정합니다.<br><br><br>MDE<br>	<br>crl.microsoft.com<br>	<br>80<br>	<br>TCP<br>	<br>인증서의 유효성을 검사하는 데 필요<br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>감사합니다.<br><br>정재현드림.<br><br><br><br><br><br><br><br><br>   <br> 정재현<br> 선임 · 엔드포인트보안팀 <br> KTDS Cloud사업본부 정보보안센터<br> M 010-7506-9916<br>	<br> T 010-7506-9916<br> H www.ktds.com<br>	<br> E jaehyeon.jeong@kt.com</div></div>
+<div class="thread-card"><div class="thread-card-index">5</div><div class="thread-card-meta">최다인(통합관제팀) &lt;dain.choi@kt.com&gt; · 2026년 7월 29일 수요일 13:42</div><div class="thread-card-body">안녕하세요.<br><br>통합관제팀 최다인입니다.<br><br> <br><br> <br><br>MDE 운영 담당자분 수신자 추가합니다.<br><br> <br><br>@정재현(엔드포인트보안팀) 선임님, 신규 망분리 VDI MDE 세팅을 위한 caseopen 내용 공유드립니다. 관련하여 업무 참고해주시면 됩니다.<br><br> <br><br> <br><br>감사합니다.<br><br>최다인 드림.</div></div>
+<div class="thread-card"><div class="thread-card-index">4</div><div class="thread-card-meta">Yonggi Min &lt;Yonggi.Min@microsoft.com&gt; · Wednesday, July 29, 2026 11:11 AM</div><div class="thread-card-body">안녕하세요 매니저님, <br><br> <br><br>Defender 정의업데이트는 Windows Update기능을 빌려 동작하는 구조입니다.<br><br>같은 이유로 디펜더의 업데이트 역시 Windows Update URL을 통해 받아옵니다.<br><br>따라서 update.microsoft.com 을 포함한 업데이트 관련 URL역시 connectivity 확보가 필요합니다.<br><br> <br><br>Windows 10 이상의 버전은 MDE 에이전트가 OS에 내장이 되어있습니다.<br><br>Windows 10 하위 버전은 Azure Monitoring Agent를 통해 MDE기능이 동작합니다.<br><br>이러한 이유로 Windows 10 하위 버전의 OS에서는 별도의 URL open이 필요합니다.<br><br> <br><br>기존에 Excel파일 형태로 제공되던 URL list는 문서에서는 제공되지 않고 앞서 전달드린 문서를 통해 확인하시는 것이 좋습니다.<br><br>다만 이 문서관리는 엔지니어 레벨에서 관리되는 것이 아니기 때문에 이후에는 또 다른 방식으로 변경될 수도 있으니 인지만 해주시기 바랍니다.<br><br> <br><br>추가로 안내드렸던 디펜더 정의 업데이트 관리와 관련된 GPO, WSUS와 관련된 내용은 오후에 발송될 종료메일에 추가하여 전달드리도록 하겠습니다.<br><br>타사의 WSUS구성 사례나 운영방식은 CSAM이신 황용하 님을 통해 문의해주시면 좋을 것 같습니다.<br><br> <br><br>감사합니다<br><br>민용기</div></div>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-meta">최다인(통합관제팀) &lt;dain.choi@kt.com&gt; · Wednesday, July 29, 2026 10:35 AM</div><div class="thread-card-body">안녕하세요, KT 정보보안실 최다인입니다.<br><br> <br><br>금일 오전중에 다시 전화 부탁드리겠습니다.<br><br> <br><br>감사합니다. 최다인 드림.</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-meta">Yonggi Min &lt;Yonggi.Min@microsoft.com&gt; · Wednesday, July 29, 2026 10:07 AM</div><div class="thread-card-body">안녕하세요 매니저님, <br><br> <br><br>설명을 듣고싶다고 적어주셔서 연락을 드렸으나 연결이 되지 않아 메일을 남깁니다.<br><br>아래 문서에는 관련 URL 목록이 정리되어있는데, 통화 가능하실때 알려주시면 전화드리도록 하겠습니다.<br><br> <br><br>감사합니다<br><br>민용기</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">Yonggi M &lt;supportmail@techsupport.microsoft.com&gt; · Wednesday, July 29, 2026 10:01 AM</div><div class="thread-card-body">안녕하세요. 한국마이크로소프트 고객기술지원부 민용기 입니다. <br><br>기술지원 서비스를 이용해 주셔서 감사합니다.<br><br> <br><br>한국마이크로소프트는 산업안전보건법에 따른 고객 응대근로자 보호조치를 따르고 있습니다.<br><br>엔지니어가 고객께 전화를 드릴 때 수신번호가 1577-9700으로 표시되며,  상담내용은 고객지원 및 서비스 개선 등을 위해 녹음되며, 관련 법안에 따라 일정기간 보관됩니다.<br><br> <br><br>문의하신 내용에 대해 아래와 같이 정리합니다. 잘못 이해한 부분이 있으면 알려 주시기 바랍니다.<br><br>[지원번호]<br><br>2607280030004570<br><br> <br><br>[문의 내용]<br><br>신규 windows 망분리 VDI 를 MDE 온보딩하려 합니다.<br>사전 네트워크 허용 작업이 필요한 url/ip 목록에 대한 설명을 듣고싶습니다<br><br> <br><br>[답변 내용]<br><br>MDE Network requirements 목록은 다음 문서에서 제공됩니다.<br><br>Microsoft Defender for Endpoint streamlined connectivity URLs - commercial - Microsoft Defender for Endpoint | Microsoft Learn<br><br> <br><br> <br><br> <br><br>민용기<br><br>Security &amp; Compliance Technical Support<br><br>Microsoft Korea | 기술지원 대표번호 : 1577-9700 | Microsoft Premier Hotline : 080-987-1000 | E-mail: yomi@microsoft.com<br><br>Working hours: Mon-Fri 9:00 am - 6:00 pm (Korea, GMT+9)<br><br>Azure 기술 지원 플랜 비교 | Azure 상태 | Azure 최신 뉴스 | 케이스 생성 방법<br><br>마이크로소프트는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 Azure 기술지원팀 매니저에게 알려주십시요.<br><br> <br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.<br><br>Yonggi.Min@microsoft.com</div></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,118 @@
+2026-08-04 10:01:56 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 티켓 종료 처리 시작 {'scope': 'all_open', 'date': '2026-08-04', 'note_visibility': 'private', 'owner': 'web-ui-freshdesk'}
+2026-08-04 10:01:57 [WARNING] ticket_sync.freshdesk: Freshdesk 열린 티켓 검색 중 네트워크 오류: HTTPSConnectionPool(host='cloud-helpdesk.freshdesk.com', port=443): Max retries exceeded with url: /api/v2/search/tickets?query=%22status%3A2+OR+status%3A3%22&page=1 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)')))
+2026-08-04 10:01:57 [INFO] ticket_sync.freshdesk_case_sync: 티켓 종료 처리: 대상 티켓이 없어 건너뜁니다. {'scanned': 0, 'already_resolved': 0, 'no_case_tag': 0, 'closed_confirmed': 0, 'notes_posted': 0, 'tickets_closed': 0, 'failed': 0}
+2026-08-04 10:06:13 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 티켓 종료 처리 시작 {'scope': 'all_open', 'date': '', 'note_visibility': 'private', 'owner': 'web-ui-freshdesk'}
+2026-08-04 10:06:23 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:06:25 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-08-04 10:06:29 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:06:30 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-08-04 10:06:30 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:06:31 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:06:32 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-08-04 10:06:41 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-08-04 10:06:43 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-04 10:06:45 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=closed (완료됨 체크=True)
+2026-08-04 10:11:45 [WARNING] ticket_sync.crawler: CSV 다운로드 실패 (1/3번째 시도): CSV 다운로드가 시간 내에 시작되지 않았습니다. 네트워크 상태나 화면 로딩 지연을 확인하세요.. 잠시 후 다시 시도합니다.
+2026-08-04 10:11:53 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-04 10:12:06 [INFO] ticket_sync.freshdesk_case_sync: 완료 케이스 노트 등록됨 (case=2607300030003578, ticket=#2138)
+2026-08-04 10:12:06 [INFO] ticket_sync.freshdesk_case_sync: 티켓 종료 처리됨 (case=2607300030003578, ticket=#2138)
+2026-08-04 10:12:37 [WARNING] ticket_sync.crawler: 커뮤니케이션 단일 조회: 목록에서 'VM 재배포 필요 상황에서 해당 VM 스펙 여유 분량이 되는지 확인 부탁드립니다.' 케이스를 찾지 못했습니다.
+2026-08-04 10:12:37 [INFO] ticket_sync.freshdesk_case_sync: 티켓 종료 처리 완료: {'scanned': 85, 'already_resolved': 0, 'no_case_tag': 83, 'closed_confirmed': 2, 'notes_posted': 1, 'tickets_closed': 1, 'failed': 0}
+2026-08-04 10:17:30 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 티켓 종료 처리 시작 {'scope': 'all_open', 'date': '2026-08-04', 'note_visibility': 'private', 'owner': 'web-ui-freshdesk'}
+2026-08-04 10:17:37 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:17:39 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-08-04 10:17:42 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:17:43 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-08-04 10:17:43 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:17:45 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:17:45 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-08-04 10:17:53 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-08-04 10:17:54 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-04 10:17:57 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=closed (완료됨 체크=True)
+2026-08-04 10:22:57 [WARNING] ticket_sync.crawler: CSV 다운로드 실패 (1/3번째 시도): CSV 다운로드가 시간 내에 시작되지 않았습니다. 네트워크 상태나 화면 로딩 지연을 확인하세요.. 잠시 후 다시 시도합니다.
+2026-08-04 10:28:00 [WARNING] ticket_sync.crawler: CSV 다운로드 실패 (2/3번째 시도): CSV 다운로드가 시간 내에 시작되지 않았습니다. 네트워크 상태나 화면 로딩 지연을 확인하세요.. 잠시 후 다시 시도합니다.
+2026-08-04 10:33:03 [WARNING] ticket_sync.crawler: CSV 다운로드가 3번 시도 모두 실패했습니다.
+2026-08-04 10:33:03 [ERROR] ticket_sync.local_runner: 로컬 실행 에이전트: 티켓 종료 처리 중 오류
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 532, in export_case_csv
+    with page.expect_download(timeout=config.crawler.download_timeout_ms) as download_info:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 85, in __exit__
+    self._event.value
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 59, in value
+    raise exception
+playwright._impl._errors.TimeoutError: Timeout 300000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\local_runner.py", line 168, in _run_closed_note_sweep_job
+    stats = freshdesk_case_sync.check_all_open_cases_for_completion(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\freshdesk_case_sync.py", line 478, in check_all_open_cases_for_completion
+    return _check_and_close_candidates(app_config, client, candidates, note_visibility, stats)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\freshdesk_case_sync.py", line 384, in _check_and_close_candidates
+    closed_titles = crawler.list_case_ids_by_status(page, context, app_config, "closed")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 1286, in list_case_ids_by_status
+    csv_path = export_case_csv_with_retry(page, context, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 566, in export_case_csv_with_retry
+    raise last_exc
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 555, in export_case_csv_with_retry
+    return export_case_csv(page, context, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 536, in export_case_csv
+    raise CrawlerError(
+crawler.CrawlerError: CSV 다운로드가 시간 내에 시작되지 않았습니다. 네트워크 상태나 화면 로딩 지연을 확인하세요.
+2026-08-04 10:49:19 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 동기화 시작 {'freshdesk_env': 'prod', 'do_freshdesk': False, 'mode': 'today', 'start_date': None, 'end_date': None, 'date_basis': 'created', 'case_status': 'open', 'skip_dedup': False, 'save_excel': False, 'owner': 'web-ui'}
+2026-08-04 10:49:23 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:49:25 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-08-04 10:49:27 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:49:28 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-08-04 10:49:28 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:49:30 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 10:49:30 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-08-04 10:49:37 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-08-04 10:49:39 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-04 10:49:39 [INFO] ticket_sync.crawler: CSV에서 총 79건 파싱됨 (날짜 필터 전, status=open)
+2026-08-04 10:49:39 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 4건 (상세 보강 대상, status=open)
+2026-08-04 10:49:53 [INFO] ticket_sync.crawler: 상세 보강 진행 1/4 완료 (case=2608040030000680)
+2026-08-04 10:50:08 [INFO] ticket_sync.crawler: 상세 보강 진행 2/4 완료 (case=2608040030000306)
+2026-08-04 10:50:24 [INFO] ticket_sync.crawler: 상세 보강 진행 3/4 완료 (case=2608040030000188)
+2026-08-04 10:50:43 [INFO] ticket_sync.crawler: 상세 보강 진행 4/4 완료 (case=2608030030007435)
+2026-08-04 14:46:13 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 티켓 종료 처리 시작 {'scope': 'all_open', 'date': '2026-08-04', 'note_visibility': 'private', 'owner': 'web-ui-freshdesk'}
+2026-08-04 14:46:20 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 14:46:23 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-08-04 14:46:25 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 14:46:26 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-08-04 14:46:26 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 14:46:27 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 14:46:28 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-08-04 14:46:39 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-08-04 14:46:40 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-04 14:46:46 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=closed (완료됨 체크=True)
+2026-08-04 14:46:49 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-04 14:47:10 [INFO] ticket_sync.freshdesk_case_sync: 완료 케이스 노트 등록됨 (case=2607300030003578, ticket=#2138)
+2026-08-04 14:47:11 [INFO] ticket_sync.freshdesk_case_sync: 티켓 종료 처리됨 (case=2607300030003578, ticket=#2138)
+2026-08-04 14:47:41 [WARNING] ticket_sync.crawler: 커뮤니케이션 전체 조회: 목록에서 'VM 재배포 필요 상황에서 해당 VM 스펙 여유 분량이 되는지 확인 부탁드립니다.' 케이스를 찾지 못했습니다.
+2026-08-04 14:47:42 [INFO] ticket_sync.freshdesk_case_sync: 티켓 종료 처리 완료: {'scanned': 86, 'already_resolved': 0, 'no_case_tag': 84, 'closed_confirmed': 2, 'notes_posted': 1, 'tickets_closed': 1, 'failed': 0}
+2026-08-04 15:08:42 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 티켓 종료 처리 시작 {'scope': 'all_open', 'date': '2026-08-04', 'note_visibility': 'private', 'owner': 'web-ui-freshdesk'}
+2026-08-04 15:08:50 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 15:08:52 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-08-04 15:08:55 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-08-04 15:08:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 15:08:57 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-04 15:08:59 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-08-04 15:09:08 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-08-04 15:09:09 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-04 15:09:12 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=closed (완료됨 체크=True)
+2026-08-04 15:19:12 [WARNING] ticket_sync.crawler: CSV 다운로드 실패 (1/3번째 시도): CSV 다운로드가 시간 내에 시작되지 않았습니다. 네트워크 상태나 화면 로딩 지연을 확인하세요.. 잠시 후 다시 시도합니다.
+2026-08-04 15:19:36 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-04 15:20:00 [INFO] ticket_sync.freshdesk_case_sync: 완료 케이스 노트 등록됨 (case=2607310030000582, ticket=#2136)
+2026-08-04 15:20:00 [INFO] ticket_sync.freshdesk_case_sync: 티켓 종료 처리됨 (case=2607310030000582, ticket=#2136)
+2026-08-04 15:20:01 [INFO] ticket_sync.freshdesk_case_sync: 티켓 종료 처리 완료: {'scanned': 85, 'already_resolved': 0, 'no_case_tag': 84, 'closed_confirmed': 1, 'notes_posted': 1, 'tickets_closed': 1, 'failed': 0}

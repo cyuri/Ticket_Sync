@@ -1,0 +1,354 @@
+{% extends "base.html" %}
+{% block title %}Ticket Sync · 대시보드{% endblock %}
+{% block content %}
+
+  {% if running %}
+    <div class="banner running">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div style="flex:1;">
+        <div>
+          <strong>{{ running_step or "실행 중" }}</strong>{% if running_percent is not none %} · {{ running_percent }}%{% endif %}
+        </div>
+        <div style="font-size:0.78rem; color:var(--text-muted); margin-top:2px;">
+          {% if running_params.kind in ("bulk_register_open", "bulk_register_closed", "closed_note_sweep") %}
+            Freshdesk Management 화면에서 실행한 작업
+          {% else %}
+            <strong>{{ running_params.mode }}</strong> 범위 ·
+            케이스 상태 <strong>{{ running_params.case_status }}</strong> ·
+            Freshdesk 등록 <strong>{{ "예" if running_params.do_freshdesk else "아니오" }}</strong> ·
+            Excel 저장 <strong>{{ "예" if running_params.save_excel else "아니오" }}</strong>
+            {% if running_params.skip_dedup %}· <strong style="color:var(--warning, #b45309);">테스트 모드(중복 방지 끔)</strong>{% endif %}
+          {% endif %}
+        </div>
+        <div class="progress-track">
+          {% if running_percent is not none %}
+            <div class="bar determinate" style="width: {{ running_percent }}%;"></div>
+          {% else %}
+            <div class="bar"></div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% elif local_runner_offline %}
+    <div class="banner error">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg>
+      <span>로컬 실행 에이전트(PC)에 연결할 수 없습니다. 사내망/VPN이 연결된 PC에서 <code>local_runner.py</code>를 실행해주세요.</span>
+    </div>
+  {% elif last_error %}
+    <div class="banner error">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg>
+      <span>마지막 실행이 오류로 종료되었습니다: {{ last_error }}</span>
+    </div>
+  {% endif %}
+
+  <form method="get" action="/" class="filter-bar" style="margin-bottom:18px;">
+    <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+      <span style="font-size:0.82rem; color:var(--text-muted); font-weight:600;">통계/그래프/이력 조회 기간</span>
+      <input type="date" name="start_date" value="{{ filter_start_date or '' }}" style="max-width:150px;">
+      <span style="color:var(--text-faint);">~</span>
+      <input type="date" name="end_date" value="{{ filter_end_date or '' }}" style="max-width:150px;">
+      <button class="btn-primary" type="submit" style="padding:8px 18px; box-shadow:none;">적용</button>
+      {% if filter_start_date or filter_end_date %}
+        <a href="/" style="font-size:0.82rem; color:var(--text-muted);">초기화</a>
+      {% endif %}
+    </div>
+  </form>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="label">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M17 8a5 5 0 0 0-8.5-3.5M7 16a5 5 0 0 0 8.5 3.5M9 4.5 8 8l3.5.5M15 19.5 16 16l-3.5-.5"/></svg>
+        총 실행 횟수
+      </div>
+      <div class="value">{{ stats.total_runs }}</div>
+      <div class="sub">{{ "선택 기간 내" if (filter_start_date or filter_end_date) else "누적" }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3"/></svg>
+        성공률
+      </div>
+      <div class="value">{{ stats.success_rate ~ "%" if stats.success_rate is not none else "-" }}</div>
+      <div class="sub">{{ runs|length }}건 기준</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        신규 수집
+      </div>
+      <div class="value">{{ stats.recent_new_total }}</div>
+      <div class="sub">{{ runs|length }}건 합계</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        마지막 실행
+      </div>
+      <div class="value" style="font-size:1.05rem;">{{ stats.last_run_at or "-" }}</div>
+      <div class="sub">run_at</div>
+    </div>
+  </div>
+
+  {% if stats.sparkline %}
+  <div class="card sparkline-card">
+    <div class="card-header">
+      <h2><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></svg></span>최근 실행 추이 (일별)</h2>
+      <div class="chart-legend">
+        <span class="legend-item"><span class="swatch ok"></span>수집 건수</span>
+        <span class="legend-item"><span class="swatch err"></span>오류 건수</span>
+      </div>
+    </div>
+    <div class="sparkline-wrap">
+      {% for s in stats.sparkline %}
+        <div class="spark-col">
+          <div class="spark-group">
+            <div class="spark-bar-track">
+              <div class="spark-bar" style="height: {{ [s.height_pct, 6]|max }}%;"
+                   title="{{ s.run_at }} · 수집 {{ s.total_collected }}건"></div>
+            </div>
+            <div class="spark-bar-track">
+              {% if s.error_count %}
+                <div class="spark-bar err" style="height: {{ [s.error_height_pct, 6]|max }}%;"
+                     title="{{ s.run_at }} · 오류 {{ s.error_count }}건"></div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="spark-label">{{ s.date_label if s.show_label else "" }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="card">
+    <div class="card-header">
+      <h2><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>새 동기화 실행</h2>
+    </div>
+    <form method="post" action="/sync">
+      <div class="field-row">
+        <div class="field-group">
+          <label class="title">Freshdesk 등록</label>
+          <div class="toggle-row">
+            <label class="switch">
+              <input type="checkbox" name="do_freshdesk" id="do_freshdesk">
+              <span class="track"></span>
+            </label>
+            <label for="do_freshdesk" style="font-size:0.88rem; cursor:pointer;">신규 케이스를 Freshdesk에도 등록</label>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="title">Excel 저장</label>
+          <div class="toggle-row">
+            <label class="switch">
+              <input type="checkbox" name="save_excel" id="save_excel">
+              <span class="track"></span>
+            </label>
+            <label for="save_excel" style="font-size:0.88rem; cursor:pointer;">결과를 Excel 파일로도 저장</label>
+          </div>
+          <div class="hint">비활성화 시(기본값) Excel 파일을 만들지 않습니다.</div>
+        </div>
+        <div class="field-group">
+          <label class="title">테스트 모드</label>
+          <div class="toggle-row">
+            <label class="switch">
+              <input type="checkbox" name="test_mode" id="test_mode">
+              <span class="track"></span>
+            </label>
+            <label for="test_mode" style="font-size:0.88rem; cursor:pointer;">등록된 케이스 재등록</label>
+          </div>
+          <div class="hint" style="color:var(--warning, #b45309);">— Freshdesk에 같은 케이스가 중복 등록될 수 있습니다. 테스트용입니다.</div>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="title">조회 범위</label>
+          <div class="segmented">
+            <input type="radio" name="mode" id="mode-all" value="all" checked onchange="toggleRangeFields()">
+            <label for="mode-all">전체</label>
+            <input type="radio" name="mode" id="mode-today" value="today" onchange="toggleRangeFields()">
+            <label for="mode-today">오늘 생성분</label>
+            <input type="radio" name="mode" id="mode-range" value="range" onchange="toggleRangeFields()">
+            <label for="mode-range">날짜 범위</label>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="title">조회할 케이스 상태</label>
+          <div class="segmented">
+            <input type="radio" name="case_status" id="cs-open" value="open" checked>
+            <label for="cs-open">열기</label>
+            <input type="radio" name="case_status" id="cs-closed" value="closed">
+            <label for="cs-closed">완료됨</label>
+            <input type="radio" name="case_status" id="cs-all" value="all">
+            <label for="cs-all">모두</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-row" id="range-fields" style="display:none;">
+        <div class="field-group">
+          <label class="title">날짜 조회 기준</label>
+          <div class="segmented">
+            <input type="radio" name="date_basis" id="db-created" value="created" checked>
+            <label for="db-created">만들어짐</label>
+            <input type="radio" name="date_basis" id="db-updated" value="updated">
+            <label for="db-updated">업데이트됨</label>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="title">시작일</label>
+          <input type="date" name="start_date" value="{{ today }}">
+        </div>
+        <div class="field-group">
+          <label class="title">종료일 (기본: 오늘)</label>
+          <input type="date" name="end_date" value="{{ today }}">
+        </div>
+      </div>
+
+      <button class="btn-primary" type="submit" {{ "disabled" if running else "" }}>
+        <svg class="icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        {{ "실행 중..." if running else "지금 실행" }}
+      </button>
+    </form>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></svg></span>실행 이력</h2>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div class="search-bar">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" id="history-search" placeholder="범위·상태·환경으로 검색">
+        </div>
+        <span class="count-chip" id="history-count">{{ runs|length }}건 표시</span>
+      </div>
+    </div>
+    {% if runs %}
+    <div class="table-wrap">
+    <table id="history-table">
+      <thead>
+        <tr>
+          <th data-key="run_at" data-type="text">실행 일시 <span class="sort-arrow">↕</span></th>
+          <th data-key="mode" data-type="text">범위 <span class="sort-arrow">↕</span></th>
+          <th>기간</th>
+          <th data-key="case_status" data-type="text">케이스 상태 <span class="sort-arrow">↕</span></th>
+          <th data-key="freshdesk_env" data-type="text">Freshdesk <span class="sort-arrow">↕</span></th>
+          <th data-key="total_collected" data-type="num">수집 <span class="sort-arrow">↕</span></th>
+          <th data-key="new_count" data-type="num">신규 <span class="sort-arrow">↕</span></th>
+          <th data-key="duplicate_count" data-type="num">중복 <span class="sort-arrow">↕</span></th>
+          <th data-key="freshdesk_success" data-type="num">FD 성공 <span class="sort-arrow">↕</span></th>
+          <th data-key="freshdesk_failed" data-type="num">FD 실패 <span class="sort-arrow">↕</span></th>
+          <th data-key="error_count" data-type="num">오류 <span class="sort-arrow">↕</span></th>
+          <th>Excel</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in runs %}
+        <tr class="data-row {{ "error-row" if r.error_count and r.error_count > 0 else "" }}"
+            data-search="{{ (r.mode ~ ' ' ~ (r.case_status or '') ~ ' ' ~ r.freshdesk_env)|lower }}"
+            {% if r.error_count and r.error_count > 0 %}onclick="toggleDetail('detail-{{ r.id }}')"{% endif %}>
+          <td>{{ r.run_at }}</td>
+          <td><span class="pill neutral">{{ r.mode }}</span></td>
+          <td>{{ (r.start_date or "-") }} ~ {{ (r.end_date or "-") }}</td>
+          <td>{{ r.case_status or "-" }}</td>
+          <td>{{ r.freshdesk_env }}</td>
+          <td>{{ r.total_collected }}</td>
+          <td>{{ r.new_count }}</td>
+          <td>{{ r.duplicate_count }}</td>
+          <td>{{ r.freshdesk_success }}</td>
+          <td>{{ r.freshdesk_failed }}</td>
+          <td>
+            {% if r.error_count and r.error_count > 0 %}
+              <span class="pill err"><svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg>{{ r.error_count }}건</span>
+            {% else %}
+              <span class="pill ok"><svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3"/></svg>없음</span>
+            {% endif %}
+          </td>
+          <td>{% if r.excel_path %}<a class="dl" href="/download/{{ r.id }}"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>다운로드</a>{% endif %}</td>
+        </tr>
+        {% if r.error_count and r.error_count > 0 %}
+        <tr class="detail-row" id="detail-{{ r.id }}">
+          <td colspan="12">오류 상세: {{ r.error_summary or "(요약 없음)" }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    {% else %}
+      <div class="empty">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></svg>
+        아직 실행 이력이 없습니다. 위에서 첫 실행을 시작해보세요.
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function toggleRangeFields() {
+    var isRange = document.querySelector('input[name="mode"]:checked').value === "range";
+    document.getElementById("range-fields").style.display = isRange ? "flex" : "none";
+  }
+  toggleRangeFields();
+
+  function toggleDetail(id) {
+    var el = document.getElementById(id);
+    if (el) el.classList.toggle("open");
+  }
+
+  var searchInput = document.getElementById("history-search");
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      var q = this.value.trim().toLowerCase();
+      var rows = document.querySelectorAll("#history-table tbody tr.data-row");
+      var visible = 0;
+      rows.forEach(function (row) {
+        var match = row.getAttribute("data-search").indexOf(q) !== -1;
+        row.style.display = match ? "" : "none";
+        var detail = row.nextElementSibling;
+        if (detail && detail.classList.contains("detail-row") && !match) {
+          detail.classList.remove("open");
+        }
+        if (match) visible++;
+      });
+      document.getElementById("history-count").textContent = visible + "건 표시";
+    });
+  }
+
+  (function () {
+    var table = document.getElementById("history-table");
+    if (!table) return;
+    var headers = table.querySelectorAll("thead th[data-key]");
+    var dir = {};
+    headers.forEach(function (th) {
+      th.addEventListener("click", function () {
+        var key = th.getAttribute("data-key");
+        var type = th.getAttribute("data-type");
+        var idx = Array.prototype.indexOf.call(th.parentNode.children, th);
+        dir[key] = dir[key] === "asc" ? "desc" : "asc";
+        headers.forEach(function (h) { h.classList.remove("sorted"); });
+        th.classList.add("sorted");
+        th.querySelector(".sort-arrow").textContent = dir[key] === "asc" ? "↑" : "↓";
+
+        var tbody = table.querySelector("tbody");
+        var rows = Array.prototype.slice.call(tbody.querySelectorAll("tr.data-row"));
+        rows.sort(function (a, b) {
+          var av = a.children[idx].textContent.trim();
+          var bv = b.children[idx].textContent.trim();
+          if (type === "num") { av = parseFloat(av) || 0; bv = parseFloat(bv) || 0; }
+          if (av < bv) return dir[key] === "asc" ? -1 : 1;
+          if (av > bv) return dir[key] === "asc" ? 1 : -1;
+          return 0;
+        });
+        rows.forEach(function (row) {
+          var detail = row.nextElementSibling && row.nextElementSibling.classList.contains("detail-row") ? row.nextElementSibling : null;
+          tbody.appendChild(row);
+          if (detail) tbody.appendChild(detail);
+        });
+      });
+    });
+  })();
+</script>
+{% endblock %}

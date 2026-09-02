@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Delta UniForm(Iceberg V3) 변환 시, Timestamp 자료형(int96/int64) 문의</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Delta UniForm(Iceberg V3) 변환 시, Timestamp 자료형(int96/int64) 문의</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607280030008046</b></span>
+    <span>최근 발신자: <b>soojeong.park@kt.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 29. 오전 10:46</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-meta">soojeong.park@kt.com · 2026. 7. 29. 오전 10:46</div><div class="thread-card-body">soojeong.park@kt.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br><br>안녕하세요 KT 박수정입니다.<br><br> <br><br>승섭님이 확인해주신 내용 추가 공유 드립니다.<br><br> <br><br>[제목]<br>Delta → Delta UniForm(Iceberg V3) 변환 시, Timestamp 자료형(int96/int64) 문의<br><br>[요약]<br>ㅇ DBX Workspace : adb-7405617489826213.13.azuredatabricks.net<br><br>ㅇ 현상 :<br><br>최초 Delta로 생성하고 데이터가 발생한 테이블을 Delta UniForm(Iceberg V3)으로 변경   (ALTER TBLPROPERTIES)<br>외부엔진(Snowflake)에서 Iceberg Table 생성 시, &quot;Invalid parquet file&quot; 오류 발생<br>스토리지 내, Parquet 파일 확인 결과 Timestamp 타입이 int96 과 int64가 혼재되어있는 것으로 확인.<br>Delta에서는 Timestamp 값이 int96로 저장됨.<br>Delta UniForm 변경 시점부터 생성되는 Parquet는 int64로 저장됨. (delta.enableIcebergCompatV3 = true 에 의해  int64로 처리되는 것으로 보임)<br>Snowflake 엔지니어 문의 시, Timestamp int96은 Parquet 명세 상 sort order가 미정의되어 min/max/null_count 통계 블록이 생성되지 않아 Iceberg 테이블 생성 시 NOT NULL 검증 불가로 오류 발생한다고 함.<br><br> <br><br>ㅇ Error Message(Snowflake) : Invalid parquet file: non-nullable column (columnId 3) without default has null values according to file statistics. File Name: sit1-bdw-sd-db/__unitystorage/schemas/faebaaf0-ec69-41f5-aed0-752c3a1e20dc/tables/71dea746-7783-48fe-a4be-f632b16b1178/Bf/part-00000-960af41f-8121-4717-9a35-21a0dc6f9192-c000.zstd.parquet<br><br> <br><br>ㅇ 대상 테이블(DBX) : magma_bdw_tst.sit1_bdw_sd_db.sd_mopty_2_prod_level_bas<br><br>ㅇ 대상 컬럼(DBX) : DPRO_DT  TIMESTAMP NOT NULL<br><br> <br><br> <br><br>ㅇ 문의사항 :<br><br>Delta UniForm(IcebergV3) 의 Timestamp 자료형은 int64가 권장이 맞는지?<br>Delta → Delta UniForm(Iceberg V3) 전환 테이블의 경우, Timestamp 형을 int96 → int64로 변경할 수 있는 방법이 Rewrite 뿐인지? 별도 REORG 나 OPTIMIZE 등 Command로 재처리 불가한지?<br>Delta에서 Timestamp 형 Write 시, 아래 config 설정 시 Timestamp형이 int64로 Write 되는 것이 맞는지?<br>spark.conf.set(&quot;spark.sql.parquet.outputTimestampType&quot;, &quot;TIMESTAMP_MICROS&quot;)<br>Spark Compute(All-Purpose / Job Compute) 외에, SQL Warehouse는 위 Config 지정 불가한건지?<br><br> <br><br> <br><br> <br><br>참고 부탁드립니다.<br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">jaesunglim@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt; · Wednesday, July 29, 2026 10:41 AM</div><div class="thread-card-body">안녕하세요. 한국 마이크로소프트(유) 기술지원부 임재성입니다.<br>기술지원 서비스를 이용해 주셔서 감사합니다.<br> <br>문의하신 내용에 대해 아래와 같이 정리합니다. 잘못 이해한 부분이 있으면 알려 주시기 바랍니다.<br><br>[문의번호]<br>2607280030008046<br><br>[제목]<br>Delta UniForm(Iceberg V3) 변환 시, Timestamp 자료형(int96/int64) 문의<br><br>[요약]<br>•최초 Delta로 생성하고 데이터가 발생한 테이블을 Delta UniForm(Iceberg V3)으로 변경   (ALTER TBLPROPERTIES)<br><br>•외부엔진(Snowflake)에서 Iceberg Table 생성 시, &#x27;Invalid parquet file&#x27; 오류 발생<br><br>•스토리지 내, Parquet 파일 확인 결과 Timestamp 타입이 int96 과 int64가 혼재되어있는 것으로 확인.<br><br>oDelta에서는 Timestamp 값이 int96로 저장됨.<br><br>oDelta UniForm 변경 시점부터 생성되는 Parquet는 int64로 저장됨. (delta.enableIcebergCompatV3 = true 에 의해  int64로 처리되는 것으로 보임)<br><br>•Snowflake 엔지니어 문의 시, Timestamp int96은 Parquet 명세 상 sort order가 미정의되어 min/max/null_count 통계 블록이 생성되지 않아 Iceberg 테이블 생성 시 NOT NULL 검증 불가로 오류 발생한다고 함.<br><br> <br><br>ㅇ Error Message(Snowflake) : Invalid parquet file: non-nullable column (columnId 3) without default has null values according to file statistics. File Name: sit1-bdw-sd-db/__unitystorage/schemas/faebaaf0-ec69-41f5-aed0-752c3a1e20dc/tables/71dea746-7783-48fe-a4be-f632b16b1178/Bf/part-00000-960af41f-8121-4717-9a35-21a0dc6f9192-c000.zstd.parquet<br><br> <br><br>문의사항 :<br><br>•Delta UniForm(IcebergV3) 의 Timestamp 자료형은 int64가 권장이 맞는지?<br><br>•Delta → Delta UniForm(Iceberg V3) 전환 테이블의 경우, Timestamp 형을 int96 → int64로 변경할 수 있는 방법이 Rewrite 뿐인지? 별도 REORG 나 OPTIMIZE 등 Command로 재처리 불가한지?<br><br>•Delta에서 Timestamp 형 Write 시, 아래 config 설정 시 Timestamp형이 int64로 Write 되는 것이 맞는지?<br><br>ospark.conf.set(&#x27;spark.sql.parquet.outputTimestampType&#x27;, &#x27;TIMESTAMP_MICROS&#x27;)<br><br>oSpark Compute(All-Purpose / Job Compute) 외에, SQL Warehouse는 위 Config 지정 불가한건지?<br><br><br>[진행사항] <br>문의주셔서 감사합니다. 보다 자세한 답변을 위 내용을 진행하고 계신 Notebook 혹은 Job URL 을 공유 부탁드립니다.<br><br>케이스 진행에 도움주셔서 감사합니다.<br><br><br>고맙습니다.<br> <br><br>문의사항 또는 문제 진행 과정에서 연락이 필요할 경우에는 아래 연락처로 알려 주십시오. <br><br>임재성<br>한국 마이크로소프트<br>Microsoft Premier Support: 080-987-1000<br>Direct: 02-531-4721 (평일 9am – 6pm)<br><br>soojeong.park@kt.com</div></div>
+</main>
+</body>
+</html>

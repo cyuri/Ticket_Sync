@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>[S-7545] VM Live Migration 이후 IIS 로그파일 영문 생성 및 자동 한글명으로 생성되는 원인 확인</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>[S-7545] VM Live Migration 이후 IIS 로그파일 영문 생성 및 자동 한글명으로 생성되는 원인 확인</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607210030008777</b></span>
+    <span>최근 발신자: <b>jiyoung97.oh@kt.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 27. 오전 09:16</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607210030008777<br><br>심각도<br>C - 최소 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 27. 오전 09:38<br><br>만들어짐<br>2026. 7. 22. 오전 08:52<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>jiyoung97.oh@kt.com<br>2026. 7. 27. 오전 09:16<br><br>hyeonmo.seong@microsoft.com<br>2026. 7. 24. 오후 12:04<br><br>jiyoung97.oh@kt.com<br>2026. 7. 23. 오후 01:15<br><br>hyeonmo.seong@microsoft.com<br>2026. 7. 22. 오후 03:02<br><br>jiyoung97.oh@kt.com<br>2026. 7. 22. 오전 10:49<br><br>jiyoung97.oh@kt.com<br>2026. 7. 22. 오전 09:56<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 22. 오전 09:51<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 22. 오전 08:52<br><br>외부 메시지가 모든 사용자에게 표시됩니다.<br>메시지:<br>	<br>jiyoung97.oh@kt.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br><br>안녕하세요. DWP서비스팀 오지영입니다.<br><br> <br><br>사내망이서 그런지 모르겠으나, 해당 파일 업로드가 계속 실패하여<br><br>메일로 전달드립니다.<br><br> <br><br>감사합니다.<br><br>보낸 사람: &quot;Hyeonmo Seong&quot; &lt;hyeonmo.seong@microsoft.com&gt;<br>보낸 날짜: 2026-07-24 12:04:49<br>받는 사람: &quot;오지영(DWP서비스팀)&quot; &lt;jiyoung97.oh@kt.com&gt;, &quot;External - supportmail-PROD&quot; &lt;supportmail@techsupport.microsoft.com&gt;<br>참조: &quot;Keehoon Kim (Kenneth)&quot; &lt;Kenneth.Kim@microsoft.com&gt;, &quot;Jay Park&quot; &lt;parkjay@microsoft.com&gt;, &quot;Yongha Hwang&quot; &lt;yonghahwang@microsoft.com&gt;, &quot;Azure 기술지원&quot; &lt;az.support@kt.com&gt;, &quot;고현정(DWP서비스팀)&quot; &lt;hyunjung12@kt.com&gt;<br>제목: RE: [S-7545] VM Live Migration 이후 IIS 로그파일 영문 생성 및 ... - TrackingID#2607210030008777<br> <br><br>안녕하세요, 오지영 고객님.<br><br>Microsoft Azure 기술지원부 성현모입니다.<br><br> <br><br>먼저 자세한 설명 감사드립니다.<br><br>우선 Platform 상에서 Live Migration 간 시간 변경에 대한 알려진 Issue는 없어 내부적으로 이러한 경우가 있었는지 검토 후 안내드리도록 하겠습니다.<br><br>이전의 Guest OS 단의 로그를 확인하려 하였으나 문제 발생 전 기록이 수집되어 있지 않아<br><br>가능하시다면 Windows System 로그를 7/9 일자가 남아있는 상황이 있다면 아래 Link로 전달 부탁드리겠습니다.<br><br>l  파일 전달 Link : File Transfer - Case 2607210030008777<br><br> <br><br>Event 로그 전달주시면 확인하여 안내드리도록 하겠습니다.<br><br> <br><br>감사합니다.<br><br> <br><br> <br><br>성현모 Hyeonmo Seong<br>Azure IaaS VM Support | Support Engineer<br>Microsoft Korea | Office: +82 (2) 531-8298 | E-mail: hyeonmo.seong@microsoft.com<br>Working hours: Mon-Fri 9:00 am - 6:00 pm (Korea, GMT+9)<br>Azure 기술 지원 플랜 비교 | Azure 상태 | Azure 최신 뉴스 | 케이스 생성 방법<br><br>근무 시간 외에 긴급한 Azure 기술지원이 필요한 경우, Azure 기술지원백업으로 연락 가능한 시간과 연락처 및 케이스 번호를 포함한 이메일을 보내주시면 연락 드리겠습니다.<br>마이크로소프트는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 Azure 기술지원팀 매니저에게 알려주십시오.<br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-body">From: 오지영(DWP서비스팀) &lt;jiyoung97.oh@kt.com&gt;<br>Sent: Thursday, July 23, 2026 1:15 PM<br>To: Hyeonmo Seong &lt;hyeonmo.seong@microsoft.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Azure 기술지원 &lt;az.support@kt.com&gt;; 고현정(DWP서비스팀) &lt;hyunjung12@kt.com&gt;<br>Subject: [EXTERNAL] Re: [S-7545] VM Live Migration 이후 IIS 로그파일 영문 생성 및 ... - TrackingID#2607210030008777<br><br> <br><br> <br><br> <br><br>안녕하세요. DWP서비스팀 오지영입니다.<br><br> <br><br>로그파일은 Application  단 에서 생성된 별도로그는 맞습니다. <br><br>  전체 7개 서버가  L4로묶여있는 상태이고 그중에  2개 서버가 문제가 있었는데 전달드린 1개서버는 7개 서버중에 하나입니다. <br><br> <br><br>  해당 로그를 작성하는 site는 주로 사용하는 WEB 쪽 main AP 가 아니고  별도로 모바일쪽 문서확인에 제공하기위해서 처리되는  site ( ap )입니다. <br><br>  모바일쪽이 상대적으로 빈번하게 사용되는 사이트가 아니고  L4에서 해당 문제가된 서버로의 분산처리 할당이 안되었을경우 <br><br>  로그 파일이 생성되는 시기는 차이가 있을것으로 보입니다. <br><br> <br><br>  로그파일은 자동으로 생성되는게 아니라  사용자(KT임직원) 이 가 모바일로 문서를 확인할때 파일이 없으면 자동으로  <br><br>  DateTime.UtcNow(9).ToShortDateString()  년월일 문자열을  가져와서  조합하여 파일명을 생성하고 있습니다. <br><br>  파일을 생성할 당시  culture 가  default 로 처리되다 보니 변경된 영문날짜를 가져오록 처리된것으로 보입니다. <br><br>  <br><br>   사용자의  문서보기 또는  L4 에서 분산 할당이 안된경우에는 파일의 생성시간도   다를수 있기 때문에 <br><br>   Live Migration 이 수행된 시간과 파일이 생성된 시간의 시간차는 있을것으로 보입니다. <br><br> <br><br>   마이그레이션을 처리하는 서버의시간은  cloud  서버가 위치한 지역기준시를 따라가는것으로 보이는데<br><br>   마이그레이션이 완료된 후 해당시간의 영향을 받지 않았을까 합니다. <br><br>   <br><br>   web.config 에 culture 를 지정 ( ko-KR  )  지정하여 해당 이슈에 대한 해소는 가능하나 <br><br>   서버의 시간이 영문으로 변경될만한 이벤트는   Live Migration  외에는 os   에  다른 특이사항이 없어 <br><br>    Live Migration 수행되는경우   지역 및 문화권이  자동으로 변경되는 이슈가 있는지  차후에도 동일한 이슈가 있을수 있어<br><br>    원인 분석차 연락 드린겁니다. <br><br> <br><br> <br><br>추가적으로 전화로 확인이 필요하시다면 아래 번호로 연락부탁드립니다.<br><br>담당자: 이용천 차장(010-2689-9724)<br><br> <br><br>감사합니다.<br><br> <br><br> <br><br>                                                          <br> 오지영<br> 선임 · DWP서비스팀 <br> kt ds<br>----------------------------------------------------------------<br> M 010-6364-7136                    T 010-6364-7136<br>----------------------------------------------------------------<br> E jiyoung97.oh@kt.com<br><br> <br><br>보낸 사람: Hyeonmo Seong &lt;hyeonmo.seong@microsoft.com&gt;<br>보낸 날짜: 2026년 7월 22일 수요일 오후 3:01<br>받는 사람: 오지영(DWP서비스팀) &lt;jiyoung97.oh@kt.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>참조: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Azure 기술지원 &lt;az.support@kt.com&gt;<br>제목: RE: [S-7545] VM Live Migration 이후 IIS 로그파일 영문 생성 및 ... - TrackingID#2607210030008777<br><br> <br><br>안녕하세요, 오지영 고객님.<br><br>Microsoft Azure 기술지원부 성현모입니다.<br><br> <br><br>먼저 내용 전달 감사드립니다. 추가 내용을 여쭤보기 위해 유선 연락을 드렸으나 통화가 닿지 않아 메일로 전달드리는 점 양해 부탁드립니다.<br><br> <br><br>확인 내용 :<br><br>우선 전달주신 내용 시간대를 보았을 때, 최초 변경된 시점은 UTC 기준 7/10 17:01 UTC이고<br><br>Live Migration 발생 시점은 7/9 18:22분으로 생성까지 차이가 있는 것으로 보입니다. 보내주신 캡쳐에선 한국시간 7/11 오전 1:38분까지의 기록이 한국어명으로 기재된 것을 보아<br><br>해당 시간까지는 한국시간 명으로 Log가 쌓인 것으로보여 Live Migration 발생과의 연관성은 커보이지 않습니다.<br><br> <br><br>또한 해당 보내주신 Log 파일명과 폴더 명을 보았을 때, IIS 단의 기본 시스템로그가 아닌 별도 Application 단이나 별도 로그를 쌓도록 구성을 해놓으신 것으로 추측됩니다.<br><br>해당 로그 파일을 쌓는 주체가 어디인지 별도 설정하신 구성이 있으실까요? 혹은 IIS 단의 시스템 로그라면 해당 로그가 어떠한 로그인지 설명 부탁드리겠습니다.<br><br> <br><br>감사합니다.<br><br> <br><br>성현모 Hyeonmo Seong<br>Azure IaaS VM Support | Support Engineer<br>Microsoft Korea | Office: +82 (2) 531-8298 | E-mail: hyeonmo.seong@microsoft.com<br>Working hours: Mon-Fri 9:00 am - 6:00 pm (Korea, GMT+9)<br>Azure 기술 지원 플랜 비교 | Azure 상태 | Azure 최신 뉴스 | 케이스 생성 방법<br><br>근무 시간 외에 긴급한 Azure 기술지원이 필요한 경우, Azure 기술지원백업으로 연락 가능한 시간과 연락처 및 케이스 번호를 포함한 이메일을 보내주시면 연락 드리겠습니다.<br>마이크로소프트는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 Azure 기술지원팀 매니저에게 알려주십시오.<br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-body">From: 오지영(DWP서비스팀) &lt;jiyoung97.oh@kt.com&gt;<br>Sent: Wednesday, July 22, 2026 10:48 AM<br>To: External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Azure 기술지원 &lt;az.support@kt.com&gt;; Hyeonmo Seong &lt;hyeonmo.seong@microsoft.com&gt;<br>Subject: [EXTERNAL] Re: [S-7545] VM Live Migration 이후 IIS 로그파일 영문 생성 및 ... - TrackingID#2607210030008777<br><br> <br><br> 	<br><br>이 메시지를 받은 사용자 일부에게는 jiyoung97.oh@kt.com의 전자 메일이 수신되지 않는 경우가 있습니다. 이 문제가 중요한 이유<br><br>	 <br><br> <br><br> <br><br>안녕하세요. DWP서비스팀 오지영입니다.<br><br> <br><br>해당 Live Migration은 UTC 시간 기준 07/09/2026 18:22 경에 발생한 것으로 확인됩니다. 최초 영문명으로 로그 생성된 시각과 자동으로 한글명으로 생성된 시간을 확인 부탁드립니다. (UTC 혹은 한국시간 기준인지 같이 표기 부탁드리겠습니다.)<br><br> 1) 시간은 UTC+9 를 기준으로 생성된 시간입니다. <br><br> 2) 영문파일이 최초 생성된 시간은 2026년 7월 11일 토요일 오전 2시 1분경입니다. <br><br> 3) 한글파일이 다시 생성된 시간은 2026년 7월 21일 화요일 오후 5시 1분경입니다. <br><br> <br><br>문제가 되는 IIS 로그가 어떤 로그인지, 생성된 파일명과 시간이 있는 Log 리스트 캡쳐가 가능하시다면 아래 Link로 캡쳐본 혹은 해당 정보를 전달 부탁드리겠습니다.<br><br>1.  파일 전달 Link : File Transfer - Case 2607210030008777<br><br> =&gt; 완료했습니다.<br><br>Culture 값을 ko-KR 로 고정하려는 목적이 해당 파일 명이 Culture 값을 기반으로 지정되는 것인지 확인한 사항이 있다면 말씀 부탁드리겠습니다.<br><br>culture 지정은  web.config 에서 아래와 같이 설정하면 처리됨을 확인했습니다. <br><br>IIS  기준으로는 .NET 전역화에서 설정 가능합니다.  <br><br> <br><br>3번은 저희쪽에서 지정했기때문에 답변안주셔도 되겠습니다.<br><br> <br><br> <br><br>감사합니다.<br><br> <br><br> <br><br>                                                          <br> 오지영<br> 선임 · DWP서비스팀 <br> kt ds<br>----------------------------------------------------------------<br> M 010-6364-7136                    T 010-6364-7136<br>----------------------------------------------------------------<br> E jiyoung97.oh@kt.com<br><br> <br><br> <br><br> <br><br>보낸 사람: hyeonmoseong@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt;<br>보냄: 2026 7월 22, 수요일 오전 9:51<br>받는 사람: 오지영(DWP서비스팀) &lt;jiyoung97.oh@kt.com&gt;<br>참조: Kenneth.Kim@microsoft.com &lt;Kenneth.Kim@microsoft.com&gt;; parkjay@microsoft.com &lt;parkjay@microsoft.com&gt;; yonghahwang@microsoft.com &lt;yonghahwang@microsoft.com&gt;; Azure 기술지원 &lt;az.support@kt.com&gt;; hyeonmo.seong@microsoft.com &lt;hyeonmo.seong@microsoft.com&gt;<br>제목: [S-7545] VM Live Migration 이후 IIS 로그파일 영문 생성 및 ... - TrackingID#2607210030008777<br><br> <br><br><br><br>안녕하세요.<br>Microsoft 지원에 문의해 주셔서 감사합니다. 저는 본 케이스를 지원드릴 Microsoft Azure 기술지원부 성현모 엔지니어입니다.<br>문의사항을 다음과 같이 정리하여 보내드리니 내용을 살펴보시고 문의사항이나 질문이 있으시면 언제든지 연락주시기 바랍니다.<br><br> <br><br>고객 데이터 보호를 위해 마이크로소프트 지원팀에서는 안전한 자료교환 솔루션인 DTM(Data Transfer &amp; Management)을 통해서만 데이터를 전달받고 있습니다.<br>첨부파일을 지원팀에 제공할 때에는 포털의 지원요청 페이지에서 파일을 업로드 해주시거나, 지원 엔지니어로부터 제공받으신 DTM 링크를 통해 자료 업로드를 부탁드립니다.<br><br><br>문의사항 : Live Migration 이후 IIS 로그 파일 영문 생성 원인 확인 요청<br><br><br>다음단계 :<br><br>먼저 전달주신 내용을 이해하였을 때, VM Live Migration이 진행된 이후 특정 IIS 로그 파일이 영문명으로 생성되었으며 이로 인한 아래 사항을 문의 주신 것으로 이해하였습니다.<br><br>1.     VM Live Migration 이후 영문명으로 로그 파일이 생긴 원인<br><br>2.     자동으로 특정 시간 이후 한글명으로 생성된 이유<br><br>3.     IIS 내 MoblieWeb의 Culture를 ko-KR 값으로 고정하는 방법<br><br> <br><br>우선 문의주신 내용이 Live Migration과 IIS 단의 문의내용이 같이 있어 IIS 팀과의 확인도 필요할 것 같습니다.<br><br>좀 더 자세한 내용 확인을 위해 아래 사항에 답변 부탁드리겠습니다.<br><br> <br><br>1.     해당 Live Migration은 UTC 시간 기준 07/09/2026 18:22 경에 발생한 것으로 확인됩니다. 최초 영문명으로 로그 생성된 시각과 자동으로 한글명으로 생성된 시간을 확인 부탁드립니다. (UTC 혹은 한국시간 기준인지 같이 표기 부탁드리겠습니다.)<br><br> <br><br>2.     문제가 되는 IIS 로그가 어떤 로그인지, 생성된 파일명과 시간이 있는 Log 리스트 캡쳐가 가능하시다면 아래 Link로 캡쳐본 혹은 해당 정보를 전달 부탁드리겠습니다.<br><br>1.     파일 전달 Link : File Transfer - Case 2607210030008777<br><br> <br><br>3.     Culture 값을 ko-KR 로 고정하려는 목적이 해당 파일 명이 Culture 값을 기반으로 지정되는 것인지 확인한 사항이 있다면 말씀 부탁드리겠습니다.<br><br> <br><br> <br><br>감사합니다.<br> <br>성현모 Hyeonmo Seong<br>Azure IaaS VM Support | Support Engineer<br>Microsoft Korea | Office: +82 (2) 531-8298 | E-mail: hyeonmo.seong@microsoft.com<br>Working hours: Mon-Fri 9:00 am - 6:00 pm (Korea, GMT+9)<br>Azure 기술 지원 플랜 비교 | Azure 상태 | Azure 최신 뉴스 | 케이스 생성 방법<br><br>근무 시간 외에 긴급한 Azure 기술지원이 필요한 경우, Azure 기술지원백업으로 연락 가능한 시간과 연락처 및 케이스 번호를 포함한 이메일을 보내주시면 연락 드리겠습니다.<br>마이크로소프트는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 Azure 기술지원팀 매니저에게 알려주십시오.<br><br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.<br><br><br>jiyoung97.oh@kt.com</div></div>
+</main>
+</body>
+</html>

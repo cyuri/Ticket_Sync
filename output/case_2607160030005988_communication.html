@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>status 상태 이상</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>status 상태 이상</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607160030005988</b></span>
+    <span>최근 발신자: <b>hugoaguiar@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 20. 오후 05:30</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">5</div><div class="thread-card-meta">hugoaguiar@microsoft.com · 2026. 7. 20. 오후 05:30</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>이 지원 케이스에는 위험 상황 상태 및 작업 계획이 연결되어 있습니다. 세부 정보 보기<br><br>필수<br>요청 ID<br>2607160030005988<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Closed<br><br>업데이트됨<br>2026. 7. 20. 오후 05:37<br><br>만들어짐<br>2026. 7. 16. 오후 07:20<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>hugoaguiar@microsoft.com<br>2026. 7. 20. 오후 05:30<br><br>hokyun.kim@kt.com<br>2026. 7. 20. 오전 09:12<br><br>hugoaguiar@microsoft.com<br>2026. 7. 17. 오후 11:01<br><br>hugoaguiar@microsoft.com<br>2026. 7. 16. 오후 10:57<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 16. 오후 09:50<br><br>hugoaguiar@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">4</div><div class="thread-card-meta">hokyun.kim@kt.com · 2026. 7. 20. 오전 09:12</div><div class="thread-card-body">hokyun.kim@kt.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br>	<br>Hello.<br><br><br>Thank you for the quick update.<br>The information you provided is sufficient for now,<br><br><br>Please close this case.<br><br><br><br> <br><br>김호균<br><br>MS본부 MS기술P-TF Azure SRE TF<br><br>M: 010-2666-9401  E: hokyun.kim@kt.com<br><br><br><br><br>대한민국 No.1 DX 전문기업 <br><br> <br><br> <br><br><br><br><br><br>보낸 사람: Hugo Aguiar &lt;hugoaguiar@microsoft.com&gt;<br>보냄: 2026 7월 17, 금요일 오후 11:00<br>받는 사람: 김호균(Azure SRE팀) &lt;hokyun.kim@kt.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>참조: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Azure 랜딩존 &lt;az.msp@kt.com&gt;<br>제목: Re: status 상태 이상 - TrackingID#2607160030005988<br><br><br>Hi Hokyun,<br><br><br>Can you also share if everything is working well at the moment?<br><br><br>Please let me know if you require a formal RCA or if the information shared above is sufficient for now.<br><br><br>Best regards,<br>Hugo Aguiar.<br><br><br><br><br><br> <br><br>Hugo Aguiar<br>Microsoft Azure Storage Team<br>Customer Support Engineer<br>	<br>Office: +351 966552303<br>hugoaguiar@microsoft.com <br>Working hours: Mon – Fri 9AM – 6PM (UTC+1)<br> <br><br><br>If you need immediate attention for any of the ongoing case while I am out of shift, please send a separate email with case ID to azurebu@microsoft.com. A duty manager will take action and loop in an available Support Engineer to help you. If you have any feedback about my work, please let either me or my manager Sara Garcia know at saragarcia@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-meta">hugoaguiar@microsoft.com · 2026. 7. 17. 오후 11:01</div><div class="thread-card-body">Hi Hokyun,<br><br><br>Can you also share if everything is working well at the moment?<br><br><br>Please let me know if you require a formal RCA or if the information shared above is sufficient for now.<br><br><br>Best regards,<br>Hugo Aguiar.<br><br><br><br><br><br> <br><br>Hugo Aguiar<br>Microsoft Azure Storage Team<br>Customer Support Engineer<br>	<br>Office: +351 966552303<br>hugoaguiar@microsoft.com <br>Working hours: Mon – Fri 9AM – 6PM (UTC+1)<br> <br><br><br>If you need immediate attention for any of the ongoing case while I am out of shift, please send a separate email with case ID to azurebu@microsoft.com. A duty manager will take action and loop in an available Support Engineer to help you. If you have any feedback about my work, please let either me or my manager Sara Garcia know at saragarcia@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-meta">hugoaguiar@microsoft.com · 2026. 7. 16. 오후 10:57</div><div class="thread-card-body">Hi Hokyun,<br><br><br>There was an outage at the time, which was traced to an issue with the Software Load Balancer (SLB) affecting inbound VIP availability in Korea Central.<br><br><br>The issue has now been mitigated, and I can see that your connections have returned to normal.<br><br><br>Regarding the RCA, it may take some time to provide. Please let me know if you require a formal RCA or if the information shared above is sufficient for now.<br><br><br>Can you also share if everything is working well at the moment?<br><br><br>We apologise for any inconvenience this may have caused.<br><br><br>Best regards,<br>Hugo Aguiar.<br><br><br><br> <br><br>Hugo Aguiar<br>Microsoft Azure Storage Team<br>Customer Support Engineer<br>	<br>Office: +351 966552303<br>hugoaguiar@microsoft.com <br>Working hours: Mon – Fri 9AM – 6PM (UTC+1)<br> <br><br><br>If you need immediate attention for any of the ongoing case while I am out of shift, please send a separate email with case ID to azurebu@microsoft.com. A duty manager will take action and loop in an available Support Engineer to help you. If you have any feedback about my work, please let either me or my manager Sara Garcia know at saragarcia@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">supportmail@techsupport.microsoft.com · 2026. 7. 16. 오후 09:50</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>이 지원 케이스에는 위험 상황 상태 및 작업 계획이 연결되어 있습니다. 세부 정보 보기<br><br>필수<br>요청 ID<br>2607160030005988<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Closed<br><br>업데이트됨<br>2026. 7. 20. 오후 05:37<br><br>만들어짐<br>2026. 7. 16. 오후 07:20<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>hugoaguiar@microsoft.com<br>2026. 7. 20. 오후 05:30<br><br>hokyun.kim@kt.com<br>2026. 7. 20. 오전 09:12<br><br>hugoaguiar@microsoft.com<br>2026. 7. 17. 오후 11:01<br><br>hugoaguiar@microsoft.com<br>2026. 7. 16. 오후 10:57<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 16. 오후 09:50<br><br>supportmail@techsupport.microsoft.com</div></div>
+</main>
+</body>
+</html>

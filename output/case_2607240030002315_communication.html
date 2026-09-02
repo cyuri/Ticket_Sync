@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>vm서버 blobfuse 이슈 건</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>vm서버 blobfuse 이슈 건</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607240030002315</b></span>
+    <span>최근 발신자: <b>siset@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 27. 오전 09:11</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">4</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607240030002315<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 27. 오전 09:11<br><br>만들어짐<br>2026. 7. 24. 오후 01:05<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>siset@microsoft.com<br>2026. 7. 27. 오전 09:11<br><br>siset@microsoft.com<br>2026. 7. 24. 오후 05:32<br><br>yoon_0.oh@kt.com<br>2026. 7. 24. 오후 04:59<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 24. 오후 02:25<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 24. 오후 01:06<br><br>외부 메시지가 모든 사용자에게 표시됩니다.<br>메시지:<br>	<br>You don&#x27;t often get email from siset@microsoft.com. Learn why this is important<br>	<br>안녕하십니까,<br>한국 Microsoft 기술지원부 시투 엔지니어입니다.<br>주말은 잘 보내셨을까요?<br>지난주 제가 전달드린 메일을 통해 케이스 #2607240030002315 관련하여 안내드린 바 있습니다.<br>혹시 메일을 확인해보셨을까요?<br>안내드린 내용을 바탕으로 문제 해결이 원활히 진행되고 계신지 확인차 다시 한 번 연락드립니다.<br>진행 중 어려운 점이 있으시거나 추가로 도움이 필요하신 부분이 있으시다면 언제든지 편하게 회신 주시기 바랍니다.<br>항상 저희 Microsoft 기술지원을 이용해 주셔서 감사드리며,<br>오늘도 좋은 하루 보내시길 바랍니다.<br>감사합니다.<br>시투 드림<br><br>Sithu Kaung Set<br><br>Azure PaaS Support Engineer<br>Customer Service &amp; Support - Azure PaaS<br>Office : +82 (2) 5318227<br><br>siset@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-body">From: Sithu Kaung Set &lt;siset@microsoft.com&gt;<br>Sent: Friday, July 24, 2026 5:31 PM<br>To: 오윤영(AX플랫폼Ops팀) &lt;yoon_0.oh@kt.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; magma_ito &lt;magma_ito@kt.com&gt;<br>Subject: Re: vm서버 blobfuse 이슈 건 - TrackingID#2607240030002315<br> <br><br>안녕하십니까,<br>한국 Microsoft 기술지원부 시투 엔지니어입니다.<br><br>빠르게 확인해주셔서 감사합니다.<br><br>아래 Kernel 로그를 통해 이번 현상의 정확한 원인을 확인할 수 있었습니다.<br>Out of memory: Killed process 17431 (blobfuse2)<br><br>해당 로그는 Linux Kernel의 OOM(Out Of Memory) Killer가 시스템 메모리 부족을 감지하여 BlobFuse2 Process를 강제로 종료하였음을 의미합니다.<br><br>BlobFuse2는 Linux FUSE(User-space Filesystem) 기반으로 동작하기 때문에, BlobFuse2 Process가 종료되면 Kernel에는 Mount 정보만 남게 되고 사용자 공간에서 요청을 처리할 Process가 존재하지 않게 됩니다.<br>따라서 이후에는 Linux에서 &quot;Transport endpoint is not connected&quot; 오류를 반환하게 되며, 이번에도 재마운트 이후 정상적으로 복구된 이유가 이와 동일한 동작 방식 때문으로 확인되었습니다.<br>즉, 이번 현상의 원인은 저희 Azure Storage 서비스 장애가 아닌 VM 내부 메모리 부족으로 인해 BlobFuse2 Process가 OOM Killer에 의해 종료된 것으로 확인되었습니다.<br>OOM이 재발하지 않도록 하기 위해서는 아래 사항들을 권장드립니다.<br>VM 메모리 사용량 모니터링 및 메모리 여유 확보 <br>먼저 BlobFuse2가 동작하는 VM의 메모리 사용량을 확인 부탁드립니다.<br>따라서 아래 항목들을 지속적으로 모니터링하시는 것을 권장드립니다.<br>Available Memory<br>Free Memory<br>Swap 사용량<br>BlobFuse2 Process Memory(RSS)<br>Application Memory 사용량<br>Troubleshoot issues in BlobFuse - Azure Storage | Microsoft Learn<br>이번에 확인된 OOM은 Linux Kernel에서 발생한 메모리 부족으로 인해 BlobFuse2 Process가 종료된 것으로, 저희 Azure Storage 서비스에서 발생한 문제가 아닌 VM 운영체제의 메모리 관리 영역에 해당합니다.<br>따라서 OOM의 근본 원인(메모리 부족 원인 분석, VM Size 적정성 검토, Linux Memory Tuning 등)에 대해서는 Azure VM(Compute) 팀 또는 Linux 운영체제 담당 부서를 통해 추가적인 검토를 받아보시는 것을 권장드립니다.<br>항상 저희 Microsoft 기술지원을 이용해 주셔서 감사드리며,<br>좋은 하루 보내시길 바랍니다.<br><br><br>감사합니다.<br><br>시투 드림<br><br>Sithu Kaung Set<br><br>Azure PaaS Support Engineer<br>Customer Service &amp; Support - Azure PaaS<br>Office : +82 (2) 5318227<br><br>siset@microsoft.com</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-body">From: 오윤영(AX플랫폼Ops팀) &lt;yoon_0.oh@kt.com&gt;<br>Sent: Friday, July 24, 2026 4:58 PM<br>To: External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Sithu Kaung Set &lt;siset@microsoft.com&gt;; magma_ito &lt;magma_ito@kt.com&gt;<br>Subject: [EXTERNAL] RE: vm서버 blobfuse 이슈 건 - TrackingID#2607240030002315<br> <br><br>안녕하세요<br><br>AX플랫폼Ops팀 오윤영입니다.<br><br> <br><br>Journalctl 로그 확인 결과, 07/22 15시경 blobfuse2 OOM 발생으로 인한 이슈로 확인됩니다.<br><br>OOM 방지를 위한 해결방안 전달 부탁드립니다.<br><br> <br><br>[오류 로그]<br><br>/var/log/kern.log:2026-07-22T15:12:11.327325+00:00 vm-az01-dev-magma-sftp-load-01 kernel: oom-kill:constraint=CONSTRAINT_NONE,nodemask=(null),cpuset=azuremonitor-coreagent.service,mems_allowed=0,global_oom,task_memcg=/user.slice/user-1000.slice/session-1.scope,task=blobfuse2,pid=17431,uid=0<br><br>/var/log/kern.log:2026-07-22T15:12:11.327327+00:00 vm-az01-dev-magma-sftp-load-01 kernel: Out of memory: Killed process 17431 (blobfuse2) total-vm:53206048kB, anon-rss:14053216kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:27944kB oom_score_adj:0<br><br> <br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-body">From: Sithu K &lt;supportmail@techsupport.microsoft.com&gt;<br>Sent: Friday, July 24, 2026 2:25 PM<br>To: 오윤영(AX플랫폼Ops팀) &lt;yoon_0.oh@kt.com&gt;<br>Cc: Kenneth.Kim@microsoft.com; parkjay@microsoft.com; yonghahwang@microsoft.com; siset@microsoft.com<br>Subject: vm서버 blobfuse 이슈 건 - TrackingID#2607240030002315<br><br> <br><br> <br><br>안녕하십니까, 저희 고객기술지원 서비스를 이용해 주셔서 감사합니다. 저는 이 케이스를 지원할 한국마이크로소프트 고객기술지원 엔지니어 시투입니다. 서명란의 연락처를 통해 언제나 연락주실 수 있습니다. <br><br> <br><br>문의하신 사항에 대해 아래와 같이 정리합니다. 내용을 살펴보시고 잘못 이해하였거나, 궁금하신 점이 있다면 알려주시기 바랍니다. 빠른 확인 및 시스템 기록을 위해 반드시 전체 회신(supportmail@techsupport.microsoft.com 포함)으로 응답 부탁드립니다. <br><br> <br><br>문의 사항: <br><br>VM명 : vm-az01-dev-magma-sftp-load-01<br><br>- 아래 경로 접근 시, connected 불가 확인<br><br>magma@vm-az01-dev-magma-sftp-load-01:/data/staz01devmagmaload01/tbloder2magma$ ll<br><br>ls: cannot access &#x27;TBLODER&#x27;: Transport endpoint is not connected<br><br>total 8<br><br>drwxr-xr-x  3 root root 4096 Feb 10 03:36 ./<br><br>drwxr-xr-x 29 root root 4096 Mar 11 06:29 ../<br><br>d?????????  ? ?    ?       ?            ? TBLODER/<br><br> <br><br>- 오류<br><br>magma@vm-az01-dev-magma-sftp-load-01:/data/staz01devmagmaload01/tbloder2magma$ df -h | grep tbloder2magma<br><br>df: /data/staz01devmagmaload01/erpeai2magma/ERPEAI: Transport endpoint is not connected<br><br> <br><br>- 마운트 경로<br><br>magma@vm-az01-dev-magma-sftp-load-01:/var/log$ sudo fuser -vm /data/staz01devmagmaload01/tbloder2magma/TBLODER<br><br>                     USER        PID ACCESS COMMAND<br><br>/data/staz01devmagmaload01/tbloder2magma/TBLODER:<br><br>                     root     kernel mount /data/staz01devmagmaload01/tbloder2magma/TBLODER<br><br> <br><br>- 오류 로그 :<br><br>2026-07-21T07:52:51.090500+00:00 vm-az01-dev-magma-sftp-load-01 blobfuse2[17431]: [/data/staz01devmagmaload01/tbloder2magma/TBLODER] LOG_WARNING [libfuse_handler.go (696)]: Libfuse::libfuse_open : Flags: (8201)[O_WRONLY | O_TRUNC] not supported to open DATA/DL_DATE=20260721/BADAMALL_APP_FREEZONE/HUNTING_STORE_PUDU_DEVICE_LIST/MAGMA_DATA_TRT_TGT_BASE_PERD_VAL=20260721/HUNTING_STORE_PUDU_DEVICE_LIST.csv when write back cache is on. Ignoring unsupported flags.<br><br> <br><br> <br><br>- 떠있는 blobfuse 결과값 없음<br><br>magma@vm-az01-dev-magma-sftp-load-01:/data/staz01devmagmaload01$ ps -ef | grep blobfuse | grep tbloder2magma<br><br> <br><br>해당 경로 재마운트 후, 이슈는 해결하였지만 원인 분석 요청<br><br> <br><br> <br><br> <br><br>&lt;Start:Agent_Additional_Properties_Do_Not_Edit&gt;<br><br>Customer answers to additional questions for Blob Storage:<br><br>문제가 언제 시작되었나요? - 2026-07-21T15:00:00+00:00;<br><br>설명 - - VM명 : vm-az01-dev-magma-sftp-load-01<br><br> <br><br>- 아래 경로 접근 시, connected 불가 확인<br><br>magma@vm-az01-dev-magma-sftp-load-01:/data/staz01devmagmaload01/tbloder2magma$ ll<br><br>ls: cannot access &#x27;TBLODER&#x27;: Transport endpoint is not connected<br><br>total 8<br><br>drwxr-xr-x  3 root root 4096 Feb 10 03:36 ./<br><br>drwxr-xr-x 29 root root 4096 Mar 11 06:29 ../<br><br>d?????????  ? ?    ?       ?            ? TBLODER/<br><br> <br><br>- 오류<br><br>magma@vm-az01-dev-magma-sftp-load-01:/data/staz01devmagmaload01/tbloder2magma$ df -h | grep tbloder2magma<br><br>df: /data/staz01devmagmaload01/erpeai2magma/ERPEAI: Transport endpoint is not connected<br><br> <br><br>- 마운트 경로<br><br>magma@vm-az01-dev-magma-sftp-load-01:/var/log$ sudo fuser -vm /data/staz01devmagmaload01/tbloder2magma/TBLODER<br><br>                     USER        PID ACCESS COMMAND<br><br>/data/staz01devmagmaload01/tbloder2magma/TBLODER:<br><br>                     root     kernel mount /data/staz01devmagmaload01/tbloder2magma/TBLODER<br><br> <br><br>- 오류 로그 :<br><br>2026-07-21T07:52:51.090500+00:00 vm-az01-dev-magma-sftp-load-01 blobfuse2[17431]: [/data/staz01devmagmaload01/tbloder2magma/TBLODER] LOG_WARNING [libfuse_handler.go (696)]: Libfuse::libfuse_open : Flags: (8201)[O_WRONLY | O_TRUNC] not supported to open DATA/DL_DATE=20260721/BADAMALL_APP_FREEZONE/HUNTING_STORE_PUDU_DEVICE_LIST/MAGMA_DATA_TRT_TGT_BASE_PERD_VAL=20260721/HUNTING_STORE_PUDU_DEVICE_LIST.csv when write back cache is on. Ignoring unsupported flags.<br><br> <br><br> <br><br>- 떠있는 blobfuse 결과값 없음<br><br>magma@vm-az01-dev-magma-sftp-load-01:/data/staz01devmagmaload01$ ps -ef | grep blobfuse | grep tbloder2magma<br><br> <br><br>해당 경로 재마운트 후, 이슈는 해결하였지만 원인 분석 요청;<br><br> <br><br>진행 사항: <br><br>먼저 저희 내부적으로 Azure Storage Backend 로그 및 서비스 상태를 종합적으로 확인해 보았습니다.<br><br>확인 결과, 해당 시간 동안 Storage Account staz01devmagmaload01은 정상적으로 동작하고 있었으며, Service Availability 또한 정상으로 확인되었습니다.<br><br>고객님 VM(10.243.194.118)에서 Storage Account로 전달된 요청들도 모두 HTTP 200(Success)으로 정상 처리되었으며, Storage 서비스 측에서는 HTTP 5xx 오류나 Throttling(503)과 같은 서버 측 오류는 확인되지 않았습니다.<br><br>따라서 Azure Storage 서비스 자체의 장애나 성능 저하로 인해 발생한 현상은 아닌 것으로 확인되었습니다.<br><br>고객님께서 전달해주신 로그를 함께 확인해 보았을 때에는 아래와 같은 점들이 확인되었습니다.<br><br>ps -ef | grep blobfuse | grep tbloder2magma 결과에서 해당 Mount를 담당하는 BlobFuse2 Process가 존재하지 않았습니다.<br>ls 수행 시 d????????? 형태로 표시되었으며, Transport endpoint is not connected 오류가 발생하였습니다.<br>fuser -vm 결과에서도 Kernel Mount만 존재하고 BlobFuse2 Process는 확인되지 않았습니다.<br>이후 동일 경로를 재마운트한 이후에는 정상적으로 접근이 가능하였습니다.<br><br>위 내용들을 종합해 보았을 때, 이번 현상은 BlobFuse2 Process가 종료된 상태에서 Linux Kernel의 FUSE Mount 정보만 남아있는 Orphaned FUSE Mount 상태가 발생한 것으로 보여집니다.<br><br>BlobFuse2는 Linux FUSE(User-space Filesystem)를 사용하여 동작합니다. 일반적으로 BlobFuse2 Process가 어떠한 사유로 종료되었지만 Kernel에는 Mount 정보가 그대로 남아있는 경우에는 Kernel이 더 이상 사용자 공간의 BlobFuse2 Process와 통신하지 못하게 되며, 이 경우 Linux에서는 &quot;Transport endpoint is not connected&quot; 오류를 반환하게 됩니다. 이후 Mount를 다시 수행하면 새로운 BlobFuse2 Process가 생성되면서 정상적으로 접근이 가능하게 됩니다.<br><br>또한 전달해주신 아래 Warning 로그도 함께 확인해 보았습니다.<br><br>O_WRONLY | O_TRUNC not supported to open ... Ignoring unsupported flags.<br><br>해당 로그는 Write-back Cache가 활성화된 상태에서 지원되지 않는 Open Flag를 BlobFuse2가 무시하고 계속 처리하였다는 Warning 로그로 확인됩니다. Fatal Error가 아닌 Warning 수준의 로그이며, 발생 시점 또한 실제 장애 발생 시점보다 수 시간 이전으로 확인되어 이번 Mount Disconnect 현상과는 관련이 없는 것으로 보여집니다.<br><br>현재까지 확인된 내용으로는 BlobFuse2 Process가 종료되면서 Mount가 Orphaned FUSE Mount 상태가 된 것까지는 확인이 되었으나, BlobFuse2 Process가 종료된 정확한 원인(OOM, Process Crash, Service Restart, Manual Stop 등)은 Azure Storage Backend에서는 확인이 어려운 부분입니다.<br><br>BlobFuse2 Process가 VM 내부에서 종료되는 경우에는 Azure Storage까지 요청이 전달되지 않기 때문에 Storage Backend에는 해당 흔적이 남지 않으며, 정확한 종료 원인은 VM 운영체제 로그에서만 확인이 가능합니다.<br><br>따라서 가능하시다면 아래 로그를 확인하여 전달 부탁드립니다.<br><br>sudo journalctl -k --since &quot;2026-07-21 01:00&quot; --until &quot;2026-07-22 02:00&quot; | grep -iE &#x27;oom|killed process|blobfuse&#x27;<br><br>sudo grep -iE &#x27;panic|fatal|signal|oom|blobfuse2&#x27; /var/log/syslog* /var/log/kern.log*<br><br>만약 BlobFuse2를 systemd Service로 운영 중이시라면 아래 내용도 함께 전달 부탁드립니다.<br><br>sudo systemctl status &lt;blobfuse2-service-name&gt;<br><br>sudo journalctl -u &lt;blobfuse2-service-name&gt; --since &quot;2026-07-21 01:00&quot; --until &quot;2026-07-22 02:00&quot;<br><br>만약 위 로그에서 아래와 같은 내용이 확인된다면 정확한 종료 원인을 확인할 수 있을 것으로 보여집니다.<br><br>Out of memory: Killed process (blobfuse2) → OOM(메모리 부족)으로 인한 종료<br>panic, fatal, SIGSEGV → BlobFuse2 Process Crash<br>Service Stop 또는 Restart 기록 → Service 재시작 또는 운영체제 수준의 종료<br><br>현재까지 확인된 내용으로는 저희 Azure Storage 서비스 측에는 이상이 없었으며, BlobFuse2 Process 종료로 인해 Orphaned FUSE Mount가 발생한 것으로 판단됩니다.<br><br>정확한 종료 원인 확인을 위해 위 VM 로그를 전달해주시면 추가 분석을 진행하여 안내드리겠습니다.<br><br>추가로 궁금하신 사항이나 확인이 필요하신 부분이 있으시면 언제든지 편하게 회신 부탁드립니다.<br><br><br> <br><br>다음 단계: <br><br>문의주신 내용에 대해 안내드렸습니다. 추가로 궁금하신 사항이나 확인이 필요하신 부분이 있으시면, 언제든지 편하게 회신 주시면 감사하겠습니다.<br><br> <br><br>항상 저희 Microsoft 기술지원을 이용해 주셔서 감사드리며,<br><br>오늘도 좋은 하루 보내시길 바랍니다.<br><br> <br><br>감사합니다.  <br><br> <br><br>시투 <br><br>Azure PaaS Support Engineer <br><br>한국마이크로소프트 고객기술지원 | siset@microsoft.com | 직통번호 02-531-8227 | 근무시간 9:00-18:00 <br> <br><br> <br><br>______________________________________________________________________________________________________________________<br><br>한국마이크로소프트는 산업안전보건법에 따른 고객 응대 근로자 보호조치를 따르고 있습니다. 전화 상담 내용은 고객 지원 및 서비스 품질 향상을 위해 녹음되며, 관련 법령에 따라 일정 기간 보관됩니다. 고객께 전화를 드릴 경우 수신번호가 1577-9700(고객기술지원센터)으로 표시됩니다. 한국마이크로소프트는 개인정보처리방침을 준수합니다. <br><br> <br><br>siset@microsoft.com</div></div>
+</main>
+</body>
+</html>

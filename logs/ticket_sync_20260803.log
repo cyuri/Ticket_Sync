@@ -1,0 +1,23 @@
+2026-08-03 09:19:37 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 동기화 시작 {'freshdesk_env': 'prod', 'do_freshdesk': False, 'mode': 'range', 'start_date': '2026-07-31', 'end_date': '2026-07-31', 'date_basis': 'created', 'case_status': 'all', 'skip_dedup': True, 'save_excel': False, 'owner': 'web-ui'}
+2026-08-03 09:19:45 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-03 09:19:48 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-08-03 09:19:51 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-08-03 09:19:52 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-03 09:19:53 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-08-03 09:19:55 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-08-03 09:20:03 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-08-03 09:20:15 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-07-31 ~ 2026-07-31
+2026-08-03 09:20:17 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-03 09:20:17 [INFO] ticket_sync.crawler: CSV에서 총 8건 파싱됨 (날짜 필터 전, status=open)
+2026-08-03 09:20:17 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 2건 (상세 보강 대상, status=open)
+2026-08-03 09:20:31 [INFO] ticket_sync.crawler: 상세 보강 진행 1/2 완료 (case=2607310030003903)
+2026-08-03 09:20:53 [INFO] ticket_sync.crawler: 상세 보강 진행 2/2 완료 (case=2607310030000582)
+2026-08-03 09:20:59 [WARNING] ticket_sync.crawler: 상태 필터에서 '열기' 항목을 찾지 못했습니다.
+2026-08-03 09:21:04 [WARNING] ticket_sync.crawler: 상태 필터에서 '완료됨' 항목을 찾지 못했습니다.
+2026-08-03 09:21:06 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=closed (완료됨 체크=True)
+2026-08-03 09:21:18 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-07-31 ~ 2026-07-31
+2026-08-03 09:21:19 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-08-03 09:21:19 [INFO] ticket_sync.crawler: CSV에서 총 8건 파싱됨 (날짜 필터 전, status=closed)
+2026-08-03 09:21:19 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 2건 (상세 보강 대상, status=closed)
+2026-08-03 09:21:43 [INFO] ticket_sync.crawler: 상세 보강 진행 1/2 완료 (case=2607310030003903)
+2026-08-03 09:22:12 [INFO] ticket_sync.crawler: 상세 보강 진행 2/2 완료 (case=2607310030000582)

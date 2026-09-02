@@ -1,0 +1,69 @@
+# 웹 대시보드(UI/API)만 배포한다. 실제 Engage Center 브라우저 자동화는 이 파드가 아니라
+# 사내망/VPN 이 연결된 PC 위의 local_runner.py 가 대신 수행하고(TICKET_SYNC_EXEC_MODE=remote),
+# 이 파드는 Cloudflare Tunnel(또는 동등한 리버스 터널)을 통해 그 PC에 HTTP로 실행을
+# 위임한다. DB(tickets.db)도 파일 공유가 안 되므로 rqlite(같은 터널로 노출)를 통해 본다.
+# 자세한 사전 준비(Tunnel/rqlite 설정)는 k8s/README.md 참고.
+#
+# 반드시 replicas: 1 이어야 한다 — local_runner.py 자체가 "한 번에 하나만 실행"을
+# sync_lock.py 로 보장하므로 웹 파드 자체는 상태가 없지만(stateless), 예약 실행 스케줄러
+# (scheduler.py)가 파드마다 따로 등록되면 같은 스케줄이 중복 트리거될 수 있어 그대로 둔다.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ticket-sync
+  labels:
+    app: ticket-sync
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ticket-sync
+  template:
+    metadata:
+      labels:
+        app: ticket-sync
+    spec:
+      containers:
+        - name: ticket-sync
+          image: ticket-sync:latest  # 본인 레지스트리 주소로 바꾸세요 (예: myregistry.azurecr.io/ticket-sync:latest)
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: ticket-sync-secrets
+          env:
+            - name: TICKET_SYNC_EXEC_MODE
+              value: "remote"
+            - name: TICKET_SYNC_LOCAL_RUNNER_URL
+              value: "https://runner.example.com"  # Cloudflare Tunnel로 노출한 local_runner.py 주소로 바꾸세요
+            - name: TICKET_SYNC_DB_BACKEND
+              value: "rqlite"
+            - name: TICKET_SYNC_RQLITE_URL
+              value: "https://rqlite.example.com"  # 같은 터널로 노출한 rqlite 주소로 바꾸세요
+          volumeMounts:
+            - name: config
+              mountPath: /app/config.json
+              subPath: config.json
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+      volumes:
+        - name: config
+          configMap:
+            name: ticket-sync-config

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>비용이 많아 나와 blob storage를 cool에서 hot으로 전환하려고 합니다. 전환 방법과 전환 시 영향받는 내용이 있는지 드립니다</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>비용이 많아 나와 blob storage를 cool에서 hot으로 전환하려고 합니다. 전환 방법과 전환 시 영향받는 내용이 있는지 드립니다</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2608040030000188</b></span>
+    <span>최근 발신자: <b>sunggunlee@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 8. 4. 오전 10:41</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-meta">sunggunlee@microsoft.com · 2026. 8. 4. 오전 10:41</div><div class="thread-card-body">안녕하세요<br><br>마이크로소프트 기술지원부 이성근 엔지니어입니다.<br><br><br><br>김태형님<br>빠르게 회신 주셔서 감사합니다.<br>문의주신 부분에 대한 답변은 다음과 같습니다.<br><br><br>1) Portal 상 tier 변경 시 기존 파일들도 변경되는지 여부<br>“두번째로 Storage Account의 default tier도 Hot으로 변경을 원하신다면 다음 CLI 또는 Portal을 이용해주세요”<br>해당 작업을 진행하면 기존 storage account 내 container 들의 tier도 자동으로 변경되는 것일지 첫 번째로 안내 주신 cli나 portal, storage explorer에서 설정은 별도로 진행해야하는지 문의 드립니다.<br><br><br>해당 부분은 default 값이기에 신규로 생성 되는 Blob에게만 반영이됩니다.<br>따라서 기존에 생성된 Blob Tier에는 적용이 되지 않겠습니다.<br>기존 생성된 Blob의 경우에는 첫번째 안내해드린 CLI 로 Bulk 처리하시는 것이 가장 편리하실 것 같습니다. <br><br><br>2) Tier 변경 간 downtime 관련<br>tier 변경 간 downtime이 발생할 수 있다고 공유 주셨습니다. Downtime의 경우 파일 단위로 생기는 것일까요? 혹은 container 단위로 생기는 것일까요?<br><br><br>변경 하고자하는 파일(Blob) 단위로 보시면 되겠습니다. <br>Storage에 대한 Downtime은 없겠습니다. <br><br> <br><br>감사합니다.<br><br>이성근<br><br>Sung Gun Lee<br>Technical Advisor (TA)<br>Customer Service &amp; Support - Azure PaaS<br><br>Office : +82 (2) 531-4575</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-meta">김태형(Foundation AI팀) &lt;taehyeong_2019.kim@kt.com&gt; · Tuesday, August 04, 2026 10:32 AM</div><div class="thread-card-body">안녕하세요. 김태형입니다.<br><br> <br><br>빠른 회신 감사드립니다.<br><br>몇 가지 문의 드립니다.<br><br> <br><br>Portal 상 tier 변경 시 기존 파일들도 변경되는지 여부<br>“두번째로 Storage Account의 default tier도 Hot으로 변경을 원하신다면 다음 CLI 또는 Portal을 이용해주세요”<br>해당 작업을 진행하면 기존 storage account 내 container 들의 tier도 자동으로 변경되는 것일지 첫 번째로 안내 주신 cli나 portal, storage explorer에서 설정은 별도로 진행해야하는지 문의 드립니다.<br><br> <br><br>Tier 변경 간 downtime 관련<br>tier 변경 간 downtime이 발생할 수 있다고 공유 주셨습니다. Downtime의 경우 파일 단위로 생기는 것일까요? 혹은 container 단위로 생기는 것일까요?<br><br> <br><br>감사합니다.<br><br>김태형 드림</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">SungGun L &lt;supportmail@techsupport.microsoft.com&gt; · Tuesday, August 4, 2026 10:03 AM</div><div class="thread-card-body">안녕하세요 저희 고객기술지원 서비스를 이용해 주셔서 감사합니다. <br><br>저는 이 케이스를 지원할 한국마이크로소프트 고객기술지원 엔지니어 이성근입니다. <br><br>서명란의 연락처를 통해 언제나 연락주실 수 있습니다.<br><br> <br><br>문의하신 사항에 대해 아래와 같이 정리합니다. 내용을 살펴보시고 잘못 이해하였거나, 궁금하신 점이 있다면 알려주시기 바랍니다. 빠른 확인 및 시스템 기록을 위해 반드시 전체 회신(supportmail@microsoft.com 포함)으로 응답 부탁드립니다.<br><br> <br><br>문의 사항:<br><br>blob storage 비용이 많이 나와 cool에서 hot으로 tier를 변경하려고 합니다.<br>blob storage전체에 대해 tier를 변경하는 방법과 변경 시 고려 사항을 문의 드립니다.<br>ex) mount한 storage 연결이 끊긴다던가 등등<br><br> <br><br>진행 사항:<br><br>먼저 현재 존재하는 Blob Tier 변경을 원하신다면 다음 CLI를 이용하시면 되겠습니다.<br><br>access-tiers-online-manage-azure-cli#bulk-tiering <br><br>Container 레벨에 대한 Bulk 처리를 하실 수 있습니다.<br><br>아쉽게도 저희가 별도로 Scripting에 대해서는 지원을 해드리고 있지 않아 해당 부분은 참고 해주시면 감사하겠습니다.<br><br> <br><br>다른 방법으로는 Portal 및 Storage Explorer를 통해서 진행을 하실 수 있으나,<br><br>해당 부분은 UI로만 진행이 되다보니 건건이 Blob을 선택하셔서 진행이 필요하다보니 CLI 커맨드 가이던스를 전달드립니다. <br><br> <br><br>Blob의 Tier 변경 간에는 Storage Account 자체적으로는 별다른 Connection 이슈가 발생하지 않습니다.<br><br>다만 변경하시고자하는 Blob의 경우에는 사이즈에 따라서 Cool에서 Hot으로 변경 되는 기간 동안 사용 및 접근이 불가할 수 있습니다.<br><br>아쉽게도 해당 Cool에 Hot으로 변경되는 부분에 대한 정확한 소요 시간을 말씀드리기가 어려운 부분이 있겠습니다.<br><br>사유는 당시 Storage의 Workload, Blob data 크기에 따라 각각 다르기에 빠르면 최소 몇 초에 그 이상이 걸릴 수도 있습니다.<br><br>이 부분에 대해서는 너그럽게 이해해주시면 감사하겠습니다.  <br><br> <br><br>두번째로 Storage Account의 default tier도 Hot으로 변경을 원하신다면 다음 CLI 또는 Portal을 이용해주세요<br><br>#set-the-default-access-tier-for-a-storage-account <br><br> <br><br>마지막으로 고려하실 부분은 Tier 변경 간에도 비용이 발생을 할 수 있습니다.<br><br>https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview#changing-a-blobs-access-tier <br><br>자세한 내용은 위 문서를 참고해주시면 감사하겠습니다.<br><br> <br><br>다음 단계:<br><br>전달 드린 내용을 참고해주시고 추가적으로 문의사항이 있으시다면 전체 회신을 부탁드립니다. <br><br> <br><br>감사합니다. <br><br> <br><br>이성근<br><br>Technical Advisor (TA)<br><br>한국마이크로소프트 고객기술지원 | sunggunlee@microsoft.com  | 직통번호 02-531-4575 | 근무시간 9:00-18:00<br><br>________________________________________________________________________________________________________________________<br><br>한국마이크로소프트는 산업안전보건법에 따른 고객 응대 근로자 보호조치를 따르고 있습니다. 전화 상담 내용은 고객 지원 및 서비스 품질 향상을 위해 녹음되며, 관련 법령에 따라 일정 기간 보관됩니다. 고객께 전화를 드릴 경우 수신번호가 1577-9700(고객기술지원센터)으로 표시됩니다. 한국마이크로소프트는 개인정보처리방침을 준수합니다.<br><br>sunggunlee@microsoft.com</div></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ticket-sync
+spec:
+  selector:
+    app: ticket-sync
+  ports:
+    - port: 80
+      targetPort: 8000
+  type: ClusterIP
+  # 클러스터 외부에서 바로 접속하려면 type: LoadBalancer 로 바꾸거나
+  # Ingress 리소스를 별도로 추가하세요.
+  #
+  # AKS에서 외부 접속 방법 두 가지:
+  #   1) type: LoadBalancer 로 바꾸면 Azure가 퍼블릭 IP를 자동으로 붙여준다(가장 간단,
+  #      단 HTTPS/도메인은 직접 처리해야 함).
+  #   2) Application Gateway Ingress Controller(AGIC) 또는 nginx-ingress + Ingress
+  #      리소스를 쓰면 도메인/HTTPS(cert-manager) 를 붙이기 편하다 — 실제 조직 내부
+  #      배포라면 이쪽을 권장.

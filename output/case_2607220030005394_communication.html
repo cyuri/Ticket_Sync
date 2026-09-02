@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>cost analysis 비용이 이상합니다.</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>cost analysis 비용이 이상합니다.</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607220030005394</b></span>
+    <span>최근 발신자: <b>Hwajeong.Son@microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 24. 오후 05:59</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">5</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607220030005394<br><br>심각도<br>B - 보통 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 24. 오후 05:59<br><br>만들어짐<br>2026. 7. 22. 오후 06:07<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>Hwajeong.Son@microsoft.com<br>2026. 7. 24. 오후 05:59<br><br>youngwoo.jo@kt.com<br>2026. 7. 24. 오전 11:25<br><br>Hwajeong.Son@microsoft.com<br>2026. 7. 24. 오전 11:12<br><br>youngwoo.jo@kt.com<br>2026. 7. 23. 오후 05:34<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 23. 오후 12:52<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 22. 오후 06:07<br><br>외부 메시지가 모든 사용자에게 표시됩니다.<br>메시지:<br>	<br>You don&#x27;t often get email from hwajeong.son@microsoft.com. Learn why this is important<br>	<br><br>안녕하세요. 조영우 고객님,<br><br> <br><br>Microsoft Azure Billing Support 손화정입니다.<br><br> <br><br>회신해주셔서 감사드립니다.<br><br> <br><br>jobid = 100212398493364 와 runname = wf_jb_dm_css_use_month_sum_dd 가 동일한 ETL Job을 의미하는 것으로 확인해 주신 것으로 이해하였습니다.<br><br> <br><br>다만 현재 정보만으로는 해당 Job과 비용 데이터의 관계를 정확히 확인하기 어려워, 추가 확인을 부탁드리고자 합니다.<br><br>번거로우시겠지만 아래 내용을 확인할 수 있는 화면을 공유해 주시면 감사드리겠습니다.<br><br> <br><br>jobid = 100212398493364 가 표시되는 Job 상세 화면<br>runname = wf_jb_dm_css_use_month_sum_dd 가 표시되는 Job 상세 화면<br>가능하시다면 해당 Job의 하위 Task(3개) 정보를 확인할 수 있는 화면<br><br> <br><br>아울러, [ rg-az01-co013701-prd-magma-datalake-03 ] 는 Resource Group이름으로 확인됩니다.<br><br>리소스명은 Resource Group 내에 포함된 개별 리소스의 이름을 의미합니다.<br><br> <br><br>리소스명 예시:<br><br> <br><br>공유해 주시는 자료를 바탕으로 jobid 기준 조회와 runname 기준 조회 시 비용 집계 결과가 상이하게 표시되는 원인에 대해 확인해 보겠습니다.<br><br> <br><br>고객님의 소중한 회신을 기다리겠습니다.<br><br>즐거운 주말 보내시기 바랍니다.<br><br> <br><br>감사합니다<br><br>손화정 드림<br><br>한국마이크로소프트 고객지원부 | Azure Subscription and Billing Management Support <br><br> <br><br>Heide Son <br><br>Support Engineer | Azure Subscription and Billing Management Support<br><br>Working hours: Mon-Fri | 09:00 AM–06:00 PM (Korea, GMT+9) | 00:00 AM-09:00 AM (UTC)<br><br>Manager: Praveen Parameswaran Nair | pravnair@microsoft.com<br><br> <br><br>Can’t reach me?<br><br>During my working hours: Email  asmskrent@microsoft.com with your support request number.<br><br>Outside my working hours: Email asmsesc@microsoft.com for English support.<br><br> <br><br>  <br><br>Microsoft Support will never ask for your account password or full credit card number. <br><br>For your privacy and security, never send your login credentials or full credit card number in email.</div></div>
+<div class="thread-card"><div class="thread-card-index">4</div><div class="thread-card-body">From: 조영우(Data엔지니어링팀) &lt;youngwoo.jo@kt.com&gt;<br>Sent: Friday, July 24, 2026 11:24 AM<br>To: Heide Son &lt;Hwajeong.Son@microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Microsoft Support &lt;supportmail@microsoft.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Subject: [EXTERNAL] RE: cost analysis 비용이 이상합니다. - TrackingID#2607220030005394<br><br> <br><br>	<br><br>youngwoo.jo@kt.com에게서 전자 메일을 받지 못하는 경우가 많습니다. 이 문제가 중요한 이유<br><br>	<br><br>안녕하세요. KT 조영우입니다.<br><br> <br><br>jobid = 100212398493364 와 runname = wf_jb_dm_css_use_month_sum_dd 가 동일한 Azure ML Job을 의미하는 것으로 이해해도 될지 확인 부탁드립니다.   <br><br> -&gt; 동일한 Azure Job 입니다 (ML job은 별도로 존재하는지 제가 모르나 해당 Job은 ETL 배치 job 입니다)<br><br>위 jobid 와 runname 의 관계를 확인할 수 있는 Azure ML 화면(또는 관련 스크린샷)을 공유 부탁드립니다.<br><br><br>해당 비용이 발생한 리소스명에 대해 확인을 부탁드립니다.<br>-&gt; 리소스명이 리소스 그룹 맞을까요? rg-az01-co013701-prd-magma-datalake-03 입니다.<br><br> <br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">3</div><div class="thread-card-body">From: Heide Son &lt;Hwajeong.Son@microsoft.com&gt;<br>Sent: Friday, July 24, 2026 11:12 AM<br>To: 조영우(Data엔지니어링팀) &lt;youngwoo.jo@kt.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Microsoft Support &lt;supportmail@microsoft.com&gt;; External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Subject: RE: cost analysis 비용이 이상합니다. - TrackingID#2607220030005394<br><br> <br><br>안녕하세요. 조영우 고객님,<br><br> <br><br>Microsoft Azure Billing Support 손화정입니다.<br><br> <br><br>회신해주셔서 감사드립니다.<br><br> <br><br>앞서 문의주셨던 [ Cost analysis에서 6월 기간이 포함되는 경우, 비용이 조회되지 않는 현상 ] 은 현재 추가 조사가 필요하시지 않은 것으로 이해하였으며,<br><br>추가로 문의 주신 [Cost Analysis에서 jobid로 필터링한 경우와 runname으로 필터링한 경우 비용이 다르게 표시되는 현상] 에 대해서 조사가 필요한 것으로 이해하였습니다.<br><br>제가 내용을 잘못 이해하였거나 누락된 부분이 있다면 말씀 부탁드립니다.<br><br> <br><br>번거로우시겠습니다만, 정확한 원인 파악을 위해 아래 사항에 대해 확인을 도와주시면 감사드리겠습니다.<br><br>jobid = 100212398493364 와 runname = wf_jb_dm_css_use_month_sum_dd 가 동일한 Azure ML Job을 의미하는 것으로 이해해도 될지 확인 부탁드립니다.<br>위 jobid 와 runname 의 관계를 확인할 수 있는 Azure ML 화면(또는 관련 스크린샷)을 공유 부탁드립니다.<br>해당 비용이 발생한 리소스명에 대해 확인을 부탁드립니다.<br><br> <br><br>고객님의 소중한 회신을 기다리겠습니다.<br><br> <br><br>감사합니다<br><br>손화정 드림<br><br>한국마이크로소프트 고객지원부 | Azure Subscription and Billing Management Support <br><br> <br><br>Heide Son <br><br>Support Engineer | Azure Subscription and Billing Management Support<br><br>Working hours: Mon-Fri | 09:00 AM–06:00 PM (Korea, GMT+9) | 00:00 AM-09:00 AM (UTC)<br><br>Manager: Praveen Parameswaran Nair | pravnair@microsoft.com<br><br> <br><br>Can’t reach me?<br><br>During my working hours: Email  asmskrent@microsoft.com with your support request number.<br><br>Outside my working hours: Email asmsesc@microsoft.com for English support.<br><br> <br><br>  <br><br>Microsoft Support will never ask for your account password or full credit card number. <br><br>For your privacy and security, never send your login credentials or full credit card number in email.</div></div>
+<div class="thread-card"><div class="thread-card-index">2</div><div class="thread-card-body">From: 조영우(Data엔지니어링팀) &lt;youngwoo.jo@kt.com&gt;<br>Sent: Thursday, July 23, 2026 5:33 PM<br>To: External - supportmail-PROD &lt;supportmail@techsupport.microsoft.com&gt;<br>Cc: Keehoon Kim (Kenneth) &lt;Kenneth.Kim@microsoft.com&gt;; Jay Park &lt;parkjay@microsoft.com&gt;; Yongha Hwang &lt;yonghahwang@microsoft.com&gt;; Heide Son &lt;Hwajeong.Son@microsoft.com&gt;; Microsoft Support &lt;supportmail@microsoft.com&gt;<br>Subject: [EXTERNAL] RE: cost analysis 비용이 이상합니다. - TrackingID#2607220030005394<br><br> <br><br>안녕하세요. KT 조영우입니다.<br><br> <br><br>해당 케이스 및 유사 케이스의 경우, 특정 지점 전/후 비용차이 갭(몇십만원 -&gt; 몇백원)이 커서 안보였던거 같습니다.<br><br>이 case말고 아래 사례를 같이 봐주시면 감사하겠습니다.<br><br> <br><br>동일한 job을 기준으로 태그 jobid와 runname으로 비교시 비용이 다릅니다.<br><br> <br><br>Jobid 으로 조회<br><br><br> <br><br>Runname 으로 조회<br><br><br> <br><br>관련하여 특이사항을 말씀드리면, 해당 job의 경우 하위 task가 3개 존재하는데,<br>기존에 job compute로 수행하던 2개 task를 Serverless로 전환했습니다.<br><br> <br><br>아래 정보도 같이 공유드립니다.<br><br> <br><br>Azure 포털로 접속하신 계정(이메일 주소):  youngwoo.jo@kt.com<br>보유하고 계시는 역할: (예: 소유자 등): role name이 [KT] Reader 입니다.<br>전체 화면의 스크린샷 (왼쪽 Azure 포털 메뉴와 오른쪽 상단의 계정 정보 포함)<br><br><br> <br><br>감사합니다.</div></div>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-body">From: heideson@microsoft.com &lt;supportmail@techsupport.microsoft.com&gt;<br>Sent: Thursday, July 23, 2026 12:53 PM<br>To: 조영우(Data엔지니어링팀) &lt;youngwoo.jo@kt.com&gt;<br>Cc: Kenneth.Kim@microsoft.com; parkjay@microsoft.com; yonghahwang@microsoft.com; hwajeong.son@microsoft.com; supportmail@microsoft.com<br>Subject: cost analysis 비용이 이상합니다. - TrackingID#2607220030005394<br><br> <br><br>안녕하세요. Microsoft Azure Billing Support 손화정입니다.<br>고객 지원 서비스를 이용해 주셔서 감사합니다.<br> <br><br>[구독 정보]<br>AzureProductSubscriptionID: 1c559cdd-e422-4200-a139-a71443ea704f<br><br>AzureProductSubscriptionName: sub-az01-co013701-prd-dtlk<br><br><br>[문의 사항]<br>1. 디폴트 기간 셋팅값 (This month) 로 특정 runname으로 조회시 7월 비용 나옴 (첫번째 이미지)<br><br>2. last 30일로 기간 셋팅 시 (동일 runname) 7월 비용 안나옴 (두번째 이미지)  <br><br>3. 추가로 last7일 기간 셋팅 시 7월 비용 나옴 , 기간 range 지정으로 6월부터 지정하면 안나옵니다.<br><br> <br><br>[첨부 파일]<br><br><br>문의주신 내용을 [ Cost analysis 에서 6월 기간이 포함되는 경우, 비용이 조회되지 않는 현상 ] 으로 이해 하였습니다.<br>만일 제가 잘못 이해하였거나 누락된 부분이 있다면 알려주시기 바랍니다.<br><br> <br><br>전해주신 스크린샷 잘 확인하였습니다. 감사합니다. <br><br> <br><br>정확한 원인 파악을 위해 Engineering team으로 조사를 요청하겠습니다.<br><br>다만 이를 위하여, 많이 번거로우시겠습니다만, 아래 4가지 부분에 대해 확인을 도와주시면 감사드리겠습니다.<br><br> <br><br>Azure 포털로 접속하신 계정(이메일 주소):<br>보유하고 계시는 역할: (예: 소유자 등)<br>전체 화면의 스크린샷 (왼쪽 Azure 포털 메뉴와 오른쪽 상단의 계정 정보 포함)<br>Trace 파일 수집 (Trace 파일이란 고객님께서 웹상에서 확인을 하시는 화면에 대해, 이슈 재현을 통하여 문자 형식으로 리코딩이 되어 메모장으로 저장이 되는 파일 형태입니다)<br><br><br>Chrome을 이용하시는 경우의 Trace 수집하시는 방법<br><br>브라우저를 오픈하여 주십시오.<br>오른쪽 상단의 설명 메뉴 &gt; “도구 더보기” &gt; “개발자 도구” 를 클릭하여 주십시오. (또는 F12를 클릭하여 주십시오) 이로서 리코딩이 시작됩니다.<br><br> <br><br>3. “Network” 클릭 후 “Preserve log”에 체크하여 주십시오.<br><br>Azure 포털로 로그인하셔서, 이슈 재현을 부탁드립니다. <br>이슈 재현이 완료되신 후, 오른쪽 로그 기록에서 마우스 오른쪽 버튼을 클릭하신 후, “Save as….” 클릭 &gt; HAR 타입 (텍스트 형태) 으로 저장을 부탁드립니다.<br>파일은 하단의 링크로 업로드를 부탁드립니다.<br><br>File Transfer - Case 2607220030005394<br><br> <br><br>위 링크로 본 케이스를 오픈해주신 고객님의 계정 youngwoo.jo@kt.com 으로 로그인이 필요하시며, 해당 계정으로만 접근이 가능합니다.  <br><br> <br><br>Trace 파일 수집 관련하여 아래 홈페이지를 통해서도 함께 참고하실 수 있습니다.<br><br>ㅣ참고 문서ㅣ문제 해결을 위한 브라우저 추적 캡처 - Azure portal | Microsoft Docs<br><br> <br><br>고객님의 소중한 회신을 기다리겠습니다.<br><br><br>감사합니다<br>손화정 드림<br>한국마이크로소프트 고객지원부 | Azure Subscription and Billing Management Support <br><br>Heide Son <br>Support Engineer | Azure Subscription and Billing Management Support<br>Working hours: Mon-Fri | 09:00 AM–06:00 PM (Korea, GMT+9) | 00:00 AM-09:00 AM (UTC)<br>Manager: Praveen Parameswaran Nair | pravnair@microsoft.com<br><br> <br>Can’t reach me? <br>During my working hours: Email  asmskrent@microsoft.comwith your support request number. <br><br>Outside my working hours: Email asmsesc@microsoft.com for English support.<br><br> <br>Microsoft Support will never ask for your account password or full credit card number. <br><br>For your privacy and security, never send your login credentials or full credit card number in email. <br><br>Hwajeong.Son@microsoft.com</div></div>
+</main>
+</body>
+</html>

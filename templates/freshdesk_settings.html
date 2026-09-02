@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block title %}Ticket Sync · Freshdesk 설정{% endblock %}
+{% block content %}
+
+  {% if saved %}
+    <div class="banner running" style="margin-bottom:16px;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      <span>연결을 저장했습니다.</span>
+    </div>
+  {% elif deleted %}
+    <div class="banner running" style="margin-bottom:16px;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      <span>연결을 삭제했습니다.</span>
+    </div>
+  {% elif activated %}
+    <div class="banner running" style="margin-bottom:16px;">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      <span>활성 연결을 변경했습니다.</span>
+    </div>
+  {% endif %}
+
+  <div class="card">
+    <div class="card-header">
+      <h2>
+        <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>저장된 Freshdesk 연결
+        <span class="info-tip" title="이름을 붙여 여러 연결을 저장해둘 수 있습니다. 그중 &quot;활성&quot;으로 지정된 연결 하나를 수동 등록·예약 실행·Freshdesk 동기화 기능이 전부 함께 씁니다.">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </span>
+      </h2>
+      <span class="count-chip">{{ connections|length }}개</span>
+    </div>
+
+    {% if connections %}
+    <div class="fd-conn-list">
+      {% for c in connections %}
+      <div class="fd-conn-row">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div>
+            <strong>{{ c.name }}</strong>
+            {% if c.is_active %}<span class="pill ok" style="margin-left:8px;">활성</span>{% endif %}
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:2px;">{{ c.domain or "(도메인 미설정)" }}</div>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            {% if not c.is_active %}
+            <form method="post" action="/freshdesk/settings/{{ c.id }}/activate" style="display:inline;">
+              <button class="btn-primary" type="submit" style="padding:6px 14px; box-shadow:none; font-size:0.82rem;">활성으로 지정</button>
+            </form>
+            {% endif %}
+            <button type="button" class="btn-primary"
+                    style="padding:6px 14px; box-shadow:none; font-size:0.82rem; background:var(--surface-alt); color:var(--text); border:1px solid var(--border-soft);"
+                    onclick="toggleEdit({{ c.id }})">편집</button>
+            <form method="post" action="/freshdesk/settings/{{ c.id }}/delete" style="display:inline;"
+                  onsubmit="return confirm('연결 \'{{ c.name }}\'을(를) 삭제하시겠습니까?')">
+              <button class="btn-primary" type="submit" style="padding:6px 14px; box-shadow:none; background:var(--danger, #d0342c);">삭제</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="conn-edit-{{ c.id }}" style="display:none; margin-top:14px; padding-top:14px; border-top:1px solid var(--border-soft);">
+          <form method="post" action="/freshdesk/settings/{{ c.id }}/update">
+            <div class="field-row">
+              <div class="field-group">
+                <label class="title">연결 이름</label>
+                <input type="text" name="name" value="{{ c.name }}" required>
+              </div>
+              <div class="field-group">
+                <label class="title">도메인</label>
+                <input type="text" name="domain" value="{{ c.domain or '' }}" placeholder="company.freshdesk.com">
+              </div>
+              <div class="field-group">
+                <label class="title">API Key</label>
+                <input type="password" name="api_key" value="{{ c.api_key or '' }}">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="title">기본 그룹 ID (선택)</label>
+                <input type="text" name="default_group" value="{{ c.default_group or '' }}">
+              </div>
+              <div class="field-group">
+                <label class="title">기본 담당자 ID (선택)</label>
+                <input type="text" name="default_responder" value="{{ c.default_responder or '' }}">
+              </div>
+              <div class="field-group">
+                <label class="title">기본 우선순위 (1~4)</label>
+                <input type="number" name="default_priority" min="1" max="4" value="{{ c.default_priority or 2 }}">
+              </div>
+              <div class="field-group">
+                <label class="title">기본 상태 코드</label>
+                <input type="number" name="default_status" value="{{ c.default_status or 2 }}">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field-group">
+                <label class="title">케이스ID 커스텀 필드명 (선택)</label>
+                <input type="text" name="custom_field_case_id" value="{{ c.custom_field_case_id or '' }}">
+              </div>
+              <div class="field-group">
+                <label class="title">접수일 커스텀 필드명 (선택)</label>
+                <input type="text" name="custom_field_received_date" value="{{ c.custom_field_received_date or '' }}">
+              </div>
+            </div>
+            <button class="btn-primary" type="submit" style="margin-right:8px;">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+              저장
+            </button>
+            <button type="button" onclick="toggleEdit({{ c.id }})"
+                    style="padding:9px 20px; border-radius:var(--radius-sm); border:1px solid var(--border-soft); background:var(--surface); color:var(--text-muted); cursor:pointer;">
+              취소
+            </button>
+          </form>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+      <div class="empty">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        아직 저장된 연결이 없습니다. 아래에서 새 연결을 추가해보세요.
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2><span class="icon-badge"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>새 연결 추가</h2>
+      <button type="button" class="btn-primary" style="padding:8px 18px; box-shadow:none;" onclick="toggleAddForm()">
+        + 새 연결
+      </button>
+    </div>
+    <div id="add-connection-form" style="display:none; margin-top:14px;">
+      <form method="post" action="/freshdesk/settings/create">
+        <div class="field-row">
+          <div class="field-group">
+            <label class="title">연결 이름</label>
+            <input type="text" name="name" placeholder="예: Connection1" required>
+          </div>
+          <div class="field-group">
+            <label class="title">도메인</label>
+            <input type="text" name="domain" placeholder="company.freshdesk.com">
+          </div>
+          <div class="field-group">
+            <label class="title">API Key</label>
+            <input type="password" name="api_key">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label class="title">기본 그룹 ID (선택)</label>
+            <input type="text" name="default_group">
+          </div>
+          <div class="field-group">
+            <label class="title">기본 담당자 ID (선택)</label>
+            <input type="text" name="default_responder">
+          </div>
+          <div class="field-group">
+            <label class="title">기본 우선순위 (1~4)</label>
+            <input type="number" name="default_priority" min="1" max="4" value="2">
+          </div>
+          <div class="field-group">
+            <label class="title">기본 상태 코드</label>
+            <input type="number" name="default_status" value="2">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field-group">
+            <label class="title">케이스ID 커스텀 필드명 (선택)</label>
+            <input type="text" name="custom_field_case_id">
+          </div>
+          <div class="field-group">
+            <label class="title">접수일 커스텀 필드명 (선택)</label>
+            <input type="text" name="custom_field_received_date">
+          </div>
+        </div>
+        <button class="btn-primary" type="submit">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+          저장
+        </button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function toggleEdit(id) {
+    var el = document.getElementById('conn-edit-' + id);
+    if (el) el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
+  }
+  function toggleAddForm() {
+    var el = document.getElementById('add-connection-form');
+    if (el) el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
+  }
+</script>
+{% endblock %}

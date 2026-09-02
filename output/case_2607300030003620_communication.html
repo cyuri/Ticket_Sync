@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>특정 리소스만 분리하여 별도 영수증을 문서로 받을 수 있는지</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>특정 리소스만 분리하여 별도 영수증을 문서로 받을 수 있는지</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607300030003620</b></span>
+    <span>최근 발신자: <b>supportmail@techsupport.microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 30. 오후 04:16</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">supportmail@techsupport.microsoft.com · 2026. 7. 30. 오후 04:16</div><div class="thread-card-body">안녕하세요. Microsoft Azure Support 조예슬입니다.<br><br>고객 지원 서비스를 이용해 주셔서 감사합니다.<br><br>고객 데이터 보호를 위해 마이크로소프트 지원팀에서는 안전한 자료 교환 솔루션인 DTM (Data Transfer &amp; Management)을 통해서만 데이터를 전달받고 있습니다.<br>첨부 파일을 지원팀에 제공할 때에는 반드시 포털의 지원요청 페이지에서 파일을 업로드해주시거나, 지원 엔지니어로부터 제공 받으신 DTM 링크를 통해 자료 업로드를 부탁드립니다.<br><br>[구독 정보]<br><br>AzureProductSubscriptionID: 59282147-4e06-47ed-bb04-cd383dd85c09<br><br>AzureProductSubscriptionName: sub-az01-rnd-gpu-02<br><br>[문의 사항]<br><br> 저희가 현재 특정 기간, 특정 리소스 ( ex) UAE, KR South 등의 gpu vm 및 storage 비용, 통신 비용 한정)에 대해 부과된 비용에 대해 영수증이나 그와 유사한 공식 문서를 받을 수 있는지 문의 드립니다.<br><br> <br><br>가능하다면 작년 11월 기준 UAE리전에 부과된 비용에 대한 영수증을 샘플로 전달해주시면 감사하겠습니다.<br><br> <br><br>문의 주신 내용을 [커스텀 영수증 발행 요청] 문의로 이해하였습니다.<br><br>제가 잘못 이해한 부분이 있거나 누락된 사항이 있을 경우 알려주시면 감사하겠습니다.<br><br> <br><br>매월 발행되는 인보이스(청구서)외에, 편집된 영수증이나 추가적인 청구서는 발행해 드릴 수 없는 구조임을 양해 부탁드립니다.<br><br>필요하시다면 Billing profile이나 구독에 청구 권한이 있는 계정으로 월별 usage report (CSV) 파일을 다운로드하여 특정 리소스와 서비스를 필터링하여 실사용액을 확인하실 수 있습니다.<br><br>참고 | EA 고객의 사용량 다운로드: https://learn.microsoft.com/ko-kr/azure/cost-management-billing/understand/download-azure-daily-usage#download-usage-for-ea-customers<br><br> <br><br>위와 같이 정리해 드리며, 신속한 지원을 위하여 회신 시 [Yeseul.cho@microsoft.com]을 포함하여 전체 회신하여 주시면 감사하겠습니다. 즐거운 하루 보내세요.<br><br> <br><br> <br><br>감사합니다.<br><br>조예슬 드림<br><br>Yeseul Cho <br><br>Support Engineer | Azure Billing and Subscription Management Support <br><br>Working hours: Mon-Fri 00:00 AM–09:00 AM UTC <br><br>Manager: Praveen Parameswaran Nair / pravnair@microsoft.com<br><br> <br><br>Can’t reach me? Email my manager<br><br>Create and manage support requests online. <br><br> <br><br> <br><br>Microsoft Support will never ask for your account password or full credit card number. <br><br>For your privacy and security, never send your login credentials or full credit card number in email. <br><br> <br><br> <br><br> <br><br>supportmail@techsupport.microsoft.com</div></div>
+</main>
+</body>
+</html>

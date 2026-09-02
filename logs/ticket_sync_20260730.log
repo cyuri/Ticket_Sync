@@ -1,0 +1,629 @@
+2026-07-30 08:57:41 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 동기화 시작 {'freshdesk_env': 'prod', 'do_freshdesk': False, 'mode': 'range', 'start_date': '2026-07-28', 'end_date': '2026-07-28', 'date_basis': 'created', 'case_status': 'closed', 'skip_dedup': True, 'save_excel': False, 'owner': 'web-ui'}
+2026-07-30 08:57:49 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:57:51 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-30 08:57:53 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:57:54 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-30 08:57:54 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:57:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:57:57 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:57:59 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:01 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:02 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:04 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:05 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:07 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:09 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:10 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:12 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:14 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:15 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:17 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:18 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:20 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:22 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:23 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:25 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:27 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:33 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:35 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 08:58:35 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-30 08:58:48 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=closed (완료됨 체크=True)
+2026-07-30 08:59:18 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-07-28 ~ 2026-07-28
+2026-07-30 08:59:19 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-30 08:59:19 [INFO] ticket_sync.crawler: CSV에서 총 4건 파싱됨 (날짜 필터 전, status=closed)
+2026-07-30 08:59:19 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 2건 (상세 보강 대상, status=closed)
+2026-07-30 08:59:27 [INFO] ticket_sync.crawler: 커뮤니케이션 '더 로드' 0회 클릭함(전체 수집).
+2026-07-30 08:59:27 [INFO] ticket_sync.crawler: 커뮤니케이션 원본 행 4개 확인됨.
+2026-07-30 08:59:30 [INFO] ticket_sync.crawler: 커뮤니케이션 1/4 수집 완료 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 28. 오후 07:15, 길이=1646자)
+2026-07-30 08:59:33 [INFO] ticket_sync.crawler: 커뮤니케이션 2/4 수집 완료 (source=supportmail@techsupport.microsoft.com, updated=2026. 7. 28. 오후 10:08, 길이=434자)
+2026-07-30 08:59:37 [INFO] ticket_sync.crawler: 커뮤니케이션 3/4 수집 완료 (source=taehyeong_2019.kim@kt.com, updated=2026. 7. 29. 오전 10:10, 길이=422자)
+2026-07-30 08:59:40 [INFO] ticket_sync.crawler: 커뮤니케이션 4/4 수집 완료 (source=prasanna.nayak@microsoft.com, updated=2026. 7. 29. 오후 11:15, 길이=425자)
+2026-07-30 08:59:44 [INFO] ticket_sync.crawler: 상세 보강 진행 1/2 완료 (case=2607280030005446)
+2026-07-30 09:00:14 [WARNING] ticket_sync.crawler: 목록에서 'gpt image 2 moderation block' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 09:00:14 [INFO] ticket_sync.crawler: 상세 보강 진행 2/2 완료 (case=2607280030002711)
+2026-07-30 09:23:49 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 동기화 시작 {'freshdesk_env': 'prod', 'do_freshdesk': False, 'mode': 'today', 'start_date': None, 'end_date': None, 'date_basis': 'created', 'case_status': 'open', 'skip_dedup': True, 'save_excel': False, 'owner': 'web-ui'}
+2026-07-30 09:23:54 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 09:23:56 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-30 09:23:59 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-30 09:23:59 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 09:24:01 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 09:24:02 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-30 09:24:15 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-07-30 09:24:16 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-30 09:24:16 [INFO] ticket_sync.crawler: CSV에서 총 78건 파싱됨 (날짜 필터 전, status=open)
+2026-07-30 09:24:16 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 0건 (상세 보강 대상, status=open)
+2026-07-30 09:25:09 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 동기화 시작 {'freshdesk_env': 'prod', 'do_freshdesk': False, 'mode': 'range', 'start_date': '2026-07-29', 'end_date': '2026-07-29', 'date_basis': 'created', 'case_status': 'open', 'skip_dedup': True, 'save_excel': False, 'owner': 'web-ui'}
+2026-07-30 09:25:13 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 09:25:15 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-30 09:25:18 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 09:25:28 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-30 09:25:28 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-30 09:25:32 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-07-30 09:25:44 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-07-29 ~ 2026-07-29
+2026-07-30 09:25:45 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-30 09:25:45 [INFO] ticket_sync.crawler: CSV에서 총 17건 파싱됨 (날짜 필터 전, status=open)
+2026-07-30 09:25:45 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 8건 (상세 보강 대상, status=open)
+2026-07-30 09:25:59 [INFO] ticket_sync.crawler: 상세 보강 진행 1/8 완료 (case=2607290030005418)
+2026-07-30 09:26:17 [INFO] ticket_sync.crawler: 상세 보강 진행 2/8 완료 (case=2607290030005200)
+2026-07-30 09:26:45 [INFO] ticket_sync.crawler: 상세 보강 진행 3/8 완료 (case=2607290030003344)
+2026-07-30 09:27:11 [INFO] ticket_sync.crawler: 상세 보강 진행 4/8 완료 (case=2607290030001963)
+2026-07-30 09:27:25 [INFO] ticket_sync.crawler: 상세 보강 진행 5/8 완료 (case=2607290030000610)
+2026-07-30 09:27:44 [INFO] ticket_sync.crawler: 상세 보강 진행 6/8 완료 (case=2607290030000261)
+2026-07-30 09:27:44 [INFO] ticket_sync.crawler: 변경 없음(modified_at 동일) 확인되어 상세 보강 건너뜀 7/8 (case=2607280030008046)
+2026-07-30 09:27:44 [INFO] ticket_sync.crawler: 변경 없음(modified_at 동일) 확인되어 상세 보강 건너뜀 8/8 (case=2607280030008010)
+2026-07-30 09:36:46 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 신규 Freshdesk 동기화 시작 {'freshdesk_env': 'prod', 'scope': 'all', 'start_date': None, 'end_date': None, 'note_visibility': 'private', 'creation_note_visibility': 'private', 'run_closure_check': False, 'owner': 'web-ui-bulk'}
+2026-07-30 09:36:50 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 09:36:52 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-30 09:36:55 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 09:36:56 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-30 09:36:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 09:36:58 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-30 09:37:04 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-07-30 09:37:05 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-30 09:37:05 [INFO] ticket_sync.crawler: CSV에서 총 78건 파싱됨 (날짜 필터 전, status=open)
+2026-07-30 09:37:05 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 78건 (상세 보강 대상, status=open)
+2026-07-30 09:37:20 [INFO] ticket_sync.crawler: 상세 보강 진행 1/78 완료 (case=2607290030005418)
+2026-07-30 09:37:33 [INFO] ticket_sync.crawler: 상세 보강 진행 2/78 완료 (case=2607290030005200)
+2026-07-30 13:15:02 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 동기화 시작 {'freshdesk_env': 'prod', 'do_freshdesk': False, 'mode': 'range', 'start_date': '2026-07-01', 'end_date': '2026-07-30', 'date_basis': 'created', 'case_status': 'all', 'skip_dedup': False, 'save_excel': False, 'owner': 'web-ui'}
+2026-07-30 13:15:06 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 13:15:09 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-30 13:15:11 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 13:15:12 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-30 13:15:12 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 13:15:14 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 13:15:14 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-30 13:15:23 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-07-30 13:15:34 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-07-01 ~ 2026-07-30
+2026-07-30 13:15:35 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-30 13:15:35 [INFO] ticket_sync.crawler: CSV에서 총 65건 파싱됨 (날짜 필터 전, status=open)
+2026-07-30 13:15:35 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 65건 (상세 보강 대상, status=open)
+2026-07-30 13:15:50 [INFO] ticket_sync.crawler: 상세 보강 진행 1/65 완료 (case=2607300030000168)
+2026-07-30 13:16:03 [INFO] ticket_sync.crawler: 상세 보강 진행 2/65 완료 (case=2607300030000146)
+2026-07-30 13:16:15 [INFO] ticket_sync.crawler: 상세 보강 진행 3/65 완료 (case=2607300060000184)
+2026-07-30 13:16:30 [INFO] ticket_sync.crawler: 상세 보강 진행 4/65 완료 (case=2607300060000156)
+2026-07-30 13:16:46 [INFO] ticket_sync.crawler: 상세 보강 진행 5/65 완료 (case=2607290030005418)
+2026-07-30 13:17:00 [INFO] ticket_sync.crawler: 상세 보강 진행 6/65 완료 (case=2607290030005200)
+2026-07-30 13:17:20 [INFO] ticket_sync.crawler: 상세 보강 진행 7/65 완료 (case=2607290030003344)
+2026-07-30 13:17:37 [INFO] ticket_sync.crawler: 상세 보강 진행 8/65 완료 (case=2607290030001963)
+2026-07-30 13:17:51 [INFO] ticket_sync.crawler: 상세 보강 진행 9/65 완료 (case=2607290030000610)
+2026-07-30 13:18:06 [INFO] ticket_sync.crawler: 상세 보강 진행 10/65 완료 (case=2607290030000261)
+2026-07-30 13:18:22 [INFO] ticket_sync.crawler: 상세 보강 진행 11/65 완료 (case=2607280030008046)
+2026-07-30 13:18:43 [INFO] ticket_sync.crawler: 상세 보강 진행 12/65 완료 (case=2607280030008010)
+2026-07-30 13:18:57 [INFO] ticket_sync.crawler: 상세 보강 진행 13/65 완료 (case=2607280030005694)
+2026-07-30 13:19:18 [INFO] ticket_sync.crawler: 상세 보강 진행 14/65 완료 (case=2607280030004851)
+2026-07-30 13:19:39 [INFO] ticket_sync.crawler: 상세 보강 진행 15/65 완료 (case=2607280030004570)
+2026-07-30 13:19:54 [INFO] ticket_sync.crawler: 상세 보강 진행 16/65 완료 (case=2607280030002572)
+2026-07-30 13:20:08 [INFO] ticket_sync.crawler: 상세 보강 진행 17/65 완료 (case=2607280030002289)
+2026-07-30 13:20:22 [INFO] ticket_sync.crawler: 상세 보강 진행 18/65 완료 (case=2607280030002044)
+2026-07-30 13:20:37 [INFO] ticket_sync.crawler: 상세 보강 진행 19/65 완료 (case=2607280030000733)
+2026-07-30 13:20:55 [INFO] ticket_sync.crawler: 상세 보강 진행 20/65 완료 (case=2607280030000143)
+2026-07-30 13:21:10 [INFO] ticket_sync.crawler: 상세 보강 진행 21/65 완료 (case=2607280030000132)
+2026-07-30 13:21:23 [INFO] ticket_sync.crawler: 상세 보강 진행 22/65 완료 (case=2607270030004632)
+2026-07-30 13:21:44 [INFO] ticket_sync.crawler: 상세 보강 진행 23/65 완료 (case=2607270030003903)
+2026-07-30 13:21:58 [INFO] ticket_sync.crawler: 상세 보강 진행 24/65 완료 (case=2607270030003887)
+2026-07-30 13:22:13 [INFO] ticket_sync.crawler: 상세 보강 진행 25/65 완료 (case=2607270030003338)
+2026-07-30 13:22:43 [WARNING] ticket_sync.crawler: 목록에서 '오픈 AI - 콘텐츠 필터링' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:22:43 [INFO] ticket_sync.crawler: 상세 보강 진행 26/65 완료 (case=2607270030000847)
+2026-07-30 13:23:14 [WARNING] ticket_sync.crawler: 목록에서 'sms' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:23:14 [INFO] ticket_sync.crawler: 상세 보강 진행 27/65 완료 (case=2607270030000761)
+2026-07-30 13:23:44 [WARNING] ticket_sync.crawler: 목록에서 'azure subnet ip증설 하고 싶은데 영향도를 알려 주세요' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:23:44 [INFO] ticket_sync.crawler: 상세 보강 진행 28/65 완료 (case=2607270030000491)
+2026-07-30 13:24:14 [WARNING] ticket_sync.crawler: 목록에서 'Azure Databricks Storage Smart Tier 관련 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:24:14 [INFO] ticket_sync.crawler: 상세 보강 진행 29/65 완료 (case=2607270030000426)
+2026-07-30 13:24:44 [WARNING] ticket_sync.crawler: 목록에서 'sentinel' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:24:44 [INFO] ticket_sync.crawler: 상세 보강 진행 30/65 완료 (case=2607240030002777)
+2026-07-30 13:25:14 [WARNING] ticket_sync.crawler: 목록에서 'MIP 권한 오류 문의드립니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:25:14 [INFO] ticket_sync.crawler: 상세 보강 진행 31/65 완료 (case=2607230030008811)
+2026-07-30 13:25:44 [WARNING] ticket_sync.crawler: 목록에서 'RI' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:25:44 [INFO] ticket_sync.crawler: 상세 보강 진행 32/65 완료 (case=2607230030003570)
+2026-07-30 13:26:14 [WARNING] ticket_sync.crawler: 목록에서 'AKS ContainerLogV2 로그 수집 지연/누락 현상 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:26:14 [INFO] ticket_sync.crawler: 상세 보강 진행 33/65 완료 (case=2607230030002732)
+2026-07-30 13:26:45 [WARNING] ticket_sync.crawler: 목록에서 'aks cost' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:26:45 [INFO] ticket_sync.crawler: 상세 보강 진행 34/65 완료 (case=2607230030002221)
+2026-07-30 13:27:15 [WARNING] ticket_sync.crawler: 목록에서 'Copilot 채팅 오류 및 답변 문제' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:27:15 [INFO] ticket_sync.crawler: 상세 보강 진행 35/65 완료 (case=2607230030002141)
+2026-07-30 13:27:45 [WARNING] ticket_sync.crawler: 목록에서 'cost analysis 비용이 이상합니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:27:45 [INFO] ticket_sync.crawler: 상세 보강 진행 36/65 완료 (case=2607220030005394)
+2026-07-30 13:28:15 [WARNING] ticket_sync.crawler: 목록에서 'Databricks-Palantir 연동 시 TCP Reset 에러 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:28:15 [INFO] ticket_sync.crawler: 상세 보강 진행 37/65 완료 (case=2607220030002770)
+2026-07-30 13:28:45 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:28:45 [INFO] ticket_sync.crawler: 상세 보강 진행 38/65 완료 (case=2607220030002453)
+2026-07-30 13:29:15 [WARNING] ticket_sync.crawler: 목록에서 '[S-7545] VM Live Migration 이후 IIS 로그파일 영문 생성 및 자동 한글명으로 생성되는 원인 확인' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:29:15 [INFO] ticket_sync.crawler: 상세 보강 진행 39/65 완료 (case=2607210030008777)
+2026-07-30 13:29:46 [WARNING] ticket_sync.crawler: 목록에서 '[S-7527] OS Disk Depth 관련 문의 드립니다' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:29:46 [INFO] ticket_sync.crawler: 상세 보강 진행 40/65 완료 (case=2607210030002868)
+2026-07-30 13:30:16 [WARNING] ticket_sync.crawler: 목록에서 ''59282147-4e06-47ed-bb04-cd383dd85c09' 구독에 대한 koreacentral의 할당량 증가를 요청하는 중' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:30:16 [INFO] ticket_sync.crawler: 상세 보강 진행 41/65 완료 (case=2607210030000935)
+2026-07-30 13:30:46 [WARNING] ticket_sync.crawler: 목록에서 'Teams caching 기능 정상 사용을 위한 디스크 여유공간 임계치 알림 제공 DCR' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:30:46 [INFO] ticket_sync.crawler: 상세 보강 진행 42/65 완료 (case=2607200030003414)
+2026-07-30 13:31:16 [WARNING] ticket_sync.crawler: 목록에서 'SLA Service Credit Eligibility for GitHub Enterprise' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:31:16 [INFO] ticket_sync.crawler: 상세 보강 진행 43/65 완료 (case=2607200030003057)
+2026-07-30 13:31:46 [WARNING] ticket_sync.crawler: 목록에서 '정보통신기반시설/SMP 진단 등에 대한 취약점 조치 필요' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:31:46 [INFO] ticket_sync.crawler: 상세 보강 진행 44/65 완료 (case=2607200030002049)
+2026-07-30 13:32:16 [WARNING] ticket_sync.crawler: 목록에서 '[S-7436] 메트릭의 네트워크 트래픽 데이터 조회 오류 문의 드립니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:32:16 [INFO] ticket_sync.crawler: 상세 보강 진행 45/65 완료 (case=2607200030002018)
+2026-07-30 13:32:46 [WARNING] ticket_sync.crawler: 목록에서 'Connectivity' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:32:46 [INFO] ticket_sync.crawler: 상세 보강 진행 46/65 완료 (case=2607160030006079)
+2026-07-30 13:33:17 [WARNING] ticket_sync.crawler: 목록에서 '로드밸런서 장애 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:33:17 [INFO] ticket_sync.crawler: 상세 보강 진행 47/65 완료 (case=2607160030005991)
+2026-07-30 13:33:47 [WARNING] ticket_sync.crawler: 목록에서 'Azure Firewall Status Review request' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:33:47 [INFO] ticket_sync.crawler: 상세 보강 진행 48/65 완료 (case=2607160030005344)
+2026-07-30 13:34:17 [WARNING] ticket_sync.crawler: 목록에서 'MDE' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:34:17 [INFO] ticket_sync.crawler: 상세 보강 진행 49/65 완료 (case=2607150030003807)
+2026-07-30 13:34:47 [WARNING] ticket_sync.crawler: 목록에서 '취약점 대응' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:34:47 [INFO] ticket_sync.crawler: 상세 보강 진행 50/65 완료 (case=2607150030003702)
+2026-07-30 13:35:17 [WARNING] ticket_sync.crawler: 목록에서 'MDE' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:35:17 [INFO] ticket_sync.crawler: 상세 보강 진행 51/65 완료 (case=2607150030002304)
+2026-07-30 13:35:47 [WARNING] ticket_sync.crawler: 목록에서 '[S-7304] Azure 알림 문자 발송 관련 문의 드립니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:35:47 [INFO] ticket_sync.crawler: 상세 보강 진행 52/65 완료 (case=2607150030000906)
+2026-07-30 13:36:17 [WARNING] ticket_sync.crawler: 목록에서 'Teams - OneNote 연동 오류 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:36:17 [INFO] ticket_sync.crawler: 상세 보강 진행 53/65 완료 (case=2607100030000024)
+2026-07-30 13:36:48 [WARNING] ticket_sync.crawler: 목록에서 'Optimize 이후 Deep Clone 시도 시, Timestamp format 관련 오류 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:36:48 [INFO] ticket_sync.crawler: 상세 보강 진행 54/65 완료 (case=2607090030008160)
+2026-07-30 13:37:18 [WARNING] ticket_sync.crawler: 목록에서 'defender for endpoint' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:37:18 [INFO] ticket_sync.crawler: 상세 보강 진행 55/65 완료 (case=2607090030004675)
+2026-07-30 13:37:48 [WARNING] ticket_sync.crawler: 목록에서 'RI' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:37:48 [INFO] ticket_sync.crawler: 상세 보강 진행 56/65 완료 (case=2607090030003248)
+2026-07-30 13:38:18 [WARNING] ticket_sync.crawler: 목록에서 '[S-7205] Azure VM 메트릭 경고 규칙 Activate 시 SMS 알람 미발송 현상' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:38:18 [INFO] ticket_sync.crawler: 상세 보강 진행 57/65 완료 (case=2607080030004856)
+2026-07-30 13:38:48 [WARNING] ticket_sync.crawler: 목록에서 'virtual machine update history' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:38:48 [INFO] ticket_sync.crawler: 상세 보강 진행 58/65 완료 (case=2607080030000425)
+2026-07-30 13:39:18 [WARNING] ticket_sync.crawler: 목록에서 '[S-7156] mdatp 프로세스 OOM killer 로그 관련 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:39:18 [INFO] ticket_sync.crawler: 상세 보강 진행 59/65 완료 (case=2607070030002273)
+2026-07-30 13:39:48 [WARNING] ticket_sync.crawler: 목록에서 'SMS 발송이 안됨' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:39:48 [INFO] ticket_sync.crawler: 상세 보강 진행 60/65 완료 (case=2607070030001770)
+2026-07-30 13:40:19 [WARNING] ticket_sync.crawler: 목록에서 'saving plan' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:40:19 [INFO] ticket_sync.crawler: 상세 보강 진행 61/65 완료 (case=2607060030003028)
+2026-07-30 13:40:49 [WARNING] ticket_sync.crawler: 목록에서 '외부 Client에서 Databricks managed Iceberg v3 테이블 생성' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:40:49 [INFO] ticket_sync.crawler: 상세 보강 진행 62/65 완료 (case=2607060030002044)
+2026-07-30 13:41:19 [WARNING] ticket_sync.crawler: 목록에서 '[S-7080] SMS 수신불가 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:41:19 [INFO] ticket_sync.crawler: 상세 보강 진행 63/65 완료 (case=2607030030004764)
+2026-07-30 13:41:49 [WARNING] ticket_sync.crawler: 목록에서 '[S-7027] Azure 작업 그룹 내 알림 SMS 메시지 수신불가에 대해 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:41:49 [INFO] ticket_sync.crawler: 상세 보강 진행 64/65 완료 (case=2607020030001641)
+2026-07-30 13:42:19 [WARNING] ticket_sync.crawler: 목록에서 '몇몇 사용자가 Databricks Genie 접속이 안됩니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:42:19 [INFO] ticket_sync.crawler: 상세 보강 진행 65/65 완료 (case=2607010030003453)
+2026-07-30 13:42:22 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=closed (완료됨 체크=True)
+2026-07-30 13:42:42 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-07-01 ~ 2026-07-30
+2026-07-30 13:42:43 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-30 13:42:43 [INFO] ticket_sync.crawler: CSV에서 총 132건 파싱됨 (날짜 필터 전, status=closed)
+2026-07-30 13:42:43 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 122건 (상세 보강 대상, status=closed)
+2026-07-30 13:43:09 [INFO] ticket_sync.crawler: 상세 보강 진행 1/122 완료 (case=2607290030006249)
+2026-07-30 13:43:40 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:43:40 [INFO] ticket_sync.crawler: 상세 보강 진행 2/122 완료 (case=2607280030005446)
+2026-07-30 13:44:10 [WARNING] ticket_sync.crawler: 목록에서 'gpt image 2 moderation block' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:44:10 [INFO] ticket_sync.crawler: 상세 보강 진행 3/122 완료 (case=2607280030002711)
+2026-07-30 13:44:40 [WARNING] ticket_sync.crawler: 목록에서 '[S-7684] ACA 락 문제' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:44:40 [INFO] ticket_sync.crawler: 상세 보강 진행 4/122 완료 (case=2607270030004163)
+2026-07-30 13:45:10 [WARNING] ticket_sync.crawler: 목록에서 'er 메인터넌스 영향 범위' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:45:10 [INFO] ticket_sync.crawler: 상세 보강 진행 5/122 완료 (case=2607270030000983)
+2026-07-30 13:45:40 [WARNING] ticket_sync.crawler: 목록에서 'vm서버 blobfuse 이슈 건' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:45:40 [INFO] ticket_sync.crawler: 상세 보강 진행 6/122 완료 (case=2607240030002315)
+2026-07-30 13:46:10 [WARNING] ticket_sync.crawler: 목록에서 'vm window update 시 periodic assessment가 disable이어도 window update가 자동으로 이루어지는지' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:46:10 [INFO] ticket_sync.crawler: 상세 보강 진행 7/122 완료 (case=2607240030001376)
+2026-07-30 13:46:40 [WARNING] ticket_sync.crawler: 목록에서 'Best Practice for 대용량 스트리밍 서비스' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:46:40 [INFO] ticket_sync.crawler: 상세 보강 진행 8/122 완료 (case=2607240030000705)
+2026-07-30 13:47:10 [WARNING] ticket_sync.crawler: 목록에서 '팀즈 화상회의 참여 개설 불가' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:47:10 [INFO] ticket_sync.crawler: 상세 보강 진행 9/122 완료 (case=2607240030000519)
+2026-07-30 13:47:25 [INFO] ticket_sync.crawler: 상세 보강 진행 10/122 완료 (case=2607240030000316)
+2026-07-30 13:47:55 [WARNING] ticket_sync.crawler: 목록에서 '해지된 구독에서 발생한 Azure Monitor alert 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:47:55 [INFO] ticket_sync.crawler: 상세 보강 진행 11/122 완료 (case=2607240030000297)
+2026-07-30 13:48:25 [WARNING] ticket_sync.crawler: 목록에서 'azure managed disk' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:48:25 [INFO] ticket_sync.crawler: 상세 보강 진행 12/122 완료 (case=2607230030005351)
+2026-07-30 13:48:56 [WARNING] ticket_sync.crawler: 목록에서 '코파일럿 스튜디오 에이전트 파일 저장 위치 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:48:56 [INFO] ticket_sync.crawler: 상세 보강 진행 13/122 완료 (case=2607230030002990)
+2026-07-30 13:49:26 [WARNING] ticket_sync.crawler: 목록에서 'aks vmss scailing' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:49:26 [INFO] ticket_sync.crawler: 상세 보강 진행 14/122 완료 (case=2607230030000988)
+2026-07-30 13:49:56 [WARNING] ticket_sync.crawler: 목록에서 'databricks delta 에서 delta uniform 변환 시 에러 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:49:56 [INFO] ticket_sync.crawler: 상세 보강 진행 15/122 완료 (case=2607220030005704)
+2026-07-30 13:50:26 [WARNING] ticket_sync.crawler: 목록에서 'azure managed redis cmk with mhsm' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:50:26 [INFO] ticket_sync.crawler: 상세 보강 진행 16/122 완료 (case=2607220030002356)
+2026-07-30 13:50:56 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:50:56 [INFO] ticket_sync.crawler: 상세 보강 진행 17/122 완료 (case=2607220030000832)
+2026-07-30 13:51:26 [WARNING] ticket_sync.crawler: 목록에서 '모바일 팀즈에서 에이전트 리스트 표출 문제' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:51:26 [INFO] ticket_sync.crawler: 상세 보강 진행 18/122 완료 (case=2607210030005897)
+2026-07-30 13:51:56 [WARNING] ticket_sync.crawler: 목록에서 'Redis 연결 신뢰성을 위한 TCP 커널 파라미터 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:51:56 [INFO] ticket_sync.crawler: 상세 보강 진행 19/122 완료 (case=2607210030005093)
+2026-07-30 13:52:27 [WARNING] ticket_sync.crawler: 목록에서 'Kubernetes Gateway API' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:52:27 [INFO] ticket_sync.crawler: 상세 보강 진행 20/122 완료 (case=2607210030004076)
+2026-07-30 13:52:57 [WARNING] ticket_sync.crawler: 목록에서 '[S-7478] Container 에 blob data contributor 권한 부여 했으나, AuthorizationFailure 지속 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:52:57 [INFO] ticket_sync.crawler: 상세 보강 진행 21/122 완료 (case=2607210030002416)
+2026-07-30 13:53:27 [WARNING] ticket_sync.crawler: 목록에서 'aks cluster autoscaler' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:53:27 [INFO] ticket_sync.crawler: 상세 보강 진행 22/122 완료 (case=2607210030000644)
+2026-07-30 13:53:57 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:53:57 [INFO] ticket_sync.crawler: 상세 보강 진행 23/122 완료 (case=2607210030000414)
+2026-07-30 13:54:27 [WARNING] ticket_sync.crawler: 목록에서 '인스턴스 관련 리소스헬스 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:54:27 [INFO] ticket_sync.crawler: 상세 보강 진행 24/122 완료 (case=2607200030003514)
+2026-07-30 13:54:57 [WARNING] ticket_sync.crawler: 목록에서 'iOS 모바일 MS앱 접속 오류' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:54:57 [INFO] ticket_sync.crawler: 상세 보강 진행 25/122 완료 (case=2607200030002904)
+2026-07-30 13:55:27 [WARNING] ticket_sync.crawler: 목록에서 '[S-7460] 경고 규칙 이벤트 SMS 수신 불가' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:55:27 [INFO] ticket_sync.crawler: 상세 보강 진행 26/122 완료 (case=2607200030002079)
+2026-07-30 13:55:57 [WARNING] ticket_sync.crawler: 목록에서 'APIM premium v2 multiple custom domain names for gateway' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:55:57 [INFO] ticket_sync.crawler: 상세 보강 진행 27/122 완료 (case=2607200030001848)
+2026-07-30 13:56:27 [WARNING] ticket_sync.crawler: 목록에서 'Purview claude 데이터 커넥터 오류 문의 드립니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:56:27 [INFO] ticket_sync.crawler: 상세 보강 진행 28/122 완료 (case=2607200030001476)
+2026-07-30 13:56:58 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:56:58 [INFO] ticket_sync.crawler: 상세 보강 진행 29/122 완료 (case=2607200030000173)
+2026-07-30 13:57:28 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Ds_v6 cannot be created in KR Central zone 1' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:57:28 [INFO] ticket_sync.crawler: 상세 보강 진행 30/122 완료 (case=2607200030000099)
+2026-07-30 13:57:58 [WARNING] ticket_sync.crawler: 목록에서 'status 상태 이상' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:57:58 [INFO] ticket_sync.crawler: 상세 보강 진행 31/122 완료 (case=2607160030005988)
+2026-07-30 13:58:28 [WARNING] ticket_sync.crawler: 목록에서 'Standard_D4s_v6 cannot be created in zone 1' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:58:28 [INFO] ticket_sync.crawler: 상세 보강 진행 32/122 완료 (case=2607160030004784)
+2026-07-30 13:58:58 [WARNING] ticket_sync.crawler: 목록에서 'AMA+DCR 기반 커스텀 로그 수집 실패 오류' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:58:58 [INFO] ticket_sync.crawler: 상세 보강 진행 33/122 완료 (case=2607160030003959)
+2026-07-30 13:59:28 [WARNING] ticket_sync.crawler: 목록에서 'storage account smart tier 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:59:28 [INFO] ticket_sync.crawler: 상세 보강 진행 34/122 완료 (case=2607160030003766)
+2026-07-30 13:59:58 [WARNING] ticket_sync.crawler: 목록에서 'AI Search - service-level CMK GA schedule' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 13:59:58 [INFO] ticket_sync.crawler: 상세 보강 진행 35/122 완료 (case=2607160030000449)
+2026-07-30 14:00:28 [WARNING] ticket_sync.crawler: 목록에서 'SLA 보상' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:00:28 [INFO] ticket_sync.crawler: 상세 보강 진행 36/122 완료 (case=2607160030000179)
+2026-07-30 14:00:58 [WARNING] ticket_sync.crawler: 목록에서 'Application Gateway Resource Health에서 3 'Performance degraded' 이벤트 발생 원인 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:00:58 [INFO] ticket_sync.crawler: 상세 보강 진행 37/122 완료 (case=2607150030005573)
+2026-07-30 14:01:29 [WARNING] ticket_sync.crawler: 목록에서 'firewall throughput and Data Transfer check' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:01:29 [INFO] ticket_sync.crawler: 상세 보강 진행 38/122 완료 (case=2607150030005448)
+2026-07-30 14:01:59 [WARNING] ticket_sync.crawler: 목록에서 'Intune Enterprise SSO 적용 후 준수된 iOS 디바이스에서 Intune Wrapped 3rd Party 앱 로그인 불가' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:01:59 [INFO] ticket_sync.crawler: 상세 보강 진행 39/122 완료 (case=2607150030005320)
+2026-07-30 14:02:29 [WARNING] ticket_sync.crawler: 목록에서 'vm temp disk 관련 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:02:29 [INFO] ticket_sync.crawler: 상세 보강 진행 40/122 완료 (case=2607150030005004)
+2026-07-30 14:02:59 [WARNING] ticket_sync.crawler: 목록에서 'databricks cmk 암호화' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:02:59 [INFO] ticket_sync.crawler: 상세 보강 진행 41/122 완료 (case=2607150030004609)
+2026-07-30 14:03:29 [WARNING] ticket_sync.crawler: 목록에서 '[S-7394] Azure Redis 관련 타임지연 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:03:29 [INFO] ticket_sync.crawler: 상세 보강 진행 42/122 완료 (case=2607150030004075)
+2026-07-30 14:03:59 [WARNING] ticket_sync.crawler: 목록에서 'host 이슈' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:03:59 [INFO] ticket_sync.crawler: 상세 보강 진행 43/122 완료 (case=2607150030003193)
+2026-07-30 14:04:29 [WARNING] ticket_sync.crawler: 목록에서 'aks ingress controller' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:04:29 [INFO] ticket_sync.crawler: 상세 보강 진행 44/122 완료 (case=2607150030003050)
+2026-07-30 14:04:43 [INFO] ticket_sync.crawler: 상세 보강 진행 45/122 완료 (case=2607150030002756)
+2026-07-30 14:05:13 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:05:13 [INFO] ticket_sync.crawler: 상세 보강 진행 46/122 완료 (case=2607150030002735)
+2026-07-30 14:05:43 [WARNING] ticket_sync.crawler: 목록에서 'aks 유지보수 이벤트 확인 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:05:43 [INFO] ticket_sync.crawler: 상세 보강 진행 47/122 완료 (case=2607150030002480)
+2026-07-30 14:06:13 [WARNING] ticket_sync.crawler: 목록에서 '가상머신 재배포 원인 확인 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:06:13 [INFO] ticket_sync.crawler: 상세 보강 진행 48/122 완료 (case=2607140030004804)
+2026-07-30 14:06:43 [WARNING] ticket_sync.crawler: 목록에서 'Azure OpenAI Modified Abuse Monitoring 설정 여부 확인' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:06:43 [INFO] ticket_sync.crawler: 상세 보강 진행 49/122 완료 (case=2607140030003232)
+2026-07-30 14:07:13 [WARNING] ticket_sync.crawler: 목록에서 'Storage Mover를 이용한 Blog Storage 데이터 이동 실패 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:07:13 [INFO] ticket_sync.crawler: 상세 보강 진행 50/122 완료 (case=2607140030002414)
+2026-07-30 14:07:43 [WARNING] ticket_sync.crawler: 목록에서 '[S-7348] sql server cpu상승 확인요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:07:43 [INFO] ticket_sync.crawler: 상세 보강 진행 51/122 완료 (case=2607140030001146)
+2026-07-30 14:08:14 [WARNING] ticket_sync.crawler: 목록에서 'Permission denied during Cross-Tenant ADLS NFS 3.0 mount' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:08:14 [INFO] ticket_sync.crawler: 상세 보강 진행 52/122 완료 (case=2607140030000882)
+2026-07-30 14:08:44 [WARNING] ticket_sync.crawler: 목록에서 'M365 Copilot 에이전트 사용 시 오류 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:08:44 [INFO] ticket_sync.crawler: 상세 보강 진행 53/122 완료 (case=2607140030000705)
+2026-07-30 14:09:14 [WARNING] ticket_sync.crawler: 목록에서 'AI Builder Credit 최적화 플로우 수정 가이드 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:09:14 [INFO] ticket_sync.crawler: 상세 보강 진행 54/122 완료 (case=2607130030004633)
+2026-07-30 14:09:44 [WARNING] ticket_sync.crawler: 목록에서 '[S-7324] 7/1 application gateway 삭제건 관련 상세 로그 분석 요청 ( 2607010030003392 관련 문의 )' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:09:44 [INFO] ticket_sync.crawler: 상세 보강 진행 55/122 완료 (case=2607130030004482)
+2026-07-30 14:10:14 [WARNING] ticket_sync.crawler: 목록에서 'managed HSM Error 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:10:14 [INFO] ticket_sync.crawler: 상세 보강 진행 56/122 완료 (case=2607130030004263)
+2026-07-30 14:10:44 [WARNING] ticket_sync.crawler: 목록에서 'RI' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:10:44 [INFO] ticket_sync.crawler: 상세 보강 진행 57/122 완료 (case=2607130030003511)
+2026-07-30 14:11:14 [WARNING] ticket_sync.crawler: 목록에서 '[Agent365] Copilot 외부 플랫폼 에이전트의 크레딧 사용량 트래킹 및 과금 모니터링 기능 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:11:14 [INFO] ticket_sync.crawler: 상세 보강 진행 58/122 완료 (case=2607130030003387)
+2026-07-30 14:11:44 [WARNING] ticket_sync.crawler: 목록에서 'Azure Storage와 databricks를 사용하는 smart tier 적용 관련 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:11:44 [INFO] ticket_sync.crawler: 상세 보강 진행 59/122 완료 (case=2607130030002567)
+2026-07-30 14:12:15 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:12:15 [INFO] ticket_sync.crawler: 상세 보강 진행 60/122 완료 (case=2607130030002547)
+2026-07-30 14:12:45 [WARNING] ticket_sync.crawler: 목록에서 'Maintenance' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:12:45 [INFO] ticket_sync.crawler: 상세 보강 진행 61/122 완료 (case=2607130030002476)
+2026-07-30 14:13:15 [WARNING] ticket_sync.crawler: 목록에서 '[S-7302] Action group 관제 SMS 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:13:15 [INFO] ticket_sync.crawler: 상세 보강 진행 62/122 완료 (case=2607130030002059)
+2026-07-30 14:13:45 [WARNING] ticket_sync.crawler: 목록에서 '7월 11일 20시37-52분 레디스의 Connected Clients 감소  캐시 hit 및 miss 급격한 변화가 발생화였습니다.     해당시간에 AKS에서 Redis 호출도 타임아웃이 발생했습니다.(동일 구독)  혹시 유지보수작업이 있었을까요?' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:13:45 [INFO] ticket_sync.crawler: 상세 보강 진행 63/122 완료 (case=2607130030001116)
+2026-07-30 14:14:15 [WARNING] ticket_sync.crawler: 목록에서 'claude 엔터프라이즈용 문의 드립니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:14:15 [INFO] ticket_sync.crawler: 상세 보강 진행 64/122 완료 (case=2607130040000298)
+2026-07-30 14:14:46 [WARNING] ticket_sync.crawler: 목록에서 'Node Reboot 리소스 헬스 이벤트 발생 원인 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:14:46 [INFO] ticket_sync.crawler: 상세 보강 진행 65/122 완료 (case=2607130030000803)
+2026-07-30 14:15:16 [WARNING] ticket_sync.crawler: 목록에서 'Connected Clients  감소' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:15:16 [INFO] ticket_sync.crawler: 상세 보강 진행 66/122 완료 (case=2607130030000392)
+2026-07-30 14:15:46 [WARNING] ticket_sync.crawler: 목록에서 'VM의 Resource health - Degraded 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:15:46 [INFO] ticket_sync.crawler: 상세 보강 진행 67/122 완료 (case=2607100030003977)
+2026-07-30 14:16:16 [WARNING] ticket_sync.crawler: 목록에서 '[S-7262] Azure Monitor alert [Health] 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:16:16 [INFO] ticket_sync.crawler: 상세 보강 진행 68/122 완료 (case=2607100030002870)
+2026-07-30 14:16:46 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:16:46 [INFO] ticket_sync.crawler: 상세 보강 진행 69/122 완료 (case=2607100030002576)
+2026-07-30 14:17:16 [WARNING] ticket_sync.crawler: 목록에서 'Word Online (Business) 커넥터 400 코드 오류 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:17:16 [INFO] ticket_sync.crawler: 상세 보강 진행 70/122 완료 (case=2607100030002020)
+2026-07-30 14:17:46 [WARNING] ticket_sync.crawler: 목록에서 'premier plan으로 업그레이드' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:17:46 [INFO] ticket_sync.crawler: 상세 보강 진행 71/122 완료 (case=2607100030000857)
+2026-07-30 14:18:17 [WARNING] ticket_sync.crawler: 목록에서 '[S-7254] aks dynamic azure disk pv/pvc vmss 연결 실패' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:18:17 [INFO] ticket_sync.crawler: 상세 보강 진행 72/122 완료 (case=2607100030000821)
+2026-07-30 14:18:47 [WARNING] ticket_sync.crawler: 목록에서 'unplanned issue' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:18:47 [INFO] ticket_sync.crawler: 상세 보강 진행 73/122 완료 (case=2607090030007744)
+2026-07-30 14:19:17 [WARNING] ticket_sync.crawler: 목록에서 'aks gpu notReady' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:19:17 [INFO] ticket_sync.crawler: 상세 보강 진행 74/122 완료 (case=2607090030004866)
+2026-07-30 14:19:47 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:19:47 [INFO] ticket_sync.crawler: 상세 보강 진행 75/122 완료 (case=2607090030004574)
+2026-07-30 14:20:17 [WARNING] ticket_sync.crawler: 목록에서 'Purview MIP 대량해제 문의드립니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:20:17 [INFO] ticket_sync.crawler: 상세 보강 진행 76/122 완료 (case=2607090040001480)
+2026-07-30 14:20:47 [WARNING] ticket_sync.crawler: 목록에서 'data encrypyion' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:20:47 [INFO] ticket_sync.crawler: 상세 보강 진행 77/122 완료 (case=2607090030002001)
+2026-07-30 14:21:17 [WARNING] ticket_sync.crawler: 목록에서 'Application Gateway 리소스 Delete Lock 설정 시 영향도 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:21:17 [INFO] ticket_sync.crawler: 상세 보강 진행 78/122 완료 (case=2607090030001941)
+2026-07-30 14:21:47 [WARNING] ticket_sync.crawler: 목록에서 'databox' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:21:47 [INFO] ticket_sync.crawler: 상세 보강 진행 79/122 완료 (case=2607090030001769)
+2026-07-30 14:22:00 [INFO] ticket_sync.crawler: 상세 보강 진행 80/122 완료 (case=2607090030000942)
+2026-07-30 14:22:16 [INFO] ticket_sync.crawler: 상세 보강 진행 81/122 완료 (case=2607090030000880)
+2026-07-30 14:22:46 [WARNING] ticket_sync.crawler: 목록에서 'AML 사용 관련 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:22:46 [INFO] ticket_sync.crawler: 상세 보강 진행 82/122 완료 (case=2607090030000344)
+2026-07-30 14:23:16 [WARNING] ticket_sync.crawler: 목록에서 '[S-7221] Azure Monitor Action Group SMS 알림 구성 후 SMS 수신 불가' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:23:16 [INFO] ticket_sync.crawler: 상세 보강 진행 83/122 완료 (case=2607090030000237)
+2026-07-30 14:23:28 [INFO] ticket_sync.crawler: 상세 보강 진행 84/122 완료 (case=2607090030000109)
+2026-07-30 14:23:58 [WARNING] ticket_sync.crawler: 목록에서 'Power Apps 프리미엄 없이 E1 라이선스 사용 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:23:58 [INFO] ticket_sync.crawler: 상세 보강 진행 85/122 완료 (case=2607080030004512)
+2026-07-30 14:24:28 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:24:28 [INFO] ticket_sync.crawler: 상세 보강 진행 86/122 완료 (case=2607080030000960)
+2026-07-30 14:24:58 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:24:58 [INFO] ticket_sync.crawler: 상세 보강 진행 87/122 완료 (case=2607070030005113)
+2026-07-30 14:25:28 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:25:28 [INFO] ticket_sync.crawler: 상세 보강 진행 88/122 완료 (case=2607070030005070)
+2026-07-30 14:25:58 [WARNING] ticket_sync.crawler: 목록에서 'smart tier' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:25:58 [INFO] ticket_sync.crawler: 상세 보강 진행 89/122 완료 (case=2607070030004041)
+2026-07-30 14:26:29 [WARNING] ticket_sync.crawler: 목록에서 '[S-7130] 서로 다른 CMK key 로 암호화 적용된 Azure Files Mount 사용 가능 유무' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:26:29 [INFO] ticket_sync.crawler: 상세 보강 진행 90/122 완료 (case=2607070030002776)
+2026-07-30 14:26:59 [WARNING] ticket_sync.crawler: 목록에서 '경고, 메트릭, 로깅 및 모니터링' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:26:59 [INFO] ticket_sync.crawler: 상세 보강 진행 91/122 완료 (case=2607070030002425)
+2026-07-30 14:27:29 [WARNING] ticket_sync.crawler: 목록에서 'Azure Confidential VM 내 OS Minor Upgrade 방안' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:27:29 [INFO] ticket_sync.crawler: 상세 보강 진행 92/122 완료 (case=2607070030002079)
+2026-07-30 14:27:59 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:27:59 [INFO] ticket_sync.crawler: 상세 보강 진행 93/122 완료 (case=2607070030001940)
+2026-07-30 14:28:30 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:28:30 [INFO] ticket_sync.crawler: 상세 보강 진행 94/122 완료 (case=2607070030001763)
+2026-07-30 14:28:45 [INFO] ticket_sync.crawler: 상세 보강 진행 95/122 완료 (case=2607070030001704)
+2026-07-30 14:29:15 [WARNING] ticket_sync.crawler: 목록에서 '상용 모델 서비스 운영 중 online endpoint tags update 관련 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:29:15 [INFO] ticket_sync.crawler: 상세 보강 진행 96/122 완료 (case=2607070030001673)
+2026-07-30 14:29:46 [WARNING] ticket_sync.crawler: 목록에서 'App Routing Addon Gateway API 일반 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:29:46 [INFO] ticket_sync.crawler: 상세 보강 진행 97/122 완료 (case=2607070030001130)
+2026-07-30 14:30:16 [WARNING] ticket_sync.crawler: 목록에서 '트래픽' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:30:16 [INFO] ticket_sync.crawler: 상세 보강 진행 98/122 완료 (case=2607070030000781)
+2026-07-30 14:30:46 [WARNING] ticket_sync.crawler: 목록에서 'billing' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:30:46 [INFO] ticket_sync.crawler: 상세 보강 진행 99/122 완료 (case=2607070030000624)
+2026-07-30 14:31:16 [WARNING] ticket_sync.crawler: 목록에서 'cvm-az01-prd-sms-db-01 반복적인 Disk failure on nbd1 로그 발생 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:31:16 [INFO] ticket_sync.crawler: 상세 보강 진행 100/122 완료 (case=2607070030000244)
+2026-07-30 14:31:46 [WARNING] ticket_sync.crawler: 목록에서 '[S-7112] cifs 마운트된 볼륨 Samba 취약점 패치 시 영향도 확인 부탁 드립니다' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:31:46 [INFO] ticket_sync.crawler: 상세 보강 진행 101/122 완료 (case=2607060030004385)
+2026-07-30 14:32:16 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:32:16 [INFO] ticket_sync.crawler: 상세 보강 진행 102/122 완료 (case=2607060030003723)
+2026-07-30 14:32:46 [WARNING] ticket_sync.crawler: 목록에서 'Spot Instance Not Applied' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:32:46 [INFO] ticket_sync.crawler: 상세 보강 진행 103/122 완료 (case=2607060030001965)
+2026-07-30 14:33:17 [WARNING] ticket_sync.crawler: 목록에서 '[S-7017] Azure http:439 에러 발생 원인 분석 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:33:17 [INFO] ticket_sync.crawler: 상세 보강 진행 104/122 완료 (case=2607060030000215)
+2026-07-30 14:33:47 [WARNING] ticket_sync.crawler: 목록에서 '방화벽' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:33:47 [INFO] ticket_sync.crawler: 상세 보강 진행 105/122 완료 (case=2607030030004597)
+2026-07-30 14:34:17 [WARNING] ticket_sync.crawler: 목록에서 '[S-7078] SSL 인증서 적용 오류 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:34:17 [INFO] ticket_sync.crawler: 상세 보강 진행 106/122 완료 (case=2607030030004230)
+2026-07-30 14:34:47 [WARNING] ticket_sync.crawler: 목록에서 '[S-7067] vm에서 Storage blob 접근 시 403 오류 발생 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:34:47 [INFO] ticket_sync.crawler: 상세 보강 진행 107/122 완료 (case=2607030030004191)
+2026-07-30 14:35:17 [WARNING] ticket_sync.crawler: 목록에서 '[S-7075] DNS private resolver 질의 시 i/o timeout 에러 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:35:17 [INFO] ticket_sync.crawler: 상세 보강 진행 108/122 완료 (case=2607030030002670)
+2026-07-30 14:35:47 [WARNING] ticket_sync.crawler: 목록에서 'wdavdaemon OS상 I/O wait가 80~90% 대로 유지 확인' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:35:47 [INFO] ticket_sync.crawler: 상세 보강 진행 109/122 완료 (case=2607020030004243)
+2026-07-30 14:36:17 [WARNING] ticket_sync.crawler: 목록에서 'vm' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:36:17 [INFO] ticket_sync.crawler: 상세 보강 진행 110/122 완료 (case=2607020030003598)
+2026-07-30 14:36:47 [WARNING] ticket_sync.crawler: 목록에서 'Azure Firewall Status Review request' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:36:47 [INFO] ticket_sync.crawler: 상세 보강 진행 111/122 완료 (case=2607020030003431)
+2026-07-30 14:37:17 [WARNING] ticket_sync.crawler: 목록에서 '[Test]Azure Firewall Status Review request' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:37:17 [INFO] ticket_sync.crawler: 상세 보강 진행 112/122 완료 (case=2607020030001390)
+2026-07-30 14:37:47 [WARNING] ticket_sync.crawler: 목록에서 '[S-7026] 서버 OS 재기동 관련(이상징후)' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:37:47 [INFO] ticket_sync.crawler: 상세 보강 진행 113/122 완료 (case=2607020060000126)
+2026-07-30 14:38:18 [WARNING] ticket_sync.crawler: 목록에서 'auzre 내부 ip 확인 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:38:18 [INFO] ticket_sync.crawler: 상세 보강 진행 114/122 완료 (case=2607020030000304)
+2026-07-30 14:38:48 [WARNING] ticket_sync.crawler: 목록에서 '[S-6976] Databricks workspace session timeout 및 웹 취약점 관리 관련 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:38:48 [INFO] ticket_sync.crawler: 상세 보강 진행 115/122 완료 (case=2607020030000262)
+2026-07-30 14:39:18 [WARNING] ticket_sync.crawler: 목록에서 'Networking' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:39:18 [INFO] ticket_sync.crawler: 상세 보강 진행 116/122 완료 (case=2607010030003651)
+2026-07-30 14:39:48 [WARNING] ticket_sync.crawler: 목록에서 'appgw delete' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:39:48 [INFO] ticket_sync.crawler: 상세 보강 진행 117/122 완료 (case=2607010030003392)
+2026-07-30 14:40:18 [WARNING] ticket_sync.crawler: 목록에서 '[S-7006]  python3 업데이트 수행이후, 운영서버 (PRD)쪽 스마트신청서 서비스접속 불가 및 LB Smart Resourece Health 이벤트 발생 확인' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:40:18 [INFO] ticket_sync.crawler: 상세 보강 진행 118/122 완료 (case=2607010030002927)
+2026-07-30 14:40:49 [WARNING] ticket_sync.crawler: 목록에서 '[S-7001] wdavdaemon 데몬과 관련된 OOM 장애가 발생하여 확인 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:40:49 [INFO] ticket_sync.crawler: 상세 보강 진행 119/122 완료 (case=2607010030002537)
+2026-07-30 14:41:19 [WARNING] ticket_sync.crawler: 목록에서 'dns 쿼리 비용 추이 분석' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:41:19 [INFO] ticket_sync.crawler: 상세 보강 진행 120/122 완료 (case=2607010030002039)
+2026-07-30 14:41:49 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:41:49 [INFO] ticket_sync.crawler: 상세 보강 진행 121/122 완료 (case=2607010030001876)
+2026-07-30 14:42:19 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 14:42:19 [INFO] ticket_sync.crawler: 상세 보강 진행 122/122 완료 (case=2607010030000499)
+2026-07-30 15:13:43 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 동기화 시작 {'freshdesk_env': 'prod', 'do_freshdesk': False, 'mode': 'range', 'start_date': '2026-06-01', 'end_date': '2026-06-30', 'date_basis': 'created', 'case_status': 'all', 'skip_dedup': True, 'save_excel': False, 'owner': 'web-ui'}
+2026-07-30 15:13:51 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 15:13:53 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-30 15:13:56 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 15:13:57 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-30 15:13:57 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 15:13:58 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-30 15:14:09 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-07-30 15:14:22 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-06-01 ~ 2026-06-30
+2026-07-30 15:14:23 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-30 15:14:23 [INFO] ticket_sync.crawler: CSV에서 총 12건 파싱됨 (날짜 필터 전, status=open)
+2026-07-30 15:14:23 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 12건 (상세 보강 대상, status=open)
+2026-07-30 15:15:11 [INFO] ticket_sync.crawler: 상세 보강 진행 1/12 완료 (case=2606290030002925)
+2026-07-30 15:15:41 [WARNING] ticket_sync.crawler: 목록에서 '[Agent365] 레지스트리 데이터 Export 시 기간 선택 기능 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:15:41 [INFO] ticket_sync.crawler: 상세 보강 진행 2/12 완료 (case=2606260030000088)
+2026-07-30 15:16:12 [WARNING] ticket_sync.crawler: 목록에서 'Copilot Studio 내에서 AIP 레이블이 적용된 엑셀 문서는 데이터 분석이 안 됩니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:16:12 [INFO] ticket_sync.crawler: 상세 보강 진행 3/12 완료 (case=2606220030002098)
+2026-07-30 15:16:42 [WARNING] ticket_sync.crawler: 목록에서 'databricks job cluster 가 SPARK_IMAGE_DOWNLOAD_FAILURE 오류 발생하며 실패' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:16:42 [INFO] ticket_sync.crawler: 상세 보강 진행 4/12 완료 (case=2606220030000083)
+2026-07-30 15:17:13 [WARNING] ticket_sync.crawler: 목록에서 '에이전트가 팀즈에서 갑자기 종료됨' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:17:13 [INFO] ticket_sync.crawler: 상세 보강 진행 5/12 완료 (case=2606190030001868)
+2026-07-30 15:17:43 [WARNING] ticket_sync.crawler: 목록에서 'databricks system.query.history 테이블 조회 시, 간헐적으로 권한 오류 발생' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:17:43 [INFO] ticket_sync.crawler: 상세 보강 진행 6/12 완료 (case=2606180030001953)
+2026-07-30 15:18:13 [WARNING] ticket_sync.crawler: 목록에서 'billing' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:18:13 [INFO] ticket_sync.crawler: 상세 보강 진행 7/12 완료 (case=2606170030005325)
+2026-07-30 15:18:44 [WARNING] ticket_sync.crawler: 목록에서 'sentinel' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:18:44 [INFO] ticket_sync.crawler: 상세 보강 진행 8/12 완료 (case=2606110030006904)
+2026-07-30 15:19:14 [WARNING] ticket_sync.crawler: 목록에서 '[S-6498] OS Disk IO 성능 Queue Depth 이슈' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:19:14 [INFO] ticket_sync.crawler: 상세 보강 진행 9/12 완료 (case=2606110030001049)
+2026-07-30 15:19:44 [WARNING] ticket_sync.crawler: 목록에서 '로컬/조직글꼴 충돌오류 해결방법' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:19:44 [INFO] ticket_sync.crawler: 상세 보강 진행 10/12 완료 (case=2606100030007386)
+2026-07-30 15:20:14 [WARNING] ticket_sync.crawler: 목록에서 '비용' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:20:14 [INFO] ticket_sync.crawler: 상세 보강 진행 11/12 완료 (case=2606100030003070)
+2026-07-30 15:20:45 [WARNING] ticket_sync.crawler: 목록에서 'billing' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:20:45 [INFO] ticket_sync.crawler: 상세 보강 진행 12/12 완료 (case=2606040030000300)
+2026-07-30 15:20:48 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=closed (완료됨 체크=True)
+2026-07-30 15:21:10 [INFO] ticket_sync.crawler: 생성일 화면 필터 적용: 2026-06-01 ~ 2026-06-30
+2026-07-30 15:21:11 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-30 15:21:11 [INFO] ticket_sync.crawler: CSV에서 총 32건 파싱됨 (날짜 필터 전, status=closed)
+2026-07-30 15:21:11 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 32건 (상세 보강 대상, status=closed)
+2026-07-30 15:21:39 [INFO] ticket_sync.crawler: 상세 보강 진행 1/32 완료 (case=2606300030005382)
+2026-07-30 15:22:10 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:22:10 [INFO] ticket_sync.crawler: 상세 보강 진행 2/32 완료 (case=2606300030005367)
+2026-07-30 15:22:41 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:22:41 [INFO] ticket_sync.crawler: 상세 보강 진행 3/32 완료 (case=2606300030005355)
+2026-07-30 15:23:11 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:23:11 [INFO] ticket_sync.crawler: 상세 보강 진행 4/32 완료 (case=2606300030005328)
+2026-07-30 15:23:42 [WARNING] ticket_sync.crawler: 목록에서 'PA 클라우드에서 PAD를 실행하는 플로우를 만들었는데, 프리미엄 라이선스가 있음에도 프리미엄 라이선스를 받으라는 안내문구가 나옵니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:23:42 [INFO] ticket_sync.crawler: 상세 보강 진행 5/32 완료 (case=2606300030004972)
+2026-07-30 15:24:12 [WARNING] ticket_sync.crawler: 목록에서 'unable to submit a support case' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:24:12 [INFO] ticket_sync.crawler: 상세 보강 진행 6/32 완료 (case=2606300030003831)
+2026-07-30 15:24:42 [WARNING] ticket_sync.crawler: 목록에서 '분석용 성능 지표 요청-개발계' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:24:42 [INFO] ticket_sync.crawler: 상세 보강 진행 7/32 완료 (case=2606300030002998)
+2026-07-30 15:25:13 [WARNING] ticket_sync.crawler: 목록에서 '분석용 성능 지표 요청-운영계' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:25:13 [INFO] ticket_sync.crawler: 상세 보강 진행 8/32 완료 (case=2606300030002988)
+2026-07-30 15:25:44 [WARNING] ticket_sync.crawler: 목록에서 '모바일 단말 변경 후 Slack for Intune 로그인 오류 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:25:44 [INFO] ticket_sync.crawler: 상세 보강 진행 9/32 완료 (case=2606300040000860)
+2026-07-30 15:26:15 [WARNING] ticket_sync.crawler: 목록에서 'Dafault 환경의 Dataverse(Database) 사용량이 하루만에 2배로 증가하였습니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:26:15 [INFO] ticket_sync.crawler: 상세 보강 진행 10/32 완료 (case=2606300030000332)
+2026-07-30 15:26:39 [INFO] ticket_sync.crawler: 상세 보강 진행 11/32 완료 (case=2606290030008276)
+2026-07-30 15:27:10 [WARNING] ticket_sync.crawler: 목록에서 'Quota request for Other Requests' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:27:10 [INFO] ticket_sync.crawler: 상세 보강 진행 12/32 완료 (case=2606290030005062)
+2026-07-30 15:27:41 [WARNING] ticket_sync.crawler: 목록에서 'VM Resource health 확인 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:27:41 [INFO] ticket_sync.crawler: 상세 보강 진행 13/32 완료 (case=2606290030004993)
+2026-07-30 15:28:11 [WARNING] ticket_sync.crawler: 목록에서 'VM 재배포 권고 리소스 헬스 메시지 다수 발생에 대해 확인 부탁드리겠습니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:28:11 [INFO] ticket_sync.crawler: 상세 보강 진행 14/32 완료 (case=2606290030004579)
+2026-07-30 15:28:41 [WARNING] ticket_sync.crawler: 목록에서 'backend 연결 끊김 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:28:41 [INFO] ticket_sync.crawler: 상세 보강 진행 15/32 완료 (case=2606290030004398)
+2026-07-30 15:29:11 [WARNING] ticket_sync.crawler: 목록에서 'MDE에서 [SC] EnumQueryServicesStatus:OpenService FAILED 1060: The specified service does not exist as an installed service. 라는 오류가 뜹니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:29:11 [INFO] ticket_sync.crawler: 상세 보강 진행 16/32 완료 (case=2606290030003842)
+2026-07-30 15:29:42 [WARNING] ticket_sync.crawler: 목록에서 '타 SaaS 앱과 Intune 앱보호정책 호환성' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:29:42 [INFO] ticket_sync.crawler: 상세 보강 진행 17/32 완료 (case=2606290040001149)
+2026-07-30 15:30:13 [WARNING] ticket_sync.crawler: 목록에서 'aks vmss zombie' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:30:13 [INFO] ticket_sync.crawler: 상세 보강 진행 18/32 완료 (case=2606290030003659)
+2026-07-30 15:30:43 [WARNING] ticket_sync.crawler: 목록에서 'MDE' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:30:43 [INFO] ticket_sync.crawler: 상세 보강 진행 19/32 완료 (case=2606290030003588)
+2026-07-30 15:31:14 [WARNING] ticket_sync.crawler: 목록에서 'VM Failed' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:31:14 [INFO] ticket_sync.crawler: 상세 보강 진행 20/32 완료 (case=2606290030003359)
+2026-07-30 15:31:44 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:31:44 [INFO] ticket_sync.crawler: 상세 보강 진행 21/32 완료 (case=2606290030002683)
+2026-07-30 15:32:14 [WARNING] ticket_sync.crawler: 목록에서 'cyclecloud' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:32:14 [INFO] ticket_sync.crawler: 상세 보강 진행 22/32 완료 (case=2606290030001007)
+2026-07-30 15:32:28 [INFO] ticket_sync.crawler: 상세 보강 진행 23/32 완료 (case=2606260030003385)
+2026-07-30 15:32:58 [WARNING] ticket_sync.crawler: 목록에서 '[Agent365] 레지스트리 활성 사용자 및 세션수 상세 페이지와 상이합니다' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:32:58 [INFO] ticket_sync.crawler: 상세 보강 진행 24/32 완료 (case=2606240030002652)
+2026-07-30 15:33:29 [WARNING] ticket_sync.crawler: 목록에서 '윈도우의 Microsotf Store에서 Codex 앱을 다운로드 시도하였으나, 오류가 발생하며 다운로드가 정상수행되지 않습니다.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:33:29 [INFO] ticket_sync.crawler: 상세 보강 진행 25/32 완료 (case=2606240030001942)
+2026-07-30 15:33:59 [WARNING] ticket_sync.crawler: 목록에서 'lusture' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:33:59 [INFO] ticket_sync.crawler: 상세 보강 진행 26/32 완료 (case=2606230030005865)
+2026-07-30 15:34:30 [WARNING] ticket_sync.crawler: 목록에서 '이중화 환경에서 패스워드 변경 및 Entra 인증 실패를 방지할 수 있는 방법' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:34:30 [INFO] ticket_sync.crawler: 상세 보강 진행 27/32 완료 (case=2606230030002063)
+2026-07-30 15:35:00 [WARNING] ticket_sync.crawler: 목록에서 'PTU' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:35:00 [INFO] ticket_sync.crawler: 상세 보강 진행 28/32 완료 (case=2606150030003623)
+2026-07-30 15:35:30 [WARNING] ticket_sync.crawler: 목록에서 'Power Automate Desktop 앱에서 흐름 표출 오류' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:35:30 [INFO] ticket_sync.crawler: 상세 보강 진행 29/32 완료 (case=2606110030002030)
+2026-07-30 15:36:01 [WARNING] ticket_sync.crawler: 목록에서 'SLA 보상 요청' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:36:01 [INFO] ticket_sync.crawler: 상세 보강 진행 30/32 완료 (case=2606090030000210)
+2026-07-30 15:36:32 [WARNING] ticket_sync.crawler: 목록에서 'redis 가용성 문의' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:36:32 [INFO] ticket_sync.crawler: 상세 보강 진행 31/32 완료 (case=2606080030004419)
+2026-07-30 15:37:02 [WARNING] ticket_sync.crawler: 목록에서 'Teams에서 메시지 수신은 정상적으로 수신되나 전송은 바로 되지 않고 나중에 전송됨.' 제목의 케이스를 찾지 못해 상세 보강을 건너뜁니다.
+2026-07-30 15:37:02 [INFO] ticket_sync.crawler: 상세 보강 진행 32/32 완료 (case=2606080030004035)
+2026-07-30 16:32:58 [INFO] ticket_sync.local_runner: 로컬 실행 에이전트: 동기화 시작 {'freshdesk_env': 'prod', 'do_freshdesk': False, 'mode': 'range', 'start_date': '2026-07-30', 'end_date': '2026-07-31', 'date_basis': 'created', 'case_status': 'open', 'skip_dedup': False, 'save_excel': False, 'owner': 'web-ui'}
+2026-07-30 16:33:03 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 16:33:05 [INFO] ticket_sync.crawler: 로그인 화면에서 '로그인' 를 자동으로 클릭했습니다.
+2026-07-30 16:33:08 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 16:33:08 [WARNING] ticket_sync.crawler: 로그인 세션이 없거나 만료된 것으로 보입니다. 계정 선택/로그인 상태 유지 확인처럼 비밀번호 없이 넘어갈 수 있는 화면은 자동으로 눌러드리며, 비밀번호나 MFA가 필요하면 브라우저 창에서 직접 완료해주세요. 최대 300초 대기합니다.
+2026-07-30 16:33:08 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 16:33:10 [INFO] ticket_sync.crawler: 로그인 화면에서 'yr.choi@kt.com' 를 자동으로 클릭했습니다.
+2026-07-30 16:33:10 [INFO] ticket_sync.crawler: 수동 로그인 완료 확인됨. 세션이 저장되어 다음 실행부터는 재사용됩니다.
+2026-07-30 16:33:19 [INFO] ticket_sync.crawler: 상태 필터 적용: case_status=open (완료됨 체크=False)
+2026-07-30 16:33:59 [WARNING] ticket_sync.crawler: 생성일 화면 필터 적용 중 오류: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='dialog'], [role='menu'], [role='listbox'], .fui-PopoverSurface").nth(2).locator("button").nth(42)
+    - locator resolved to <button disabled type="button" tabindex="-1" elementtiming="1500" class="dayButton-241" data-is-focusable="false" aria-label="31, July, 2026">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    54 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+Traceback (most recent call last):
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 1118, in _collect_for_single_status
+    _apply_created_date_range_filter(page, config, start_date, end_date)
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 502, in _apply_created_date_range_filter
+    ok_end = _select_calendar_date(page, frame, "종료 날짜 선택", end, timeout_ms)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\crawler.py", line 452, in _select_calendar_date
+    day_btn.click()
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 17672, in click
+    self._sync(
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 163, in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 591, in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\youre\Downloads\ticket_sync\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 563, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("[role='dialog'], [role='menu'], [role='listbox'], .fui-PopoverSurface").nth(2).locator("button").nth(42)
+    - locator resolved to <button disabled type="button" tabindex="-1" elementtiming="1500" class="dayButton-241" data-is-focusable="false" aria-label="31, July, 2026">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    54 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+2026-07-30 16:34:00 [INFO] ticket_sync.crawler: 케이스 목록 CSV 다운로드 완료: C:\Users\youre\Downloads\ticket_sync\data\downloads\SupportCases.csv
+2026-07-30 16:34:00 [INFO] ticket_sync.crawler: CSV에서 총 88건 파싱됨 (날짜 필터 전, status=open)
+2026-07-30 16:34:00 [INFO] ticket_sync.crawler: 날짜 필터(created_at 기준) 적용 후 12건 (상세 보강 대상, status=open)
+2026-07-30 16:34:15 [INFO] ticket_sync.crawler: 상세 보강 진행 1/12 완료 (case=2607300030003620)
+2026-07-30 16:34:29 [INFO] ticket_sync.crawler: 상세 보강 진행 2/12 완료 (case=2607300030003578)
+2026-07-30 16:34:44 [INFO] ticket_sync.crawler: 상세 보강 진행 3/12 완료 (case=2607300030003183)
+2026-07-30 16:34:59 [INFO] ticket_sync.crawler: 상세 보강 진행 4/12 완료 (case=2607300030002788)
+2026-07-30 16:35:14 [INFO] ticket_sync.crawler: 상세 보강 진행 5/12 완료 (case=2607300030002261)
+2026-07-30 16:35:27 [INFO] ticket_sync.crawler: 상세 보강 진행 6/12 완료 (case=2607300030002243)
+2026-07-30 16:35:42 [INFO] ticket_sync.crawler: 상세 보강 진행 7/12 완료 (case=2607300030002032)
+2026-07-30 16:35:58 [INFO] ticket_sync.crawler: 상세 보강 진행 8/12 완료 (case=2607300030001794)
+2026-07-30 16:36:14 [INFO] ticket_sync.crawler: 상세 보강 진행 9/12 완료 (case=2607300030000168)
+2026-07-30 16:36:27 [INFO] ticket_sync.crawler: 상세 보강 진행 10/12 완료 (case=2607300030000146)
+2026-07-30 16:36:41 [INFO] ticket_sync.crawler: 상세 보강 진행 11/12 완료 (case=2607300060000184)
+2026-07-30 16:36:57 [INFO] ticket_sync.crawler: 상세 보강 진행 12/12 완료 (case=2607300060000156)

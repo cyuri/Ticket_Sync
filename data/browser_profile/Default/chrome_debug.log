@@ -1,0 +1,3 @@
+[0709/083836.412:INFO:CONSOLE:0] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
+[0709/083836.413:INFO:CONSOLE:0] "Error with Permissions-Policy header: Unrecognized feature: 'battery'.", source:  (0)
+[0709/083837.671:INFO:CONSOLE:18] "BSSO Telemetry: {"result":"Error","error":"NoExtension","type":"ChromeSsoTelemetry","data":{},"traces":["BrowserSSO Initialized","Creating ChromeBrowserCore provider","Sending message for method CreateProviderAsync","Received message for method CreateProviderAsync","Error: ChromeBrowserCore error NoExtension: Extension is not installed."]}", source: https://aadcdn.msftauth.net/shared/1.0/content/js/BssoInterrupt_Core_Pub9GRdfCt-pUOuUnzQRBw2.js (18)

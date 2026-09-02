@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Power Automate에서 SharePoint 연동 커넥터를 사용시, 계정 토큰 만료 문제가 발생</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-meta { font-size: 0.78rem; color: #6b7280; margin-bottom: 8px; }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+    .thread-card-meta { color: #9aa0ab; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Power Automate에서 SharePoint 연동 커넥터를 사용시, 계정 토큰 만료 문제가 발생</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607290030000610</b></span>
+    <span>최근 발신자: <b>supportmail@techsupport.microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 29. 오전 11:43</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-meta">supportmail@techsupport.microsoft.com · 2026. 7. 29. 오전 11:43</div><div class="thread-card-body">안녕하세요 담당자님, 마이크로소프트 최라미 입니다.<br><br> <br><br>Power Automate에서 SharePoint 연동 커넥터를 사용시, 계정 토큰 만료 문제가 발생 #2607290030000610에 대한 지원을 드리고자 메일을 드립니다.<br><br> <br><br>[문의 내용]<br><br>- Power Automate에서 SharePoint 연동 커넥터를 사용시, 계정 토큰 만료 문제가 발생합니다. 대상자 4천명중 2명에게서만 발생하고 있습니다.<br><br> <br><br>흐름 실행이 실패했습니다. Action &#x27;항목_가져오기(2개_이상)&#x27; failed: Error from token exchange: Runtime call was blocked because connection has error status: Enabled| Error, and sharepointonline is in the block list. Connection errors: [ParameterName: token, Error: Code: Unauthorized, Message: &#x27;Failed to refresh access token for service: sharepointonlinecertificatev2. Correlation Id=179e0979-740f-4ddf-8984-e32c2d651735, UTC TimeStamp=7/27/2026 1:09:39 AM, Error: Failed to acquire token from AAD: {&quot;error&quot;:&quot;invalid_grant&quot;,&quot;error_description&quot;:&quot;AADSTS135010: UserPrincipal doesn&#x27;t have the key ID configured. Trace ID: b4694ce1-f41f-441a-98c7-17b843711500 Correlation ID: 670e0576-0f27-47ef-9e27-b80cea63ae29 Timestamp: 2026-07-27 01:09:39Z&quot;,&quot;error_codes&quot;:[135010],&quot;timestamp&quot;:&quot;2026-07-27 01:09:39Z&quot;,&quot;trace_id&quot;:&quot;b4694ce1-f41f-441a-98c7-17b843711500&quot;,&quot;correlation_id&quot;:&quot;670e0576-0f27-47ef-9e27-b80cea63ae29&quot;}&#x27;]<br><br> <br><br>[지원 범위]<br><br>- 상기 설명된 문의내용이 해결 되거나, 적합한 안내 가이드를 제공해 드리면, 본 지원 케이스는 정상적으로 종료된 것으로 간주합니다.<br><br>- 지원을 드리는 과정에서, 만약 하나의 문의에 여러 하위 문의가 포함되어 있는 경우, 각 하위 문의들은 별도의 케이스를 통해 지원 드립니다.<br><br>- 본 이슈 해결을 위해 고객님과 Microsoft는 상호 협력하여 진행하고 있습니다. 상기 정의된 지원 범위에 동의하지 않으시거나 범위 수정이 필요하신 경우, 편하게 말씀해 주시기 바랍니다.<br><br> <br><br>[안내 사항]<br><br>연결 소유자는 make.powerautomate.com → 연결(Connections) 으로 이동한 후, 문제가 발생한 SharePoint 연결 → Reconnect 을 선택해 주시기 바랍니다. 연결 재인증이 완료된 후 동일한 흐름을 다시 테스트해 주시기 바랍니다.<br><br> <br><br> <br><br>(참조: 통합에 대한 AAD 오류 문제 해결 | Microsoft Learn)<br><br> <br><br>위와 같이 리포팅 드립니다. 추가 요청 사항이나 궁금한 점이 있으시면 언제든지 문의해 주시기 바랍니다.<br><br> <br><br>감사합니다!<br><br>최라미 드림<br><br> <br><br><br><br>Pui Lam Chan<br><br><br><br><br>Tech Support Eng<br><br>Office: 60327772097<br><br>puilamchan@microsoft.com<br><br><br><br><br> <br><br>Can&#x27;t reach me? Find the regional support number<br><br>Technical Advisor: Raymond Cheang waikincheang@microsoft.com <br><br>Manager: Tristan Hong tristanhong@microsoft.com  <br><br> <br><br>Note: Microsoft Support is updating its email domain to @techsupport.microsoft.com.<br><br>Please ensure this domain is allowed in your email filters to avoid missing important updates.<br><br>Learn how to verify legitimate Microsoft Support emails: How to determine if an email from Microsoft support is genuine<br><br> <br><br> <br><br>supportmail@techsupport.microsoft.com</div></div>
+</main>
+</body>
+</html>

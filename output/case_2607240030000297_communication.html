@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>해지된 구독에서 발생한 Azure Monitor alert 문의</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    background: #f5f6f8;
+    color: #1b1b1f;
+    line-height: 1.65;
+  }
+  header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #d8dbe0;
+  }
+  h1 { font-size: 1.35rem; margin: 0 0 10px; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.88rem; color: #4b4f56; }
+  .meta span b { color: #1b1b1f; }
+  main { position: relative; padding-left: 8px; }
+  .thread-card {
+    background: #fff;
+    border: 1px solid #e1e3e8;
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    margin: 18px 0 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .thread-card::before {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 0;
+    bottom: -18px;
+    width: 2px;
+    background: #dfe2e7;
+  }
+  .thread-card:last-child::before { bottom: 50%; }
+  .thread-card-index {
+    position: absolute;
+    top: 18px;
+    left: -34px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #2b579a;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .thread-card-body {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .empty { color: #888; font-style: italic; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1b1c1f; color: #e7e7ea; }
+    header { border-bottom-color: #33353a; }
+    .meta { color: #a9adb5; }
+    .meta span b { color: #e7e7ea; }
+    .thread-card { background: #26272b; border-color: #33353a; box-shadow: none; }
+    .thread-card::before { background: #3a3c42; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>해지된 구독에서 발생한 Azure Monitor alert 문의</h1>
+  <div class="meta">
+    <span>케이스 번호: <b>2607240030000297</b></span>
+    <span>최근 발신자: <b>supportmail@techsupport.microsoft.com</b></span>
+    <span>마지막 업데이트: <b>2026. 7. 24. 오전 10:40</b></span>
+  </div>
+</header>
+<main>
+<div class="thread-card"><div class="thread-card-index">1</div><div class="thread-card-body">새로 고침<br><br>새 메시지<br><br>피드백 제공<br><br>필수<br>요청 ID<br>2607240030000297<br><br>심각도<br>C - 최소 영향<br><br>상태<br>Open<br><br>업데이트됨<br>2026. 7. 24. 오전 10:40<br><br>만들어짐<br>2026. 7. 24. 오전 09:49<br><br>인시던트 관리자<br>keki@microsoft.com<br><br>원본<br>마지막 업데이트<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 24. 오전 10:40<br><br>supportmail@techsupport.microsoft.com<br>2026. 7. 24. 오전 09:49<br><br>외부 메시지가 모든 사용자에게 표시됩니다.<br>메시지:<br> <br>안녕하세요.<br>마이크로소프트 기술지원에 문의 주셔서 감사합니다. 저는 본 케이스를 지원할 함종호 엔지니어입니다.<br> <br>관련내용을 다음과 같이 정리하여 보내 드리니 내용을 살펴보시고 문의사항 있으면 언제든지 연락주시기 바랍니다.<br><br><br>본 메일의 회신은 빠른 확인을 위해 전체 회신으로 부탁드립니다.<br><br>[요청내용]<br><br>안녕하세요<br><br>해지된 구독에서 리소스헬스 alert가 발생하여, 관련 문의를 드립니다.<br><br>해지된 구독은 SR 발행 시 선택이 불가하여, 부득이 다른 구독을 대상으로 케이스를 발행한 점 양해 부탁드립니다.<br><br>sub-az01-ag012301-prd-itop 구독은 7.22 에 해지된 구독으로 알고 있으나, 해당 구독에 설정되어 있던 리소스헬스 alert가 발생하였다고 전달 받았습니다.<br>alert 발생 일시는 7.23 12:14 AM(KST) 이며, 12:40 경 이메일을 통해 담당자에게 alert가 전파되었습니다. 이메일 스크린샷을 첨부 드립니다.<br><br>구독 해지 시, 해당 구독 내 경고 규칙들은 유효한 상태로 남아있는 것인가요? 구독이 해지된 이후에도 해당 구독 내 리소스를 대상으로 alert 가 발생하는 것이 의도된 동작일지 확인 부탁드립니다.<br><br>향후 구독 해지 시, 사전에 alert rule을 모두 비활성화 하는 작업이 선행되어야 하는 것일지 문의 드립니다.<br><br>분석에 추가로 필요하신 정보가 있다면 말씀 부탁드립니다.<br>감사합니다.<br><br> <br><br>[확인결과]<br>구독삭제가 되면 구독 내의 리소스도 마찬가지로 삭제되지만 각 리소스 별로 완전 삭제 시기는 달라질 수 있습니다.<br> <br>내부적으로 아래 정보를 토대로 삭제 여부를 확인해보도록 하겠습니다.<br> <br>스크린샷을 통해 확인된 정보는 아래와 같습니다.<br>구독 id: 4191DE26-5429-4C0E-8207-A52C73A46A5B<br>correlation id: f63e4e33-528b-4946-a34e-90b50e10ac41<br>resource id: /SUBSCRIPTIONS/4191DE26-5429-4C0E-8207-A52C73A46A5B/RESOURCEGROUPS/RG-AZ01-AG012301-PRD-ITOP-01/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINES/VM-AZ01-ITOP01<br>alert rule 이름: [Health]ITOP_ResourceHealth<br> <br><br>[다음단계]<br>추가 문의 사항이나 설명이 부족한 부분 있으면 말씀 부탁 드립니다.<br> <br> <br><br>감사합니다.<br>함종호<br>Customer Service &amp; Support<br>Microsoft Korea | Office: +82 (2) 531-4042 | E-mail: joham@microsoft.com<br>Working hours: Mon-Fri 9:00 am - 6:00 pm (Korea, GMT+9)<br><br>Microsoft는 고객 만족을 최우선으로 생각합니다. 기술지원 관련하여 피드백이 있으시면 기술지원팀 매니저에게 알려주십시요.<br> <br>이 메시지는 Microsoft에서 발송한 것으로, 귀하 또는 귀사에서 구매 또는 참가한 프로그램, 서비스 또는 제품의 중요한 일부입니다. Microsoft는 사용자의 개인 정보를 보호합니다. 온라인 개인정보처리방침을 참조하세요.<br> <br><br> <br><br> <br><br>supportmail@techsupport.microsoft.com</div></div>
+</main>
+</body>
+</html>

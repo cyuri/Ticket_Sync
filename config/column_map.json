@@ -1,0 +1,21 @@
+{
+  "_comment": "Engage Center 'CSV로 다운로드' 결과 파일(SupportCases.csv)의 실제 헤더명 -> 내부 필드명 매핑. 2026-07-09 실제 다운로드로 확인한 값입니다.",
+
+  "RequestId": "ms_case_id",
+  "Title": "title",
+  "Severity": "severity",
+  "State": "status",
+  "ContractId": "contract_id",
+  "CaseType": "case_type",
+  "CreatedDate": "created_at",
+  "LastUpdatedDate": "modified_at",
+  "ClosedDate": "closed_at",
+  "Product": "product",
+  "ProductFamily": "product_family",
+  "StatusMessage": "status_message",
+  "TenantId": "tenant_id",
+  "SubscriptionId": "subscription_id",
+  "PrimaryContact": "requester",
+  "Tenant": "tenant",
+  "Workspace": "workspace"
+}
